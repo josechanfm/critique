@@ -4,13 +4,13 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:T+wiaRPW4tDe4U7OSyj07OvPTetHMhW0AVcsKw9WFoY=',
+    'key' => 'base64:7ti1J9buRGRTl3u+uuUeYGeLuNOtgkdAESpzNqiFdIA=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -107,11 +107,6 @@
         'driver' => 'session',
         'provider' => 'users',
       ),
-      'ldap_web' => 
-      array (
-        'driver' => 'session',
-        'provider' => 'ldap',
-      ),
       'sanctum' => 
       array (
         'driver' => 'sanctum',
@@ -124,22 +119,6 @@
       array (
         'driver' => 'eloquent',
         'model' => 'App\\Models\\User',
-      ),
-      'ldap' => 
-      array (
-        'driver' => 'ldap',
-        'model' => 'LdapRecord\\Models\\ActiveDirectory\\User',
-        'database' => 
-        array (
-          'model' => 'App\\Models\\User',
-          'sync_passwords' => false,
-          'sync_attributes' => 
-          array (
-            'name' => 'cn',
-            'email' => 'mail',
-            'username' => 'samaccountname',
-          ),
-        ),
       ),
     ),
     'passwords' => 
@@ -222,8 +201,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/var/www/html/budget-master/storage/framework/cache/data',
-        'lock_path' => '/var/www/html/budget-master/storage/framework/cache/data',
+        'path' => 'D:\\wamp64\\www\\critique\\storage\\framework/cache/data',
+        'lock_path' => 'D:\\wamp64\\www\\critique\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -306,7 +285,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'budget_master',
+        'database' => 'critique',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -316,9 +295,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'budget_master',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'database' => 'critique',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -336,9 +315,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'budget_master',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'database' => 'critique',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -351,9 +330,9 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'budget_master',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'database' => 'critique',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -396,14 +375,14 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/budget-master/storage/app',
+        'root' => 'D:\\wamp64\\www\\critique\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/budget-master/storage/app/public',
-        'url' => 'http://localhost/storage',
+        'root' => 'D:\\wamp64\\www\\critique\\storage\\app/public',
+        'url' => 'http://localhost:8000/storage',
         'visibility' => 'public',
         'throw' => false,
       ),
@@ -422,7 +401,7 @@
     ),
     'links' => 
     array (
-      '/var/www/html/budget-master/public/storage' => '/var/www/html/budget-master/storage/app/public',
+      'D:\\wamp64\\www\\critique\\public\\storage' => 'D:\\wamp64\\www\\critique\\storage\\app/public',
     ),
   ),
   'fortify-options' => 
@@ -442,7 +421,7 @@
     ),
     'auth_middleware' => 'auth',
     'passwords' => 'users',
-    'username' => 'username',
+    'username' => 'email',
     'email' => 'email',
     'views' => true,
     'home' => '/dashboard',
@@ -550,38 +529,6 @@
     'auth_session' => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
     'guard' => 'sanctum',
   ),
-  'ldap' => 
-  array (
-    'default' => 'default',
-    'connections' => 
-    array (
-      'default' => 
-      array (
-        'hosts' => 
-        array (
-          0 => 'ldap4.ipm.edu.mo',
-        ),
-        'username' => 'cn=ldapproxy,ou=guests,dc=ipm,dc=edu,dc=mo',
-        'password' => 'cinfok',
-        'port' => '389',
-        'base_dn' => 'dc=ipm,dc=edu,dc=mo',
-        'timeout' => '5',
-        'use_ssl' => false,
-        'use_tls' => false,
-      ),
-    ),
-    'logging' => 
-    array (
-      'enabled' => true,
-      'channel' => 'stack',
-      'level' => 'debug',
-    ),
-    'cache' => 
-    array (
-      'enabled' => false,
-      'driver' => 'file',
-    ),
-  ),
   'logging' => 
   array (
     'default' => 'stack',
@@ -604,14 +551,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/var/www/html/budget-master/storage/logs/laravel.log',
+        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/var/www/html/budget-master/storage/logs/laravel.log',
+        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -676,7 +623,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/var/www/html/budget-master/storage/logs/laravel.log',
+        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -752,7 +699,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/var/www/html/budget-master/resources/views/vendor/mail',
+        0 => 'D:\\wamp64\\www\\critique\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -878,7 +825,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'localhost',
+      5 => 'localhost:8000',
     ),
     'guard' => 
     array (
@@ -919,7 +866,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/var/www/html/budget-master/storage/framework/sessions',
+    'files' => 'D:\\wamp64\\www\\critique\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -940,9 +887,9 @@
   array (
     'paths' => 
     array (
-      0 => '/var/www/html/budget-master/resources/views',
+      0 => 'D:\\wamp64\\www\\critique\\resources\\views',
     ),
-    'compiled' => '/var/www/html/budget-master/storage/framework/views',
+    'compiled' => 'D:\\wamp64\\www\\critique\\storage\\framework\\views',
   ),
   'inertia' => 
   array (
@@ -956,7 +903,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => '/var/www/html/budget-master/resources/js/Pages',
+        0 => 'D:\\wamp64\\www\\critique\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (
@@ -1053,7 +1000,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => '/var/www/html/budget-master',
+    'remote_sites_path' => 'D:\\wamp64\\www\\critique',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

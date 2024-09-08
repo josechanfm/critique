@@ -40,10 +40,9 @@ defineProps({
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
                             </div>
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">澳門科技發展基金項目</h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">提升批判性思维</h2>
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                是通過澳門特區政府的科技發展基金進行資助的科研項目，旨在推動本地科技創新和發展。這類項目通常需提交詳細的計劃書和預算，並遵循特定的資金使用規定，申請流程相對正式。
-                            </p>
+                                整合基于挑战的学习模式和知识和价值观教育模式，旨在训练学习者的批判性思维。                            </p>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
@@ -58,10 +57,10 @@ defineProps({
                                 </svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">校內項目 </h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">实现自主学习 </h2>
 
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                是指由大學內部資金支持的科研活動，旨在促進校內的學術研究與創新。這些項目通常具有靈活的預算管理，並且資金撥付流程較快，有助於滿足教職員的研究需求，提升學校的學術影響力。
+                                规范的教学步骤和程序，旨在指引学习者自主完成学习任务。
                             </p>
                            
                         </div>
@@ -78,9 +77,9 @@ defineProps({
                                 </svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">校外委託項目</h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">明晰学习路径</h2>
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                是由外部機構（如企業或政府部門）委託大學進行的研究工作。這些項目強調與業界的合作，通常涉及明確的合同管理和成果交付要求，並且資金使用需符合雙方的約定。
+                                规范的教学步骤和程序，旨在使学习者清晰自己的学习过程。
                             </p>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">

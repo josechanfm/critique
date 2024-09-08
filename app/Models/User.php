@@ -11,12 +11,9 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use LdapRecord\Laravel\Auth\HasLdapUser;
-use LdapRecord\Laravel\Auth\LdapAuthenticatable;
-use LdapRecord\Laravel\Auth\AuthenticatesWithLdap;
 use LaravelAndVueJS\Traits\LaravelPermissionToVueJS;
 
-class User extends Authenticatable implements LdapAuthenticatable
+class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -25,8 +22,7 @@ class User extends Authenticatable implements LdapAuthenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
-    use Notifiable, AuthenticatesWithLdap;
-    use HasLdapUser;
+    use Notifiable;
     use LaravelPermissionToVueJS;
 
     /**
@@ -66,5 +62,7 @@ class User extends Authenticatable implements LdapAuthenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
+    public function mission(){
+        return $this->belongsToMany(Mission::class)->with('members')->first();
+    }
 }

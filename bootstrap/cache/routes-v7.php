@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::C1aC6YGmUqJ4Idpg',
+            '_route' => 'generated::kgyvEaRyI9HUVFmW',
           ),
           1 => NULL,
           2 => 
@@ -61,7 +61,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8Aly43AH1muUprg2',
+            '_route' => 'generated::4IQpEk4Giu86otKw',
           ),
           1 => NULL,
           2 => 
@@ -171,7 +171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::zwljShJgicwABxvr',
+            '_route' => 'generated::SsmojKmqgy8NKPyo',
           ),
           1 => NULL,
           2 => 
@@ -228,7 +228,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::iMHoGNjNXn2uqCse',
+            '_route' => 'generated::DmqaKTMFUHYyPHax',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::vEXNPfVdT4LCTL3b',
+            '_route' => 'generated::TJ4eCJxBu67yaWep',
           ),
           1 => NULL,
           2 => 
@@ -431,7 +431,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::efDKXa9QjvH1EqTP',
+            '_route' => 'generated::bxNXYJqQbmI9GkYK',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +663,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eB7tCMlweZL6EXGd',
+            '_route' => 'generated::boJgSb1NhusP3XHu',
           ),
           1 => NULL,
           2 => 
@@ -683,7 +683,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::2NQd6RjcbWYVIrJ2',
+            '_route' => 'generated::BKFxiltn5n3ciLtA',
           ),
           1 => NULL,
           2 => 
@@ -717,13 +717,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/funds' => 
+      '/missions' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.index',
+            '_route' => 'messions.index',
           ),
           1 => NULL,
           2 => 
@@ -740,7 +740,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.store',
+            '_route' => 'messions.store',
           ),
           1 => NULL,
           2 => 
@@ -753,13 +753,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/funds/create' => 
+      '/missions/create' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.create',
+            '_route' => 'messions.create',
           ),
           1 => NULL,
           2 => 
@@ -849,122 +849,10 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/categories' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/categories/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/funds' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/funds/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/language/([^/]++)(*:160)|/fund(?|s/([^/]++)(?|(*:189)|/edit(*:202)|(*:210))|/([^/]++)/(?|items(?|(*:240)|/(?|create(*:258)|([^/]++)(?|(*:277)|/edit(*:290)|(*:298)))|(*:308))|expends(?|(*:327)|/(?|create(*:345)|([^/]++)(?|(*:364)|/edit(*:377)|(*:385)))|(*:395))))|/expend/([^/]++)/items(?|(*:431)|/(?|create(*:449)|([^/]++)(?|(*:468)|/edit(*:481)|(*:489)))|(*:499))|/admin/(?|c(?|onfigs/([^/]++)(?|(*:540)|/edit(*:553)|(*:561))|ategor(?|ies/([^/]++)(?|(*:594)|/edit(*:607)|(*:615))|y/(?|([^/]++)/items(?|(*:646)|/(?|create(*:664)|([^/]++)(?|(*:683)|/edit(*:696)|(*:704)))|(*:714))|item/([^/]++)/accounts(?|(*:748)|/(?|create(*:766)|([^/]++)(?|(*:785)|/edit(*:798)|(*:806)))|(*:816)))))|fund(?|s/([^/]++)(?|(*:848)|/edit(*:861)|(*:869))|/([^/]++)/(?|items(?|(*:899)|/(?|create(*:917)|([^/]++)(?|(*:936)|/edit(*:949)|(*:957)))|(*:967))|expends(?|(*:986)|/(?|create(*:1004)|([^/]++)(?|(*:1024)|/edit(*:1038)|(*:1047)))|(*:1058))|toggle_close(*:1080)))|expend/([^/]++)/(?|items(?|(*:1118)|/(?|create(*:1137)|([^/]++)(?|(*:1157)|/edit(*:1171)|(*:1180)))|(*:1191))|toggle_(?|lock(*:1215)|close(*:1229)))))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/language/([^/]++)(*:160)|/missions/([^/]++)(?|(*:189)|/edit(*:202)|(*:210))|/admin/configs/([^/]++)(?|(*:245)|/edit(*:258)|(*:266)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1188,11 +1076,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.show',
+            '_route' => 'messions.show',
           ),
           1 => 
           array (
-            0 => 'fund',
+            0 => 'mission',
           ),
           2 => 
           array (
@@ -1211,11 +1099,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.edit',
+            '_route' => 'messions.edit',
           ),
           1 => 
           array (
-            0 => 'fund',
+            0 => 'mission',
           ),
           2 => 
           array (
@@ -1234,11 +1122,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.update',
+            '_route' => 'messions.update',
           ),
           1 => 
           array (
-            0 => 'fund',
+            0 => 'mission',
           ),
           2 => 
           array (
@@ -1254,11 +1142,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'staff.funds.destroy',
+            '_route' => 'messions.destroy',
           ),
           1 => 
           array (
-            0 => 'fund',
+            0 => 'mission',
           ),
           2 => 
           array (
@@ -1270,487 +1158,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      240 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.index',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      258 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.create',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      277 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.show',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      290 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.edit',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      298 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.update',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      308 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.items.store',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      327 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.index',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      345 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.create',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      364 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.show',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      377 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.edit',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      385 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.update',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      395 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.fund.expends.store',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      431 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.index',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      449 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.create',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      468 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.show',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      481 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.edit',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      489 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.update',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      499 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'staff.expend.items.store',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      540 => 
+      245 => 
       array (
         0 => 
         array (
@@ -1773,7 +1181,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      553 => 
+      258 => 
       array (
         0 => 
         array (
@@ -1796,7 +1204,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      561 => 
+      266 => 
       array (
         0 => 
         array (
@@ -1837,1049 +1245,7 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-      ),
-      594 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.show',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      607 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.edit',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      615 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.update',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.categories.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      646 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.index',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      664 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.create',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      683 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.show',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      696 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.edit',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      704 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.update',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      714 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.items.store',
-          ),
-          1 => 
-          array (
-            0 => 'category',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      748 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.index',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      766 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.create',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      785 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.show',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-            1 => 'account',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      798 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.edit',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-            1 => 'account',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      806 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.update',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-            1 => 'account',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-            1 => 'account',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      816 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.category.item.accounts.store',
-          ),
-          1 => 
-          array (
-            0 => 'item',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      848 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.show',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      861 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.edit',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      869 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.update',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.funds.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      899 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.index',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      917 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.create',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      936 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.show',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      949 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.edit',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      957 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.update',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      967 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.items.store',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      986 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.index',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1004 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.create',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1024 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.show',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      1038 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.edit',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1047 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.update',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-            1 => 'expend',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      1058 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.expends.store',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1080 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.fund.toggleClose',
-          ),
-          1 => 
-          array (
-            0 => 'fund',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1118 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.index',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1137 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.create',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1157 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.show',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      1171 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.edit',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1180 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.update',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-            1 => 'item',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      1191 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.items.store',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1215 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.toggleLock',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      1229 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.expend.toggleClose',
-          ),
-          1 => 
-          array (
-            0 => 'expend',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
+        2 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -2895,7 +1261,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::C1aC6YGmUqJ4Idpg' => 
+    'generated::kgyvEaRyI9HUVFmW' => 
     array (
       'methods' => 
       array (
@@ -2908,13 +1274,13 @@ app('router')->setCompiledRoutes(
         'middleware' => 'web',
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:87:"function () {
         return \\auth()->check()?\\auth()->user()->jsPermissions():0;
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000006420000000000000000";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000006100000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::C1aC6YGmUqJ4Idpg',
+        'as' => 'generated::kgyvEaRyI9HUVFmW',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2969,7 +1335,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8Aly43AH1muUprg2' => 
+    'generated::4IQpEk4Giu86otKw' => 
     array (
       'methods' => 
       array (
@@ -2992,7 +1358,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::8Aly43AH1muUprg2',
+        'as' => 'generated::4IQpEk4Giu86otKw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3239,7 +1605,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::zwljShJgicwABxvr' => 
+    'generated::SsmojKmqgy8NKPyo' => 
     array (
       'methods' => 
       array (
@@ -3261,7 +1627,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::zwljShJgicwABxvr',
+        'as' => 'generated::SsmojKmqgy8NKPyo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3353,7 +1719,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::iMHoGNjNXn2uqCse' => 
+    'generated::DmqaKTMFUHYyPHax' => 
     array (
       'methods' => 
       array (
@@ -3376,7 +1742,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::iMHoGNjNXn2uqCse',
+        'as' => 'generated::DmqaKTMFUHYyPHax',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3508,7 +1874,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::vEXNPfVdT4LCTL3b' => 
+    'generated::TJ4eCJxBu67yaWep' => 
     array (
       'methods' => 
       array (
@@ -3531,7 +1897,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::vEXNPfVdT4LCTL3b',
+        'as' => 'generated::TJ4eCJxBu67yaWep',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3784,7 +2150,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::efDKXa9QjvH1EqTP' => 
+    'generated::bxNXYJqQbmI9GkYK' => 
     array (
       'methods' => 
       array (
@@ -3807,7 +2173,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::efDKXa9QjvH1EqTP',
+        'as' => 'generated::bxNXYJqQbmI9GkYK',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4570,7 +2936,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eB7tCMlweZL6EXGd' => 
+    'generated::boJgSb1NhusP3XHu' => 
     array (
       'methods' => 
       array (
@@ -4587,13 +2953,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006d90000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000068f0000000000000000";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::eB7tCMlweZL6EXGd',
+        'as' => 'generated::boJgSb1NhusP3XHu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4626,7 +2992,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:151:"function ($language) {
     \\Illuminate\\Support\\Facades\\Session::put(\'applocale\', $language);
     return \\Illuminate\\Support\\Facades\\Redirect::back();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006db0000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006910000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4648,7 +3014,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::2NQd6RjcbWYVIrJ2' => 
+    'generated::BKFxiltn5n3ciLtA' => 
     array (
       'methods' => 
       array (
@@ -4669,13 +3035,13 @@ app('router')->setCompiledRoutes(
         \'laravelVersion\' => \\Illuminate\\Foundation\\Application::VERSION,
         \'phpVersion\' => PHP_VERSION,
     ]);
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006dd0000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006930000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::2NQd6RjcbWYVIrJ2',
+        'as' => 'generated::BKFxiltn5n3ciLtA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4710,7 +3076,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:73:"function () {
         return \\Inertia\\Inertia::render(\'Dashboard\');
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006e10000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006970000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4732,14 +3098,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.index' => 
+    'messions.index' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'funds',
+      'uri' => 'missions',
       'action' => 
       array (
         'middleware' => 
@@ -4749,9 +3115,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.index',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@index',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@index',
+        'as' => 'messions.index',
+        'uses' => 'App\\Http\\Controllers\\MissionController@index',
+        'controller' => 'App\\Http\\Controllers\\MissionController@index',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4772,14 +3138,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.create' => 
+    'messions.create' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'funds/create',
+      'uri' => 'missions/create',
       'action' => 
       array (
         'middleware' => 
@@ -4789,9 +3155,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.create',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@create',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@create',
+        'as' => 'messions.create',
+        'uses' => 'App\\Http\\Controllers\\MissionController@create',
+        'controller' => 'App\\Http\\Controllers\\MissionController@create',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4812,13 +3178,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.store' => 
+    'messions.store' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'funds',
+      'uri' => 'missions',
       'action' => 
       array (
         'middleware' => 
@@ -4828,9 +3194,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.store',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@store',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@store',
+        'as' => 'messions.store',
+        'uses' => 'App\\Http\\Controllers\\MissionController@store',
+        'controller' => 'App\\Http\\Controllers\\MissionController@store',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4851,14 +3217,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.show' => 
+    'messions.show' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'funds/{fund}',
+      'uri' => 'missions/{mission}',
       'action' => 
       array (
         'middleware' => 
@@ -4868,9 +3234,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.show',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@show',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@show',
+        'as' => 'messions.show',
+        'uses' => 'App\\Http\\Controllers\\MissionController@show',
+        'controller' => 'App\\Http\\Controllers\\MissionController@show',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4891,14 +3257,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.edit' => 
+    'messions.edit' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'funds/{fund}/edit',
+      'uri' => 'missions/{mission}/edit',
       'action' => 
       array (
         'middleware' => 
@@ -4908,9 +3274,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.edit',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@edit',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@edit',
+        'as' => 'messions.edit',
+        'uses' => 'App\\Http\\Controllers\\MissionController@edit',
+        'controller' => 'App\\Http\\Controllers\\MissionController@edit',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4931,14 +3297,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.update' => 
+    'messions.update' => 
     array (
       'methods' => 
       array (
         0 => 'PUT',
         1 => 'PATCH',
       ),
-      'uri' => 'funds/{fund}',
+      'uri' => 'missions/{mission}',
       'action' => 
       array (
         'middleware' => 
@@ -4948,9 +3314,9 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.update',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@update',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@update',
+        'as' => 'messions.update',
+        'uses' => 'App\\Http\\Controllers\\MissionController@update',
+        'controller' => 'App\\Http\\Controllers\\MissionController@update',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -4971,13 +3337,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'staff.funds.destroy' => 
+    'messions.destroy' => 
     array (
       'methods' => 
       array (
         0 => 'DELETE',
       ),
-      'uri' => 'funds/{fund}',
+      'uri' => 'missions/{mission}',
       'action' => 
       array (
         'middleware' => 
@@ -4987,845 +3353,11 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'staff.funds.destroy',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundController@destroy',
+        'as' => 'messions.destroy',
+        'uses' => 'App\\Http\\Controllers\\MissionController@destroy',
+        'controller' => 'App\\Http\\Controllers\\MissionController@destroy',
         'namespace' => NULL,
         'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.index',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@index',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@index',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/items/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.create',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@create',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@create',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'fund/{fund}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.store',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@store',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@store',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.show',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@show',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@show',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/items/{item}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.edit',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@edit',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@edit',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.update',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@update',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@update',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.items.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.items.destroy',
-        'uses' => 'App\\Http\\Controllers\\Staff\\FundItemController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Staff\\FundItemController@destroy',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/expends',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.index',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@index',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@index',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/expends/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.create',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@create',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@create',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'fund/{fund}/expends',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.store',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@store',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@store',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.show',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@show',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@show',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'fund/{fund}/expends/{expend}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.edit',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@edit',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@edit',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.update',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@update',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@update',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.fund.expends.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.fund.expends.destroy',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendController@destroy',
-        'namespace' => NULL,
-        'prefix' => '/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'expend/{expend}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.index',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@index',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@index',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'expend/{expend}/items/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.create',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@create',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@create',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'expend/{expend}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.store',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@store',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@store',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.show',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@show',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@show',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'expend/{expend}/items/{item}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.edit',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@edit',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@edit',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.update',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@update',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@update',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'staff.expend.items.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-        ),
-        'as' => 'staff.expend.items.destroy',
-        'uses' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Staff\\ExpendItemController@destroy',
-        'namespace' => NULL,
-        'prefix' => '/expend/{expend}',
         'where' => 
         array (
         ),
@@ -6155,2121 +3687,6 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/categories',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@index',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/categories/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@create',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/categories',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@store',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/categories/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@show',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/categories/{category}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@edit',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/categories/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@update',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.categories.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/categories/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.categories.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryController@destroy',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/{category}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/{category}/items/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/category/{category}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/{category}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@show',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/{category}/items/{item}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/category/{category}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.items.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/category/{category}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.items.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/{category}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts/{account}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@show',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts/{account}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts/{account}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.category.item.accounts.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/category/item/{item}/accounts/{account}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.category.item.accounts.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CategoryItemAccountController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin/category/item/{item}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/funds',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@index',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/funds/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@create',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/funds',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@store',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/funds/{fund}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@show',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/funds/{fund}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@edit',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/funds/{fund}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@update',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.funds.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/funds/{fund}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.funds.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@destroy',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/items/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/fund/{fund}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@show',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/items/{item}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.items.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/fund/{fund}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.items.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundItemController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundItemController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/expends',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/expends/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/fund/{fund}/expends',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@show',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/fund/{fund}/expends/{expend}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.expends.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/fund/{fund}/expends/{expend}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.fund.expends.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin/fund/{fund}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/expend/{expend}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.index',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@index',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@index',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/expend/{expend}/items/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.create',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@create',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@create',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/expend/{expend}/items',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.store',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@store',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@store',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.show',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@show',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@show',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/expend/{expend}/items/{item}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.edit',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@edit',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@edit',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'admin/expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.update',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@update',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@update',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.items.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'admin/expend/{expend}/items/{item}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'as' => 'admin.expend.items.destroy',
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@destroy',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendItemController@destroy',
-        'namespace' => NULL,
-        'prefix' => 'admin/expend/{expend}',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.fund.toggleClose' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/fund/{fund}/toggle_close',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\FundController@toggleClose',
-        'controller' => 'App\\Http\\Controllers\\Admin\\FundController@toggleClose',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'admin.fund.toggleClose',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.toggleLock' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/expend/{expend}/toggle_lock',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@toggleLock',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@toggleLock',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'admin.expend.toggleLock',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.expend.toggleClose' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/expend/{expend}/toggle_close',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:sanctum',
-          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
-          3 => 'verified',
-          4 => 'role:admin',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ExpendController@toggleClose',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ExpendController@toggleClose',
-        'namespace' => NULL,
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'admin.expend.toggleClose',
       ),
       'fallback' => false,
       'defaults' => 

@@ -63,8 +63,7 @@ const logout = () => {
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative">
-                                <a-button type="link" :href="route('admin.funds.index')">Admin</a-button>
-                                <a-button type="link" :href="route('admin.categories.index')">Category</a-button>
+                                Admin
                             </div>
 
                             <div class="ms-3 relative">
