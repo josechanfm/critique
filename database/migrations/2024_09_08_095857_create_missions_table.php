@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->text('remark')->nullable();
+            $table->tinyInteger('current_stage');
             $table->date('started_at')->nullable();
             $table->date('closed_at')->nullable();
             $table->timestamps();

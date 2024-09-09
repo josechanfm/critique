@@ -10,14 +10,23 @@
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
-          <a-col :span="12" class="bg-red-100">
+          <a-col :span="8" class="bg-red-100">
             <div style="height:150px">
-              {{ mission }}
+              upload videos
               col-4
             </div>
           </a-col>
-          <a-col :span="12" class="bg-blue-100">
+          <a-col :span="8" class="bg-blue-100">
             <div style="height:150px">
+              Evaluation result
+              upload word and pdf  
+              col-4
+            </div>
+          </a-col>
+          <a-col :span="8" class="bg-blue-100">
+            <div style="height:150px">
+              Final proposal
+              upload word pdf  
               col-4
             </div>
           </a-col>
@@ -31,7 +40,7 @@
 <script>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
-import StageHeader from "@/Pages/StageHeader.vue";
+import StageHeader from "@/Pages/Stages/StageHeader.vue";
 
 
 export default {
@@ -39,7 +48,7 @@ export default {
     AdminLayout,
     StageHeader
   },
-  props: ["configStages","mission"],
+  props: ["configStages","mission","stage"],
   data() {
     return {
       current: 1

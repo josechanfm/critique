@@ -1,6 +1,9 @@
 <template>
+      <div class="container mx-auto pt-5">
+      <div class="bg-white relative shadow rounded-lg">
+
     <div :style="containerStyle">
-      <a-steps :current="current" :style="stepsStyle">
+      <a-steps :current="current" :style="stepsStyle" >
         <template v-for="(step, index) in steps" :key="index">
           <a-step>
             <template v-slot:title>
@@ -8,12 +11,15 @@
                 <div style="height: 40px;"> <!-- Space for the icon -->
                   <!-- Optional: Add some icon or step marker here if needed -->
                 </div>
-                <div class="rotated-title">{{ step.title }}</div> <!-- Step Title -->
+                <div class="rotated-title">{{ step.label}}</div> <!-- Step Title -->
               </div>
             </template>
           </a-step>
         </template>
       </a-steps>
+    </div>
+
+    </div>
     </div>
   </template>
   

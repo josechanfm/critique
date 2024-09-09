@@ -5,15 +5,17 @@
           Config
         </h2>
       </template>
-
+      <a-button @click="createRecord()" type="primary">
+        Create
+      </a-button>
       <div class="container mx-auto pt-5">
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
-          <a-button type="primary" class="float-right m-5" @click="createRecord()">Create</a-button>
-          <a-table :dataSource="categories" :columns="columns">
+          <div>stage column 顯示任務到哪個階段,並提供按鈕,進入下一階段.</div>
+          <div>current stage: {{ mission.current_stage }}</div>
+          <a-table :dataSource="mission.stages" :columns="columns" :pagination="{ pageSize: 20 }">
             <template #bodyCell="{ column, text, record, index }">
               <template v-if="column.dataIndex == 'operation'">
                 <a-button @click="editRecord(record)">Edit</a-button>
-                <a-button :href="route('admin.category.items.index',record.id)">Items</a-button>
               </template>
               <template v-else>
                 {{ record[column.dataIndex] }}
@@ -34,12 +36,15 @@
           :rules="rules"
           :validate-messages="validateMessages"
         >
-          <a-form-item label="Title (zh)" name="title_zh">
-            <a-input v-model:value="modal.data.title_zh" />
+        <a-form-item label="Code" name="code">
+            <a-input v-model:value="modal.data.code" />
           </a-form-item>
-          <a-form-item label="Remark" name="remark">
-            <a-textarea v-model:value="modal.data.remark" :rows="5" />
+          <a-form-item label="Title" name="title">
+            <a-input v-model:value="modal.data.title" />
           </a-form-item>
+          <div>
+            {{ modal.data.tasks }}
+          </div>
         </a-form>
         <template #footer>
           <a-button
@@ -70,7 +75,7 @@
     components: {
       AdminLayout,
     },
-    props: ["categories"],
+    props: ["mission"],
     data() {
       return {
         modal: {
@@ -82,11 +87,22 @@
         teacherStateLabels: {},
         columns: [
           {
+            title: "Code",
+            i18n: "code",
+            dataIndex: "code",
+          },{
             title: "Title",
-            i18n: "title_zh",
-            dataIndex: "title_zh",
-          },
-          {
+            i18n: "title",
+            dataIndex: "title",
+          },{
+            title: "Start",
+            i18n: "started_at",
+            dataIndex: "started_at",
+          },{
+            title: "Stage",
+            i18n: "stage",
+            dataIndex: "stage",
+          },{
             title: "Operation",
             i18n: "operation",
             dataIndex: "operation",
@@ -127,6 +143,7 @@
       },
       editRecord(record) {
         this.modal.data = { ...record };
+        this.modal.data.content = JSON.stringify(record.content);
         this.modal.mode = "EDIT";
         this.modal.title = "edit";
         this.modal.isOpen = true;
@@ -135,7 +152,7 @@
         this.$refs.modalRef
           .validateFields()
           .then(() => {
-            this.$inertia.post(route("admin.categories.store"), this.modal.data, {
+            this.$inertia.post(route("admin.configs.store"), this.modal.data, {
               onSuccess: (page) => {
                 this.modal.data = {};
                 this.modal.isOpen = false;
@@ -152,7 +169,7 @@
       updateRecord() {
         console.log(this.modal.data);
         this.$inertia.patch(
-          route("admin.categories.update", this.modal.data.id),
+          route("admin.configs.update", this.modal.data.id),
           this.modal.data,
           {
             onSuccess: (page) => {

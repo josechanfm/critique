@@ -4,13 +4,13 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost:8000',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:7ti1J9buRGRTl3u+uuUeYGeLuNOtgkdAESpzNqiFdIA=',
+    'key' => 'base64:pu498iNXZ5T8hy6U9DxPHfQHIcUZlE2cnH+l5fcBkx4=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -201,8 +201,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\wamp64\\www\\critique\\storage\\framework/cache/data',
-        'lock_path' => 'D:\\wamp64\\www\\critique\\storage\\framework/cache/data',
+        'path' => '/var/www/html/critique/storage/framework/cache/data',
+        'lock_path' => '/var/www/html/critique/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -296,8 +296,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'dbadmin',
+        'password' => 'password',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -316,8 +316,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'dbadmin',
+        'password' => 'password',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -331,8 +331,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'root',
-        'password' => '',
+        'username' => 'dbadmin',
+        'password' => 'password',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -375,14 +375,14 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\wamp64\\www\\critique\\storage\\app',
+        'root' => '/var/www/html/critique/storage/app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\wamp64\\www\\critique\\storage\\app/public',
-        'url' => 'http://localhost:8000/storage',
+        'root' => '/var/www/html/critique/storage/app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
       ),
@@ -401,7 +401,7 @@
     ),
     'links' => 
     array (
-      'D:\\wamp64\\www\\critique\\public\\storage' => 'D:\\wamp64\\www\\critique\\storage\\app/public',
+      '/var/www/html/critique/public/storage' => '/var/www/html/critique/storage/app/public',
     ),
   ),
   'fortify-options' => 
@@ -551,14 +551,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
+        'path' => '/var/www/html/critique/storage/logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
+        'path' => '/var/www/html/critique/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -623,7 +623,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\wamp64\\www\\critique\\storage\\logs/laravel.log',
+        'path' => '/var/www/html/critique/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -699,7 +699,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\wamp64\\www\\critique\\resources\\views/vendor/mail',
+        0 => '/var/www/html/critique/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -825,7 +825,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'localhost:8000',
+      5 => 'localhost',
     ),
     'guard' => 
     array (
@@ -866,7 +866,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\wamp64\\www\\critique\\storage\\framework/sessions',
+    'files' => '/var/www/html/critique/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -887,9 +887,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\wamp64\\www\\critique\\resources\\views',
+      0 => '/var/www/html/critique/resources/views',
     ),
-    'compiled' => 'D:\\wamp64\\www\\critique\\storage\\framework\\views',
+    'compiled' => '/var/www/html/critique/storage/framework/views',
   ),
   'inertia' => 
   array (
@@ -903,7 +903,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => 'D:\\wamp64\\www\\critique\\resources\\js/Pages',
+        0 => '/var/www/html/critique/resources/js/Pages',
       ),
       'page_extensions' => 
       array (
@@ -1000,7 +1000,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'D:\\wamp64\\www\\critique',
+    'remote_sites_path' => '/var/www/html/critique',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

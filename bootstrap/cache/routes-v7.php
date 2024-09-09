@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kgyvEaRyI9HUVFmW',
+            '_route' => 'generated::xuXytAhgL2p1t0iJ',
           ),
           1 => NULL,
           2 => 
@@ -61,7 +61,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4IQpEk4Giu86otKw',
+            '_route' => 'generated::T6xz5iq5eVDCXJp5',
           ),
           1 => NULL,
           2 => 
@@ -171,7 +171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::SsmojKmqgy8NKPyo',
+            '_route' => 'generated::pB4yU3Du2p7QQ62T',
           ),
           1 => NULL,
           2 => 
@@ -228,7 +228,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::DmqaKTMFUHYyPHax',
+            '_route' => 'generated::P7xlkJnwwdx8pyGf',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::TJ4eCJxBu67yaWep',
+            '_route' => 'generated::HEyX3pcqgM9FrrYN',
           ),
           1 => NULL,
           2 => 
@@ -431,7 +431,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::bxNXYJqQbmI9GkYK',
+            '_route' => 'generated::xoxMenyVbCv3ULKa',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +663,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::boJgSb1NhusP3XHu',
+            '_route' => 'generated::EEcq2UgTc0GDCNrD',
           ),
           1 => NULL,
           2 => 
@@ -683,7 +683,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::BKFxiltn5n3ciLtA',
+            '_route' => 'generated::wOlQLI1RAmxyzHeI',
           ),
           1 => NULL,
           2 => 
@@ -849,10 +849,66 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/missions' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/missions/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/language/([^/]++)(*:160)|/missions/([^/]++)(?|(*:189)|/edit(*:202)|(*:210))|/admin/configs/([^/]++)(?|(*:245)|/edit(*:258)|(*:266)))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/language/([^/]++)(*:160)|/missions/([^/]++)(?|(*:189)|/edit(*:202)|(*:210))|/admin/(?|configs/([^/]++)(?|(*:248)|/edit(*:261)|(*:269))|mission(?|s/([^/]++)(?|(*:301)|/edit(*:314)|(*:322))|/([^/]++)/stages(?|(*:350)|/(?|create(*:368)|([^/]++)(?|(*:387)|/edit(*:400)|(*:408)))|(*:418)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1158,7 +1214,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      245 => 
+      248 => 
       array (
         0 => 
         array (
@@ -1181,7 +1237,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      258 => 
+      261 => 
       array (
         0 => 
         array (
@@ -1204,7 +1260,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      266 => 
+      269 => 
       array (
         0 => 
         array (
@@ -1245,7 +1301,255 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-        2 => 
+      ),
+      301 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.show',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      314 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.edit',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      322 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.update',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      350 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.index',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      368 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.create',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      387 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.show',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+            1 => 'stage',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      400 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.edit',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+            1 => 'stage',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      408 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.update',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+            1 => 'stage',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+            1 => 'stage',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      418 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.mission.stages.store',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -1261,7 +1565,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::kgyvEaRyI9HUVFmW' => 
+    'generated::xuXytAhgL2p1t0iJ' => 
     array (
       'methods' => 
       array (
@@ -1274,13 +1578,13 @@ app('router')->setCompiledRoutes(
         'middleware' => 'web',
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:87:"function () {
         return \\auth()->check()?\\auth()->user()->jsPermissions():0;
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000006100000000000000000";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000006110000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::kgyvEaRyI9HUVFmW',
+        'as' => 'generated::xuXytAhgL2p1t0iJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1335,7 +1639,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4IQpEk4Giu86otKw' => 
+    'generated::T6xz5iq5eVDCXJp5' => 
     array (
       'methods' => 
       array (
@@ -1358,7 +1662,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4IQpEk4Giu86otKw',
+        'as' => 'generated::T6xz5iq5eVDCXJp5',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1605,7 +1909,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::SsmojKmqgy8NKPyo' => 
+    'generated::pB4yU3Du2p7QQ62T' => 
     array (
       'methods' => 
       array (
@@ -1627,7 +1931,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::SsmojKmqgy8NKPyo',
+        'as' => 'generated::pB4yU3Du2p7QQ62T',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1719,7 +2023,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::DmqaKTMFUHYyPHax' => 
+    'generated::P7xlkJnwwdx8pyGf' => 
     array (
       'methods' => 
       array (
@@ -1742,7 +2046,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::DmqaKTMFUHYyPHax',
+        'as' => 'generated::P7xlkJnwwdx8pyGf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1874,7 +2178,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TJ4eCJxBu67yaWep' => 
+    'generated::HEyX3pcqgM9FrrYN' => 
     array (
       'methods' => 
       array (
@@ -1897,7 +2201,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::TJ4eCJxBu67yaWep',
+        'as' => 'generated::HEyX3pcqgM9FrrYN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2150,7 +2454,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::bxNXYJqQbmI9GkYK' => 
+    'generated::xoxMenyVbCv3ULKa' => 
     array (
       'methods' => 
       array (
@@ -2173,7 +2477,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::bxNXYJqQbmI9GkYK',
+        'as' => 'generated::xoxMenyVbCv3ULKa',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2936,7 +3240,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::boJgSb1NhusP3XHu' => 
+    'generated::EEcq2UgTc0GDCNrD' => 
     array (
       'methods' => 
       array (
@@ -2953,13 +3257,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000068f0000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006900000000000000000";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::boJgSb1NhusP3XHu',
+        'as' => 'generated::EEcq2UgTc0GDCNrD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2992,7 +3296,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:151:"function ($language) {
     \\Illuminate\\Support\\Facades\\Session::put(\'applocale\', $language);
     return \\Illuminate\\Support\\Facades\\Redirect::back();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006910000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006920000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -3014,7 +3318,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::BKFxiltn5n3ciLtA' => 
+    'generated::wOlQLI1RAmxyzHeI' => 
     array (
       'methods' => 
       array (
@@ -3035,13 +3339,13 @@ app('router')->setCompiledRoutes(
         \'laravelVersion\' => \\Illuminate\\Foundation\\Application::VERSION,
         \'phpVersion\' => PHP_VERSION,
     ]);
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006930000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006940000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::BKFxiltn5n3ciLtA',
+        'as' => 'generated::wOlQLI1RAmxyzHeI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3076,7 +3380,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:73:"function () {
         return \\Inertia\\Inertia::render(\'Dashboard\');
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006970000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006980000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -3684,6 +3988,576 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\Admin\\ConfigController@destroy',
         'namespace' => NULL,
         'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/missions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/missions/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/missions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/missions/{mission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.show',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@show',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/missions/{mission}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/missions/{mission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/missions/{mission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.missions.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/mission/{mission}/stages',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@index',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/mission/{mission}/stages/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@create',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/mission/{mission}/stages',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@store',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/mission/{mission}/stages/{stage}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.show',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@show',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@show',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/mission/{mission}/stages/{stage}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@edit',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/mission/{mission}/stages/{stage}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@update',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.mission.stages.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/mission/{mission}/stages/{stage}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.mission.stages.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\StageController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\StageController@destroy',
+        'namespace' => NULL,
+        'prefix' => 'admin/mission/{mission}',
         'where' => 
         array (
         ),

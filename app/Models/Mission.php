@@ -10,7 +10,7 @@ class Mission extends Model
     use HasFactory;
 
     public function stages(){
-        return $this->hasMany(Stage::class);
+        return $this->hasMany(Stage::class)->with('tasks');
     }
     public function members(){
         return $this->belongsToMany(User::class);

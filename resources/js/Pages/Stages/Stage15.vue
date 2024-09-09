@@ -9,19 +9,7 @@
 
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
-        <a-row justify="space-between" align="bottom" class="h-32 p-2">
-          <a-col :span="12" class="bg-red-100">
-            <div style="height:150px">
-              {{ mission }}
-              col-4
-            </div>
-          </a-col>
-          <a-col :span="12" class="bg-blue-100">
-            <div style="height:150px">
-              col-4
-            </div>
-          </a-col>
-        </a-row>
+        done! congradurated!
       </div>
     </div>
 

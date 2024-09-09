@@ -2,21 +2,28 @@
     <AdminLayout title="Dashboard">
       <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          {{ $t('my_project') }}
+          Config
         </h2>
       </template>
+      <a-button @click="createRecord()" type="primary">
+        Create
+      </a-button>
       <div class="container mx-auto pt-5">
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
-          <FundHeader :fund="fund"/>
-        </div>
-        <a-divider/>
-        <div class="bg-white relative shadow rounded-lg overflow-x-auto text-right">
-          <a-button type="primary" @click="createRecord()">Create</a-button>
-          <a-table :dataSource="expends" :columns="columns">
+          <a-table :dataSource="missions" :columns="columns">
             <template #bodyCell="{ column, text, record, index }">
               <template v-if="column.dataIndex == 'operation'">
-                <a-button :href="route('staff.expend.items.index',record.id)" >Items</a-button>
-                <a-button @click="editRecord(record)" :disabled="record.is_locked || record.is_closed">Edit</a-button>
+                <a-button @click="editRecord(record)">Edit</a-button>
+                <a-button :href="route('admin.missions.show',record.id)">Stages</a-button>
+                <a-button :href="route('admin.mission.stages.index',record.id)">Tasks</a-button>
+              </template>
+              <template v-if="column.dataIndex == 'current_stage'">
+                <span v-if="text>=14">
+                  Finished
+                </span>
+                <span v-else>
+                  {{ text+1 }}
+                </span>
               </template>
               <template v-else>
                 {{ record[column.dataIndex] }}
@@ -40,17 +47,8 @@
           <a-form-item label="Title" name="title">
             <a-input v-model:value="modal.data.title" />
           </a-form-item>
-          <a-form-item label="Proposal No." name="proposal_number">
-            <a-input v-model:value="modal.data.proposal_number" />
-          </a-form-item>
-          <a-form-item label="Proposed at" name="proposed_at">
-            <a-date-picker v-model:value="modal.data.proposed_at" :format="dateFormat" :valueFormat="dateFormat"/>
-          </a-form-item>
-          <a-form-item label="Proposed by" name="proposed_by">
-            <a-input v-model:value="modal.data.proposed_by"/>
-          </a-form-item>
-          <a-form-item label="Approved at" name="approved_at">
-            <a-date-picker v-model:value="modal.data.approved_at" :format="dateFormat" :valueFormat="dateFormat"/>
+          <a-form-item label="Description" name="description">
+            <a-textarea v-model:value="modal.data.description" :rows="15" />
           </a-form-item>
           <a-form-item label="Remark" name="remark">
             <a-textarea v-model:value="modal.data.remark" />
@@ -79,41 +77,31 @@
   
   <script>
   import AdminLayout from "@/Layouts/AdminLayout.vue";
-  import FundHeader from "@/Pages/Staff/FundHeader.vue";
-
+  import { defineComponent, reactive } from "vue";
+  
   export default {
     components: {
       AdminLayout,
-      FundHeader
     },
-    props: ["fund","expends"],
+    props: ["configStages","missions"],
     data() {
       return {
-        dateFormat:'YYYY-MM-DD',
         modal: {
           isOpen: false,
           data: {},
           title: "Modal",
           mode: "",
         },
-          teacherStateLabels: {},
+        teacherStateLabels: {},
         columns: [
           {
             title: "Title",
             i18n: "title",
             dataIndex: "title",
           },{
-            title: "Propsal Number",
-            i18n: "proposal_number",
-            dataIndex: "proposal_number",
-          },{
-            title: "Propsal At",
-            i18n: "proposed_at",
-            dataIndex: "proposed_at",
-          },{
-            title: "Propssed By",
-            i18n: "proposed_by",
-            dataIndex: "proposed_by",
+            title: "Current",
+            i18n: "current_stage",
+            dataIndex: "current_stage",
           },{
             title: "Operation",
             i18n: "operation",
@@ -122,7 +110,9 @@
           },
         ],
         rules: {
-          title: { required: true },
+          name: { required: true },
+          email: { required: true, type: "email" },
+          password: { required: true },
         },
         validateMessages: {
           required: "${label} is required!",
@@ -145,24 +135,24 @@
       
     },
     methods: {
-      createRecord(){
-        this.modal.data = {}
-        this.modal.data.fund_id=this.fund.id
-        this.modal.mode = "CREATE"
-        this.modal.title = "Create"
-        this.modal.isOpen = true
+      createRecord() {
+        this.modal.data = {};
+        this.modal.mode = "CREATE";
+        this.modal.title = "create";
+        this.modal.isOpen = true;
       },
-      editRecord(record){
-        this.modal.data = {...record}
-        this.modal.mode = "EDIT"
-        this.modal.title = "Edit"
-        this.modal.isOpen = true
+      editRecord(record) {
+        this.modal.data = { ...record };
+        this.modal.data.content = JSON.stringify(record.content);
+        this.modal.mode = "EDIT";
+        this.modal.title = "edit";
+        this.modal.isOpen = true;
       },
       storeRecord() {
         this.$refs.modalRef
           .validateFields()
           .then(() => {
-            this.$inertia.post(route("staff.fund.expends.store",this.fund.id), this.modal.data, {
+            this.$inertia.post(route("admin.configs.store"), this.modal.data, {
               onSuccess: (page) => {
                 this.modal.data = {};
                 this.modal.isOpen = false;
@@ -179,7 +169,7 @@
       updateRecord() {
         console.log(this.modal.data);
         this.$inertia.patch(
-          route("staff.fund.expends.update", {fund:this.fund.id,expend:this.modal.data.id}),
+          route("admin.configs.update", this.modal.data.id),
           this.modal.data,
           {
             onSuccess: (page) => {

@@ -9,19 +9,26 @@
 
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
-        <a-row justify="space-between" align="bottom" class="h-32 p-2">
-          <a-col :span="12" class="bg-red-100">
-            <div style="height:150px">
-              {{ mission }}
-              col-4
-            </div>
-          </a-col>
-          <a-col :span="12" class="bg-blue-100">
-            <div style="height:150px">
-              col-4
-            </div>
-          </a-col>
-        </a-row>
+        <a-form
+          :model="item"
+          name="fund"
+          :label-col="labelCol"
+
+          autocomplete="off"
+          :rules="rules"
+          :validate-messages="validateMessages"
+          @finish="onFinish"
+          enctype="multipart/form-data"
+
+        >
+          <a-form-item :label="$t('project_entity')" name="entity">
+            <a-textarea v-model:value="item.content" />
+          </a-form-item>
+          <div class="flex flex-row item-center justify-center gap-5 pt-5">
+            <a-button >{{ $t('back') }}</a-button>
+            <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
+          </div>
+        </a-form>
       </div>
     </div>
 
@@ -31,7 +38,7 @@
 <script>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
-import StageHeader from "@/Pages/StageHeader.vue";
+import StageHeader from "@/Pages/Stages/StageHeader.vue";
 
 
 export default {
@@ -39,10 +46,35 @@ export default {
     AdminLayout,
     StageHeader
   },
-  props: ["configStages","mission"],
+  props: ["configStages","mission","stage"],
   data() {
     return {
-      current: 1
+      current: 1,
+      item:{
+        title:null,
+        content:null
+      },
+      rules: {
+          name: { required: true },
+          email: { required: true, type: "email" },
+          password: { required: true },
+        },
+        validateMessages: {
+          required: "${label} is required!",
+          types: {
+            email: "${label} is not a valid email!",
+            number: "${label} is not a valid number!",
+          },
+          number: {
+            range: "${label} must be between ${min} and ${max}",
+          },
+        },
+        labelCol: {
+          style: {
+            width: "150px",
+          },
+        },
+
     };
   },
   created() {
@@ -67,6 +99,10 @@ export default {
     },
   },
   methods: {
+    onFinish(){
+      console.log('on Finished');
+      console.log(this.item);
+    }
   },
 };
 </script>
