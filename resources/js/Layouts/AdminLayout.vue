@@ -62,8 +62,8 @@ const logout = () => {
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
-                            <div class="ms-3 relative">
-                                Admin
+                            <div class="ms-3 relative" v-role="['admin']">
+                                <inertia-link :href="route('admin.dashboard')">Admin</inertia-link>
                             </div>
 
                             <div class="ms-3 relative">

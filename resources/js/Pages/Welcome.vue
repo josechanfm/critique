@@ -26,7 +26,7 @@ defineProps({
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-                <a-typography-title>科研申報及預算管理系統</a-typography-title>
+                <a-typography-title>批判性思维训练社区</a-typography-title>
             </div>
             <div class="flex justify-center">
                 <ApplicationMark />
@@ -95,10 +95,10 @@ defineProps({
                                 </svg>
                             </div>
 
-                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">其他項目</h2>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">其他</h2>
 
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                則涵蓋了不符合上述類別的科研項目，包括自籌資金或特殊資助來源。這些項目通常具有靈活性，能夠根據特定的研究需求進行調整，並需要根據具體情況制定相應的預算管理策略。
+                                xx
                             </p>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">

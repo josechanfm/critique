@@ -62,6 +62,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    protected $with=['roles'];
+
     public function mission(){
         return $this->belongsToMany(Mission::class)->with('members')->first();
     }

@@ -83,7 +83,7 @@ export default {
 
   },
   mounted(){
-    console.log('stage02');
+    console.log('stage0 2');
     console.log(this.stage)
   },
   computed: {
