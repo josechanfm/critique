@@ -68,6 +68,22 @@ export default {
     },
   },
   methods: {
+    onFinish(){
+      this.$inertia.patch(
+          route("missions.update", this.mission.id),
+          this.items,
+          {
+            onSuccess: (page) => {
+              this.modal.data = {};
+              this.modal.isOpen = false;
+              console.log(page);
+            },
+            onError: (error) => {
+              console.log(error);
+            },
+          }
+        );
+    }
   },
 };
 </script>

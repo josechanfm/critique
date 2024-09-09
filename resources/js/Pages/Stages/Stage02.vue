@@ -10,7 +10,7 @@
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
         <a-form
-          :model="item"
+          :model="items"
           name="fund"
           :label-col="labelCol"
 
@@ -22,10 +22,10 @@
 
         >
           <a-form-item :label="$t('project_entity')" name="entity">
-            <a-input v-model:value="item.title" />
+            <a-input v-model:value="items[0].title" />
           </a-form-item>
           <a-form-item :label="$t('project_entity')" name="entity">
-            <a-textarea v-model:value="item.content" />
+            <a-textarea v-model:value="items[0].content" />
           </a-form-item>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
@@ -53,10 +53,9 @@ export default {
   data() {
     return {
       current: 1,
-      item:{
-        title:null,
-        content:null
-      },
+      items:[
+        {title:null,content:null}
+      ],
       rules: {
           name: { required: true },
           email: { required: true, type: "email" },
@@ -83,6 +82,10 @@ export default {
   created() {
 
   },
+  mounted(){
+    console.log('stage02');
+    console.log(this.stage)
+  },
   computed: {
     containerStyle() {
       return {
@@ -103,8 +106,20 @@ export default {
   },
   methods: {
     onFinish(){
-      console.log('on Finished');
-      console.log(this.item);
+      this.$inertia.patch(
+          route("missions.update", this.mission.id),
+          this.items,
+          {
+            onSuccess: (page) => {
+              this.modal.data = {};
+              this.modal.isOpen = false;
+              console.log(page);
+            },
+            onError: (error) => {
+              console.log(error);
+            },
+          }
+        );
     }
   },
 };

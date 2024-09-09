@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mission;
 use Inertia\Inertia;
 use App\Models\Config;
+use App\Models\Task;
 
 class MissionController extends Controller
 {
@@ -68,9 +69,21 @@ class MissionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Mission $mission)
     {
-        //
+        $items=$request->all();
+        $stageCode='S'.substr('0'.$mission->current_stage,-2);
+        $stage=$mission->stages()->where('code',$stageCode)->first();
+        foreach($items as $item){
+            if($item['id']){
+                Task::find($item['id'])->update($item);
+            }else{
+                $stage->tasks()->create($item);
+            }
+            
+        };
+        return redirect()->back();
+
     }
 
     /**
@@ -79,15 +92,5 @@ class MissionController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function stage01(){
-
-    }
-    public function stage02($mission){
-        
-    }
-    public function stage03(){
-
     }
 }

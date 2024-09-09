@@ -11,7 +11,7 @@
       <div class="bg-white relative shadow rounded-lg">
         <a-form
           :model="items"
-          name="fund"
+          name="items"
           :label-col="labelCol"
 
           autocomplete="off"
@@ -69,9 +69,8 @@ export default {
         {title:null,content:null}
       ],
       rules: {
-          name: { required: true },
-          email: { required: true, type: "email" },
-          password: { required: true },
+          title: { required: true },
+          content: { required: true},
         },
         validateMessages: {
           required: "${label} is required!",
@@ -93,7 +92,10 @@ export default {
     };
   },
   created() {
-    console.log(this.items)
+  },
+  mounted(){
+    console.log('stage03');
+    this.items=this.stage.tasks;
   },
   computed: {
     containerStyle() {
@@ -115,8 +117,20 @@ export default {
   },
   methods: {
     onFinish(){
-      console.log('on Finished');
+      console.log(this.mission);
       console.log(this.items);
+      this.$inertia.patch(
+          route("missions.update", this.mission.id),
+          this.items,
+          {
+            onSuccess: (page) => {
+              console.log(page);
+            },
+            onError: (error) => {
+              console.log(error);
+            },
+          }
+        );
     }
 
   },

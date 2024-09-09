@@ -117,8 +117,20 @@ export default {
   },
   methods: {
     onFinish(){
-      console.log('on Finished');
-      console.log(this.items);
+      this.$inertia.patch(
+          route("missions.update", this.mission.id),
+          this.items,
+          {
+            onSuccess: (page) => {
+              this.modal.data = {};
+              this.modal.isOpen = false;
+              console.log(page);
+            },
+            onError: (error) => {
+              console.log(error);
+            },
+          }
+        );
     }
 
   },

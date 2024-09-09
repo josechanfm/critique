@@ -40,7 +40,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
-    Route::resource('missions',App\Http\Controllers\MissionController::class)->names('messions');
+    Route::resource('missions',App\Http\Controllers\MissionController::class)->names('missions');
 
  
 });

@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xuXytAhgL2p1t0iJ',
+            '_route' => 'generated::5ba7kdQV3Oaho37c',
           ),
           1 => NULL,
           2 => 
@@ -61,7 +61,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::T6xz5iq5eVDCXJp5',
+            '_route' => 'generated::FjIZA9WUp2xHxcSY',
           ),
           1 => NULL,
           2 => 
@@ -171,7 +171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pB4yU3Du2p7QQ62T',
+            '_route' => 'generated::Bra2PFA7ivAUJvDz',
           ),
           1 => NULL,
           2 => 
@@ -228,7 +228,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::P7xlkJnwwdx8pyGf',
+            '_route' => 'generated::3rQkoatXds0EXHqH',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HEyX3pcqgM9FrrYN',
+            '_route' => 'generated::b969BfsuxdkI6S4n',
           ),
           1 => NULL,
           2 => 
@@ -431,7 +431,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xoxMenyVbCv3ULKa',
+            '_route' => 'generated::1SEF8xh6zMtwVRH7',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +663,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::EEcq2UgTc0GDCNrD',
+            '_route' => 'generated::4h6nePtxs8pG0Iq6',
           ),
           1 => NULL,
           2 => 
@@ -683,7 +683,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wOlQLI1RAmxyzHeI',
+            '_route' => 'generated::FPibF8QKX0reFJqn',
           ),
           1 => NULL,
           2 => 
@@ -723,7 +723,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.index',
+            '_route' => 'missions.index',
           ),
           1 => NULL,
           2 => 
@@ -740,7 +740,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.store',
+            '_route' => 'missions.store',
           ),
           1 => NULL,
           2 => 
@@ -759,7 +759,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.create',
+            '_route' => 'missions.create',
           ),
           1 => NULL,
           2 => 
@@ -1132,7 +1132,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.show',
+            '_route' => 'missions.show',
           ),
           1 => 
           array (
@@ -1155,7 +1155,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.edit',
+            '_route' => 'missions.edit',
           ),
           1 => 
           array (
@@ -1178,7 +1178,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.update',
+            '_route' => 'missions.update',
           ),
           1 => 
           array (
@@ -1198,7 +1198,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'messions.destroy',
+            '_route' => 'missions.destroy',
           ),
           1 => 
           array (
@@ -1565,7 +1565,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::xuXytAhgL2p1t0iJ' => 
+    'generated::5ba7kdQV3Oaho37c' => 
     array (
       'methods' => 
       array (
@@ -1584,7 +1584,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::xuXytAhgL2p1t0iJ',
+        'as' => 'generated::5ba7kdQV3Oaho37c',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1639,7 +1639,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::T6xz5iq5eVDCXJp5' => 
+    'generated::FjIZA9WUp2xHxcSY' => 
     array (
       'methods' => 
       array (
@@ -1662,7 +1662,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::T6xz5iq5eVDCXJp5',
+        'as' => 'generated::FjIZA9WUp2xHxcSY',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1909,7 +1909,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pB4yU3Du2p7QQ62T' => 
+    'generated::Bra2PFA7ivAUJvDz' => 
     array (
       'methods' => 
       array (
@@ -1931,7 +1931,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::pB4yU3Du2p7QQ62T',
+        'as' => 'generated::Bra2PFA7ivAUJvDz',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2023,7 +2023,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::P7xlkJnwwdx8pyGf' => 
+    'generated::3rQkoatXds0EXHqH' => 
     array (
       'methods' => 
       array (
@@ -2046,7 +2046,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::P7xlkJnwwdx8pyGf',
+        'as' => 'generated::3rQkoatXds0EXHqH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2178,7 +2178,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HEyX3pcqgM9FrrYN' => 
+    'generated::b969BfsuxdkI6S4n' => 
     array (
       'methods' => 
       array (
@@ -2201,7 +2201,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::HEyX3pcqgM9FrrYN',
+        'as' => 'generated::b969BfsuxdkI6S4n',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2454,7 +2454,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xoxMenyVbCv3ULKa' => 
+    'generated::1SEF8xh6zMtwVRH7' => 
     array (
       'methods' => 
       array (
@@ -2477,7 +2477,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::xoxMenyVbCv3ULKa',
+        'as' => 'generated::1SEF8xh6zMtwVRH7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3240,7 +3240,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::EEcq2UgTc0GDCNrD' => 
+    'generated::4h6nePtxs8pG0Iq6' => 
     array (
       'methods' => 
       array (
@@ -3263,7 +3263,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::EEcq2UgTc0GDCNrD',
+        'as' => 'generated::4h6nePtxs8pG0Iq6',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3318,7 +3318,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wOlQLI1RAmxyzHeI' => 
+    'generated::FPibF8QKX0reFJqn' => 
     array (
       'methods' => 
       array (
@@ -3345,7 +3345,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::wOlQLI1RAmxyzHeI',
+        'as' => 'generated::FPibF8QKX0reFJqn',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3402,7 +3402,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.index' => 
+    'missions.index' => 
     array (
       'methods' => 
       array (
@@ -3419,7 +3419,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.index',
+        'as' => 'missions.index',
         'uses' => 'App\\Http\\Controllers\\MissionController@index',
         'controller' => 'App\\Http\\Controllers\\MissionController@index',
         'namespace' => NULL,
@@ -3442,7 +3442,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.create' => 
+    'missions.create' => 
     array (
       'methods' => 
       array (
@@ -3459,7 +3459,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.create',
+        'as' => 'missions.create',
         'uses' => 'App\\Http\\Controllers\\MissionController@create',
         'controller' => 'App\\Http\\Controllers\\MissionController@create',
         'namespace' => NULL,
@@ -3482,7 +3482,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.store' => 
+    'missions.store' => 
     array (
       'methods' => 
       array (
@@ -3498,7 +3498,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.store',
+        'as' => 'missions.store',
         'uses' => 'App\\Http\\Controllers\\MissionController@store',
         'controller' => 'App\\Http\\Controllers\\MissionController@store',
         'namespace' => NULL,
@@ -3521,7 +3521,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.show' => 
+    'missions.show' => 
     array (
       'methods' => 
       array (
@@ -3538,7 +3538,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.show',
+        'as' => 'missions.show',
         'uses' => 'App\\Http\\Controllers\\MissionController@show',
         'controller' => 'App\\Http\\Controllers\\MissionController@show',
         'namespace' => NULL,
@@ -3561,7 +3561,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.edit' => 
+    'missions.edit' => 
     array (
       'methods' => 
       array (
@@ -3578,7 +3578,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.edit',
+        'as' => 'missions.edit',
         'uses' => 'App\\Http\\Controllers\\MissionController@edit',
         'controller' => 'App\\Http\\Controllers\\MissionController@edit',
         'namespace' => NULL,
@@ -3601,7 +3601,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.update' => 
+    'missions.update' => 
     array (
       'methods' => 
       array (
@@ -3618,7 +3618,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.update',
+        'as' => 'missions.update',
         'uses' => 'App\\Http\\Controllers\\MissionController@update',
         'controller' => 'App\\Http\\Controllers\\MissionController@update',
         'namespace' => NULL,
@@ -3641,7 +3641,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'messions.destroy' => 
+    'missions.destroy' => 
     array (
       'methods' => 
       array (
@@ -3657,7 +3657,7 @@ app('router')->setCompiledRoutes(
           2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
           3 => 'verified',
         ),
-        'as' => 'messions.destroy',
+        'as' => 'missions.destroy',
         'uses' => 'App\\Http\\Controllers\\MissionController@destroy',
         'controller' => 'App\\Http\\Controllers\\MissionController@destroy',
         'namespace' => NULL,

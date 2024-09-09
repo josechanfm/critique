@@ -92,7 +92,6 @@
           title: "Modal",
           mode: "",
         },
-        teacherStateLabels: {},
         columns: [
           {
             title: "Title",
