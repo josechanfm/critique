@@ -5,6 +5,9 @@
         {{ $t('my_project') }}
       </h2>
     </template>
+    {{ stage }}
+    <hr>
+    {{ items }}
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
@@ -42,12 +45,14 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import { notification } from 'ant-design-vue';
 
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    notification 
   },
   props: ["configStages","mission","stage"],
   data() {
@@ -83,8 +88,9 @@ export default {
 
   },
   mounted(){
-    console.log('stage0 2');
-    console.log(this.stage)
+    if( this.stage.tasks.length>0 ){
+      this.items = this.stage.tasks
+    }
   },
   computed: {
     containerStyle() {
@@ -107,12 +113,9 @@ export default {
   methods: {
     onFinish(){
       this.$inertia.patch(
-          route("missions.update", this.mission.id),
-          this.items,
-          {
+          route("missions.update", this.mission.id),this.items,{
             onSuccess: (page) => {
-              this.modal.data = {};
-              this.modal.isOpen = false;
+              this.items=this.stage.tasks
               console.log(page);
             },
             onError: (error) => {

@@ -5,22 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\Config;
-use App\Models\Mission;
+use App\Models\TemplateStage;
 
-
-class MissionController extends Controller
+class TemplateStageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('Admin/Missions',[
-            'configStages'=>Config::item('stages'),
-            'missions'=>Mission::all()
+        return Inertia::render('Admin/TemplateStages',[
+            'stages'=>TemplateStage::all()
         ]);
-
     }
 
     /**
@@ -42,13 +38,9 @@ class MissionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Mission $mission)
+    public function show(string $id)
     {
-        $mission->stages;
-        return Inertia::render('Admin/MissionStages',[
-            'mission'=>$mission
-        ]);
-
+        //
     }
 
     /**
@@ -62,8 +54,9 @@ class MissionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mission $mission)
+    public function update(Request $request, string $id)
     {
+        //
     }
 
     /**
@@ -72,11 +65,5 @@ class MissionController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function approve(Mission $mission)
-    {
-        $mission->current_stage = $mission->current_stage+1;
-        $mission->update();
     }
 }

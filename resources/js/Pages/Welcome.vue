@@ -26,7 +26,7 @@ defineProps({
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-                <a-typography-title>批判性思维训练社区</a-typography-title>
+                <a-typography-title class="!text-blue-500 dark:!text-slate-100">批判性思维训练社区</a-typography-title>
             </div>
             <div class="flex justify-center">
                 <ApplicationMark />

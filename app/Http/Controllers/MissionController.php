@@ -24,8 +24,7 @@ class MissionController extends Controller
         $mission=auth()->user()->mission();
         $page=substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages->where('code','S'.$page)->first();
-        //dd($mission);
-        //dd($stage);
+
         //$this->{'stage'.$page}($mission,$page);
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),
@@ -72,12 +71,18 @@ class MissionController extends Controller
     public function update(Request $request, Mission $mission)
     {
         $items=$request->all();
-        $stageCode='S'.substr('0'.$mission->current_stage,-2);
+        // dd($items);
+        $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages()->where('code',$stageCode)->first();
         foreach($items as $item){
-            if($item['id']){
+            // Task::updateOrCreate(
+            //     ['stage_id' => $stage->id],
+            //     ['title' => $item['title'], 'content'=> $item['content']]
+            // );
+            if(array_key_exists('id', $item)){
                 Task::find($item['id'])->update($item);
             }else{
+                //Task::create($items);
                 $stage->tasks()->create($item);
             }
             

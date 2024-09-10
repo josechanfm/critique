@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:pu498iNXZ5T8hy6U9DxPHfQHIcUZlE2cnH+l5fcBkx4=',
+    'key' => 'base64:aPSg6gQVk23CGNObeWXkBT6Hyq8wz+burNxXUtddWco=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -201,8 +201,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/var/www/html/critique/storage/framework/cache/data',
-        'lock_path' => '/var/www/html/critique/storage/framework/cache/data',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/cache/data',
+        'lock_path' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -296,8 +296,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -316,8 +316,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -331,8 +331,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -375,13 +375,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/critique/storage/app',
+        'root' => 'C:\\xampp8\\htdocs\\critique\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/critique/storage/app/public',
+        'root' => 'C:\\xampp8\\htdocs\\critique\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -401,7 +401,7 @@
     ),
     'links' => 
     array (
-      '/var/www/html/critique/public/storage' => '/var/www/html/critique/storage/app/public',
+      'C:\\xampp8\\htdocs\\critique\\public\\storage' => 'C:\\xampp8\\htdocs\\critique\\storage\\app/public',
     ),
   ),
   'fortify-options' => 
@@ -551,14 +551,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -623,7 +623,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -699,9 +699,116 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/var/www/html/critique/resources/views/vendor/mail',
+        0 => 'C:\\xampp8\\htdocs\\critique\\resources\\views/vendor/mail',
       ),
     ),
+  ),
+  'media-library' => 
+  array (
+    'disk_name' => 'public',
+    'max_file_size' => 10485760,
+    'queue_connection_name' => 'sync',
+    'queue_name' => '',
+    'queue_conversions_by_default' => true,
+    'queue_conversions_after_database_commit' => true,
+    'media_model' => 'Spatie\\MediaLibrary\\MediaCollections\\Models\\Media',
+    'use_default_collection_serialization' => false,
+    'temporary_upload_model' => 'Spatie\\MediaLibraryPro\\Models\\TemporaryUpload',
+    'enable_temporary_uploads_session_affinity' => true,
+    'generate_thumbnails_for_temporary_uploads' => true,
+    'file_namer' => 'Spatie\\MediaLibrary\\Support\\FileNamer\\DefaultFileNamer',
+    'path_generator' => 'Spatie\\MediaLibrary\\Support\\PathGenerator\\DefaultPathGenerator',
+    'file_remover_class' => 'Spatie\\MediaLibrary\\Support\\FileRemover\\DefaultFileRemover',
+    'custom_path_generators' => 
+    array (
+    ),
+    'url_generator' => 'Spatie\\MediaLibrary\\Support\\UrlGenerator\\DefaultUrlGenerator',
+    'moves_media_on_update' => false,
+    'version_urls' => false,
+    'image_optimizers' => 
+    array (
+      'Spatie\\ImageOptimizer\\Optimizers\\Jpegoptim' => 
+      array (
+        0 => '-m85',
+        1 => '--force',
+        2 => '--strip-all',
+        3 => '--all-progressive',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Pngquant' => 
+      array (
+        0 => '--force',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Optipng' => 
+      array (
+        0 => '-i0',
+        1 => '-o2',
+        2 => '-quiet',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Svgo' => 
+      array (
+        0 => '--disable=cleanupIDs',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Gifsicle' => 
+      array (
+        0 => '-b',
+        1 => '-O3',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Cwebp' => 
+      array (
+        0 => '-m 6',
+        1 => '-pass 10',
+        2 => '-mt',
+        3 => '-q 90',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Avifenc' => 
+      array (
+        0 => '-a cq-level=23',
+        1 => '-j all',
+        2 => '--min 0',
+        3 => '--max 63',
+        4 => '--minalpha 0',
+        5 => '--maxalpha 63',
+        6 => '-a end-usage=q',
+        7 => '-a tune=ssim',
+      ),
+    ),
+    'image_generators' => 
+    array (
+      0 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Image',
+      1 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Webp',
+      2 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Avif',
+      3 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Pdf',
+      4 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Svg',
+      5 => 'Spatie\\MediaLibrary\\Conversions\\ImageGenerators\\Video',
+    ),
+    'temporary_directory_path' => NULL,
+    'image_driver' => 'gd',
+    'ffmpeg_path' => '/usr/bin/ffmpeg',
+    'ffprobe_path' => '/usr/bin/ffprobe',
+    'jobs' => 
+    array (
+      'perform_conversions' => 'Spatie\\MediaLibrary\\Conversions\\Jobs\\PerformConversionsJob',
+      'generate_responsive_images' => 'Spatie\\MediaLibrary\\ResponsiveImages\\Jobs\\GenerateResponsiveImagesJob',
+    ),
+    'media_downloader' => 'Spatie\\MediaLibrary\\Downloaders\\DefaultDownloader',
+    'media_downloader_ssl' => true,
+    'remote' => 
+    array (
+      'extra_headers' => 
+      array (
+        'CacheControl' => 'max-age=604800',
+      ),
+    ),
+    'responsive_images' => 
+    array (
+      'width_calculator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\WidthCalculator\\FileSizeOptimizedWidthCalculator',
+      'use_tiny_placeholders' => true,
+      'tiny_placeholder_generator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\TinyPlaceholderGenerator\\Blurred',
+    ),
+    'enable_vapor_uploads' => false,
+    'default_loading_attribute_value' => NULL,
+    'prefix' => '',
+    'force_lazy_loading' => true,
   ),
   'permission' => 
   array (
@@ -735,23 +842,9 @@
     'cache' => 
     array (
       'expiration_time' => 
-      DateInterval::__set_state(array(
-         'y' => 0,
-         'm' => 0,
-         'd' => 0,
-         'h' => 24,
-         'i' => 0,
-         's' => 0,
-         'f' => 0.0,
-         'weekday' => 0,
-         'weekday_behavior' => 0,
-         'first_last_day_of' => 0,
-         'invert' => 0,
-         'days' => false,
-         'special_type' => 0,
-         'special_amount' => 0,
-         'have_weekday_relative' => 0,
-         'have_special_relative' => 0,
+      \DateInterval::__set_state(array(
+         'from_string' => true,
+         'date_string' => '24 hours',
       )),
       'key' => 'spatie.permission.cache',
       'store' => 'default',
@@ -866,7 +959,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/var/www/html/critique/storage/framework/sessions',
+    'files' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -887,9 +980,9 @@
   array (
     'paths' => 
     array (
-      0 => '/var/www/html/critique/resources/views',
+      0 => 'C:\\xampp8\\htdocs\\critique\\resources\\views',
     ),
-    'compiled' => '/var/www/html/critique/storage/framework/views',
+    'compiled' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework\\views',
   ),
   'inertia' => 
   array (
@@ -903,7 +996,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => '/var/www/html/critique/resources/js/Pages',
+        0 => 'C:\\xampp8\\htdocs\\critique\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (
@@ -1000,7 +1093,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => '/var/www/html/critique',
+    'remote_sites_path' => 'C:\\xampp8\\htdocs\\critique',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

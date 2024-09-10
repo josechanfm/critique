@@ -57,6 +57,20 @@ export default {
   created() {
 
   },
+  mounted(){
+    console.log('stage03');
+    if( this.stage ){
+      this.items = this.items.map( item => ({
+        ...item,
+        stage_id: this.stage.id
+      }))
+    }
+
+    if( this.stage.tasks.length>0 ){
+      this.items = this.stage.tasks
+    }
+
+  },
   computed: {
     containerStyle() {
       return {
@@ -78,12 +92,9 @@ export default {
   methods: {
     onFinish(){
       this.$inertia.patch(
-          route("missions.update", this.mission.id),
-          this.items,
-          {
+          route("missions.update", this.mission.id),this.items,{
             onSuccess: (page) => {
-              this.modal.data = {};
-              this.modal.isOpen = false;
+              this.items=this.stage.tasks
               console.log(page);
             },
             onError: (error) => {

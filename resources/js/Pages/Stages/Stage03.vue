@@ -9,9 +9,25 @@
 
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
+        {{items}}
+        {{ stage.tasks }}
+        <div>
+          <a-row>
+            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
+            <a-col><div>a</div></a-col>
+          </a-row>
+          <a-row>
+            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
+            <a-col><div>b</div></a-col>
+          </a-row>
+          <a-row>
+            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
+            <a-col><div>c</div></a-col>
+          </a-row>
+        </div>
         <a-form
           :model="items"
-          name="items"
+          name="fund"
           :label-col="labelCol"
 
           autocomplete="off"
@@ -19,23 +35,10 @@
           :validate-messages="validateMessages"
           @finish="onFinish"
           enctype="multipart/form-data"
-
         >
-        <template v-for="item in items">
-          <a-row>
-            <a-col>
-              <a-form-item :label="$t('project_entity')" name="entity">
-
-                <a-input v-model:value="item.title" />
-              </a-form-item>
-            </a-col>
-            <a-col>
-              <a-form-item :label="$t('project_entity')" name="entity">
-                <a-input v-model:value="item.content" />
-              </a-form-item>
-            </a-col>
-          </a-row>
-        </template>
+          <a-form-item label="已完成" name="entity">
+            <a-checkbox v-model:checked="items[0].title">Checkbox</a-checkbox>
+          </a-form-item>
 
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
@@ -64,9 +67,7 @@ export default {
     return {
       current: 1,
       items:[
-        {title:null,content:null},
-        {title:null,content:null},
-        {title:null,content:null}
+        {title:null,content:'已完成'}
       ],
       rules: {
           title: { required: true },
@@ -94,8 +95,10 @@ export default {
   created() {
   },
   mounted(){
-    console.log('stage03');
-    this.items=this.stage.tasks;
+    if( this.stage.tasks.length>0 ){
+      
+      this.items.title = this.stage.tasks[0].title==1?true:false
+    }
   },
   computed: {
     containerStyle() {
@@ -117,13 +120,10 @@ export default {
   },
   methods: {
     onFinish(){
-      console.log(this.mission);
-      console.log(this.items);
       this.$inertia.patch(
-          route("missions.update", this.mission.id),
-          this.items,
-          {
+          route("missions.update", this.mission.id),this.items,{
             onSuccess: (page) => {
+              this.items=this.stage.tasks
               console.log(page);
             },
             onError: (error) => {

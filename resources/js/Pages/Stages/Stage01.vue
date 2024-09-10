@@ -12,7 +12,6 @@
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
           <a-col :span="12" class="bg-red-100">
             <div style="height:150px">
-              {{ mission }}
               col-4
             </div>
           </a-col>
@@ -22,6 +21,26 @@
             </div>
           </a-col>
         </a-row>
+        <a-form
+          :model="items"
+          name="fund"
+          :label-col="labelCol"
+
+          autocomplete="off"
+          :rules="rules"
+          :validate-messages="validateMessages"
+          @finish="onFinish"
+          enctype="multipart/form-data"
+        >
+          <a-form-item label="已完成" name="entity">
+            <a-checkbox v-model:checked="items[0].title">Checkbox</a-checkbox>
+          </a-form-item>
+
+          <div class="flex flex-row item-center justify-center gap-5 pt-5">
+            <a-button >{{ $t('back') }}</a-button>
+            <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
+          </div>
+        </a-form>
       </div>
     </div>
 
@@ -42,12 +61,42 @@ export default {
   props: ["configStages","mission","stage"],
   data() {
     return {
-      current: 1
+      current: 1,
+      items:[
+        {title:null,content:'已完成'}
+      ],
+      rules: {
+          name: { required: true },
+          email: { required: true, type: "email" },
+          password: { required: true },
+        },
+        validateMessages: {
+          required: "${label} is required!",
+          types: {
+            email: "${label} is not a valid email!",
+            number: "${label} is not a valid number!",
+          },
+          number: {
+            range: "${label} must be between ${min} and ${max}",
+          },
+        },
+        labelCol: {
+          style: {
+            width: "150px",
+          },
+        },
     };
   },
   created() {
 
   },
+  mounted(){
+    if( this.stage ){
+      this.items[0].title=this.stage.tasks[0].title;
+    }
+
+  },
+
   computed: {
     containerStyle() {
       return {
@@ -69,12 +118,9 @@ export default {
   methods: {
     onFinish(){
       this.$inertia.patch(
-          route("missions.update", this.mission.id),
-          this.items,
-          {
+          route("missions.update", this.mission.id),this.items,{
             onSuccess: (page) => {
-              this.modal.data = {};
-              this.modal.isOpen = false;
+              this.items=this.stage.tasks
               console.log(page);
             },
             onError: (error) => {

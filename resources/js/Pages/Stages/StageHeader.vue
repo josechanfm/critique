@@ -2,7 +2,10 @@
       <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg">
 
-    <div :style="containerStyle">
+    <div class="block sm:hidden">
+        <div>{{ steps[current].label }}</div>
+    </div>
+    <div :style="containerStyle" class="hidden sm:block">
       <a-steps :current="current" :style="stepsStyle" >
         <template v-for="(step, index) in steps" :key="index">
           <a-step>

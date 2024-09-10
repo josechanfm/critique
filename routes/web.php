@@ -55,7 +55,9 @@ Route::group([
 ], function () {
     Route::get('/',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin.dashboard');
     Route::resource('configs',App\Http\Controllers\Admin\ConfigController::class)->names('admin.configs');
+    Route::resource('template_stages',App\Http\Controllers\Admin\TemplateStageController::class)->names('admin.templateStages');
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
+    Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');
     Route::resource('mission/{mission}/stages',App\Http\Controllers\Admin\StageController::class)->names('admin.mission.stages');
 });
 

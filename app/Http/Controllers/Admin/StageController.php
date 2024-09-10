@@ -15,10 +15,12 @@ class StageController extends Controller
      */
     public function index(Mission $mission)
     {
-        $stageCode='S'.substr('0'.$mission->current_stage,-2);
+        $mission->stages;
+        $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         //dd($stageCode);
         $stage=$mission->stages()->where('code',$stageCode)->first();
         return Inertia::render('Admin/StageTasks',[
+            'mission'=>$mission,
             'stage'=>$stage
         ]);
     }
