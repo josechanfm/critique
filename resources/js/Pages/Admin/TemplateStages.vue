@@ -33,15 +33,36 @@
           autocomplete="off"
           :rules="rules"
           :validate-messages="validateMessages"
+           enctype="multipart/form-data"
         >
-          <a-form-item label="Key" name="key">
-            <a-input v-model:value="modal.data.key" />
+        <a-form-item label="Code" name="code">
+            <a-input v-model:value="modal.data.code" />
           </a-form-item>
-          <a-form-item label="Content" name="content">
-            <a-textarea v-model:value="modal.data.content" :rows="15" />
+          <a-form-item label="Title" name="title">
+            <a-input v-model:value="modal.data.title" />
           </a-form-item>
-          <a-form-item label="Remark" name="remark">
-            <a-textarea v-model:value="modal.data.remark" />
+          <a-form-item label="Description" name="description">
+            <a-textarea v-model:value="modal.data.description" :rows="5" />
+          </a-form-item>
+          <a-form-item label="Upload File">
+            <a-upload
+              :file-list="modal.data.files"
+              :before-upload="beforeUpload"
+              :on-change="handleChange"
+              :multiple="true"
+              :show-upload-list="true"
+              :custom-request="dummyRequest"
+            >
+              <a-button>
+                <UploadOutlined />
+                Click to upload
+              </a-button>
+            </a-upload>
+          </a-form-item>
+          <a-form-item label="Uploaded File">
+            <ol>
+              <li v-for="file in modal.data.media">{{ file.file_name }}<a class="text-red-500">X</a></li>
+            </ol>
           </a-form-item>
         </a-form>
         <template #footer>
@@ -68,10 +89,12 @@
   <script>
   import AdminLayout from "@/Layouts/AdminLayout.vue";
   import { defineComponent, reactive } from "vue";
-  
+  import { UploadOutlined } from '@ant-design/icons-vue';
+
   export default {
     components: {
       AdminLayout,
+      UploadOutlined
     },
     props: ["stages"],
     data() {
@@ -138,11 +161,26 @@
         this.modal.title = "edit";
         this.modal.isOpen = true;
       },
+      beforeUpload(file){
+        const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
+        if (!isValid) {
+          message.error('You can only upload JPG/PNG file!');
+        }
+        return isValid;
+      },
+      handleChange(newFileList){
+        this.modal.data.files = newFileList.fileList;
+      },
+      dummyRequest({file, onSuccess}){
+        setTimeout(() => {
+          onSuccess(file);
+        }, 0);
+      },
       storeRecord() {
         this.$refs.modalRef
           .validateFields()
           .then(() => {
-            this.$inertia.post(route("admin.configs.store"), this.modal.data, {
+            this.$inertia.post(route("admin.templateStages.store"), this.modal.data, {
               onSuccess: (page) => {
                 this.modal.data = {};
                 this.modal.isOpen = false;
@@ -158,8 +196,9 @@
       },
       updateRecord() {
         console.log(this.modal.data);
-        this.$inertia.patch(
-          route("admin.configs.update", this.modal.data.id),
+        this.modal.data._method='PATCH';
+        this.$inertia.post(
+          route("admin.templateStages.update", this.modal.data.id),
           this.modal.data,
           {
             onSuccess: (page) => {

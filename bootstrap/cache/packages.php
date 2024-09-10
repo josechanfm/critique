@@ -6,19 +6,22 @@
       0 => 'LaravelAndVueJS\\LaravelAndVueJSServiceProvider',
     ),
   ),
-  'directorytree/ldaprecord-laravel' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'LdapRecord\\Laravel\\LdapServiceProvider',
-      1 => 'LdapRecord\\Laravel\\LdapAuthServiceProvider',
-    ),
-  ),
   'inertiajs/inertia-laravel' => 
   array (
     'providers' => 
     array (
       0 => 'Inertia\\ServiceProvider',
+    ),
+  ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
   'laravel/fortify' => 

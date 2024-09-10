@@ -15,7 +15,7 @@ class TemplateStageController extends Controller
     public function index()
     {
         return Inertia::render('Admin/TemplateStages',[
-            'stages'=>TemplateStage::all()
+            'stages'=>TemplateStage::with('media')->get()
         ]);
     }
 
@@ -54,9 +54,16 @@ class TemplateStageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, TemplateStage $templateStage)
     {
-        //
+        $templateStage->update($request->all());
+        if($request->file('files')){
+            foreach($request->file('files') as $file){
+                //dd($file['originFileObj']);
+                $templateStage->addMedia($file['originFileObj'])->toMediaCollection('templateStage');    
+            }
+        }
+        return redirect()->back();
     }
 
     /**

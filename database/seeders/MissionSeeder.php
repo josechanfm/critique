@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Mission;
 use App\Models\Config;
+use App\Models\TemplateStage;
 
 class MissionSeeder extends Seeder
 {
@@ -21,11 +22,12 @@ class MissionSeeder extends Seeder
             'started_at'=>'2024-09-01'
         ]);
         $mission->members()->sync([1,2,3]);
-        $stages=Config::item('stages');
+        //$stages=Config::item('stages');
+        $stages=TemplateStage::all();
         foreach($stages as $stage){
             $mission->stages()->create([
-                'code'=>$stage['value'],
-                'title'=>$stage['label']
+                'code'=>$stage->code,
+                'title'=>$stage->title
             ]);
         }
         
