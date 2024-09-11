@@ -67,14 +67,16 @@ class StageController extends Controller
         $request->validate([
             'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048', // Adjust as needed
         ]);
-        if($request->file('file')){
+        
+        if($request->uploadType=='file'){
             $stage->addMedia($request->file('file'))->toMediaCollection('file'); // Replace 'your_collection_name' with your actual collection name
             return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
         }
-        if($request->file('video')){
-            $stage->addMedia($request->file('video'))->toMediaCollection('video'); // Replace 'your_collection_name' with your actual collection name
+        if($request->uploadType=='video'){
+            $stage->addMedia($request->file('file'))->toMediaCollection('video'); // Replace 'your_collection_name' with your actual collection name
             return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
         }
+        
         // //$stage->addMedia
         // return redirect()->back();
 

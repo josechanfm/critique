@@ -21,13 +21,14 @@
                 :on-change="handleChange"
                 :multiple="true"
                 :show-upload-list="true"
-                :custom-request="(options) => fileUploader(options, {uploadType:'video'})"
+                :custom-request="(options) => fileUploader(options, { uploadType: 'video' })"
               >
                 <a-button>
                   <upload-outlined></upload-outlined>
                   Upload
                 </a-button>
               </a-upload>
+
             </div>
           </a-col>
           <a-col :span="12" class="bg-blue-100">
@@ -41,7 +42,7 @@
                 :on-change="handleChange"
                 :multiple="true"
                 :show-upload-list="true"
-                :custom-request="(options) => fileUploader(options, {uploadType:'file'})"
+                :custom-request="(options) => fileUploader(options, { uploadType: 'file' })"
               >
                 <a-button>
                   <upload-outlined></upload-outlined>
@@ -62,6 +63,7 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
 import { UploadOutlined } from '@ant-design/icons-vue';
+
 
 export default {
   components: {
@@ -125,16 +127,16 @@ export default {
       return isValid;
     },
     handleChange(newFileList){
-      console.log(newFileList)
       this.fileList = newFileList.fileList;
     },
-    fileUploader({file, onSuccess, onError},{ uploadType }){
-      console.log(uploadType)
-      const formData = new FormData()
-      formData.append(uploadType, file)
+    fileUploader({file, onSuccess, onError},{uploadType}){
+      const formData = new FormData();
+      formData.append('uploadType', uploadType);
+      formData.append('file', file);
+
       axios.post(route('mission.stage.upload', this.stage.id), formData)
         .then(response => {
-          console.log(response);
+          console.log(response.data);
           onSuccess(response.data);
         })
         .catch(error => {
