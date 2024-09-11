@@ -14,6 +14,7 @@ class TemplateStageController extends Controller
      */
     public function index()
     {
+        //dd(TemplateStage::all());
         return Inertia::render('Admin/TemplateStages',[
             'stages'=>TemplateStage::with('media')->get()
         ]);

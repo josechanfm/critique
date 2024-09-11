@@ -159,7 +159,7 @@
       },
       editRecord(record) {
         this.modal.data = { ...record };
-        this.modal.data.content = JSON.stringify(record.content);
+        this.modal.data.content = record.content;
         this.modal.mode = "EDIT";
         this.modal.title = "edit";
         this.modal.isOpen = true;
