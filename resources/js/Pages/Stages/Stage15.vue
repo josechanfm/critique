@@ -8,7 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg p-5">
+      <div class="bg-white relative shadow rounded-lg md:p-5">
         done! congradurated!
       </div>
     </div>

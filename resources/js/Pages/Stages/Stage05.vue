@@ -8,7 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg p-5">
+      <div class="bg-white relative shadow rounded-lg md:p-5">
         <a-form
           :model="item"
           name="fund"
