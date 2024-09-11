@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:pu498iNXZ5T8hy6U9DxPHfQHIcUZlE2cnH+l5fcBkx4=',
+    'key' => 'base64:aPSg6gQVk23CGNObeWXkBT6Hyq8wz+burNxXUtddWco=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -201,8 +201,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/var/www/html/critique/storage/framework/cache/data',
-        'lock_path' => '/var/www/html/critique/storage/framework/cache/data',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/cache/data',
+        'lock_path' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -296,8 +296,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -316,8 +316,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -331,8 +331,8 @@
         'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'critique',
-        'username' => 'dbadmin',
-        'password' => 'password',
+        'username' => 'root',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -375,13 +375,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/critique/storage/app',
+        'root' => 'C:\\xampp8\\htdocs\\critique\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/critique/storage/app/public',
+        'root' => 'C:\\xampp8\\htdocs\\critique\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -401,7 +401,7 @@
     ),
     'links' => 
     array (
-      '/var/www/html/critique/public/storage' => '/var/www/html/critique/storage/app/public',
+      'C:\\xampp8\\htdocs\\critique\\public\\storage' => 'C:\\xampp8\\htdocs\\critique\\storage\\app/public',
     ),
   ),
   'fortify-options' => 
@@ -551,14 +551,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -623,7 +623,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/var/www/html/critique/storage/logs/laravel.log',
+        'path' => 'C:\\xampp8\\htdocs\\critique\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -699,7 +699,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/var/www/html/critique/resources/views/vendor/mail',
+        0 => 'C:\\xampp8\\htdocs\\critique\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -842,23 +842,9 @@
     'cache' => 
     array (
       'expiration_time' => 
-      DateInterval::__set_state(array(
-         'y' => 0,
-         'm' => 0,
-         'd' => 0,
-         'h' => 24,
-         'i' => 0,
-         's' => 0,
-         'f' => 0.0,
-         'weekday' => 0,
-         'weekday_behavior' => 0,
-         'first_last_day_of' => 0,
-         'invert' => 0,
-         'days' => false,
-         'special_type' => 0,
-         'special_amount' => 0,
-         'have_weekday_relative' => 0,
-         'have_special_relative' => 0,
+      \DateInterval::__set_state(array(
+         'from_string' => true,
+         'date_string' => '24 hours',
       )),
       'key' => 'spatie.permission.cache',
       'store' => 'default',
@@ -973,7 +959,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/var/www/html/critique/storage/framework/sessions',
+    'files' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -994,9 +980,9 @@
   array (
     'paths' => 
     array (
-      0 => '/var/www/html/critique/resources/views',
+      0 => 'C:\\xampp8\\htdocs\\critique\\resources\\views',
     ),
-    'compiled' => '/var/www/html/critique/storage/framework/views',
+    'compiled' => 'C:\\xampp8\\htdocs\\critique\\storage\\framework\\views',
   ),
   'inertia' => 
   array (
@@ -1010,7 +996,7 @@
       'ensure_pages_exist' => true,
       'page_paths' => 
       array (
-        0 => '/var/www/html/critique/resources/js/Pages',
+        0 => 'C:\\xampp8\\htdocs\\critique\\resources\\js/Pages',
       ),
       'page_extensions' => 
       array (
@@ -1111,7 +1097,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => '/var/www/html/critique',
+    'remote_sites_path' => 'C:\\xampp8\\htdocs\\critique',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

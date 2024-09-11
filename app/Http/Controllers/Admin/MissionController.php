@@ -78,5 +78,13 @@ class MissionController extends Controller
     {
         $mission->current_stage = $mission->current_stage+1;
         $mission->update();
+        return ;
+    }
+
+    public function regret(Mission $mission)
+    {
+        $mission->current_stage = $mission->current_stage-1;
+        $mission->update();
+        return ;
     }
 }

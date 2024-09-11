@@ -5,10 +5,10 @@
           Config
         </h2>
       </template>
-      <a-button @click="createRecord()" type="primary">
-        Create
-      </a-button>
-      <div class="container mx-auto pt-5">
+      <div class="container mx-auto pt-5 ">
+        <a-button @click="createRecord()" type="primary">
+          Create
+        </a-button>
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
           <a-table :dataSource="stages" :columns="columns">
             <template #bodyCell="{ column, text, record, index }">

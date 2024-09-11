@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
+Route::resource('blogs',App\Http\Controllers\BlogController::class)->names('blogs'); 
+Route::get('blogs/getBlog/{stage_id}',[App\Http\Controllers\BlogController::class,'getBlog'])->name('blogs.getBlog'); 
 
 Route::get('/language/{language}', function ($language) {
     Session::put('applocale', $language);
@@ -42,6 +44,7 @@ Route::middleware([
     })->name('dashboard');
     Route::resource('missions',App\Http\Controllers\MissionController::class)->names('missions');
     Route::post('mission/stage/{stage}/upload',[App\Http\Controllers\StageController::class,'upload'])->name('mission.stage.upload'); 
+    Route::get('mission/stage/{stage}/{media_id}/{mediaType}/delete',[App\Http\Controllers\StageController::class,'deleteUpload'])->name('mission.stage.deleteUpload'); 
 
  
 });
@@ -59,6 +62,7 @@ Route::group([
     Route::resource('template_stages',App\Http\Controllers\Admin\TemplateStageController::class)->names('admin.templateStages');
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
     Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');
+    Route::get('missions/regret/{mission}',[App\Http\Controllers\Admin\MissionController::class,'regret'])->name('admin.missions.regret');
     Route::resource('mission/{mission}/stages',App\Http\Controllers\Admin\StageController::class)->names('admin.mission.stages');
 });
 

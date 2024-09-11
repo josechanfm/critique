@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stage;
+use App\Models\TemplateStage;
 use Illuminate\Http\Request;
 
 class StageController extends Controller
@@ -81,5 +82,12 @@ class StageController extends Controller
         // return redirect()->back();
 
         // dd($request->all());
+    }
+
+    public function deleteUpload(Stage $stage , $media_id, $mediaType){
+        
+        $media = $stage->getMedia($mediaType)->find($media_id);
+
+        $media->delete();
     }
 }
