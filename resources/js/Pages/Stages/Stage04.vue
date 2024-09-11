@@ -8,12 +8,11 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
         <a-form
           :model="items"
           name="fund"
           :label-col="labelCol"
-
           autocomplete="off"
           :rules="rules"
           :validate-messages="validateMessages"
@@ -21,21 +20,12 @@
           enctype="multipart/form-data"
 
         >
-        <template v-for="item in items">
-          <a-row>
-            <a-col>
-              <a-form-item :label="$t('project_entity')" name="entity">
-                <a-input v-model:value="item.title" />
-              </a-form-item>
-            </a-col>
-            <a-col>
-              <a-form-item :label="$t('project_entity')" name="entity">
-                <a-input v-model:value="item.content" />
-              </a-form-item>
-            </a-col>
-          </a-row>
-        </template>
-
+          <template v-for="(c,idx) in stage.content">
+            <label class="font-bold">{{ c.title }}</label>
+            <p>{{ c.note }}</p>
+            <a-input v-model:value="items[idx].title" :placeholder="c.placeholder"/>
+            <a-devider/>
+          </template>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
@@ -98,14 +88,6 @@ export default {
     console.log(this.items)
   },
   mounted(){
-    console.log('stage03');
-    if( this.stage ){
-      this.items = this.items.map( item => ({
-        ...item,
-        stage_id: this.stage.id
-      }))
-    }
-
     if( this.stage.tasks.length>0 ){
       this.items = this.stage.tasks
     }

@@ -14,7 +14,7 @@ class TemplateStage extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
-    protected $fillable=['code','title','description'];
+    protected $fillable=['code','title','description','content'];
     
     public function registerMediaCollections(): void
     {

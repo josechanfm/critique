@@ -8,7 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
         <a-form
           :model="item"
           name="fund"
@@ -21,9 +21,14 @@
           enctype="multipart/form-data"
 
         >
-          <a-form-item :label="$t('project_entity')" name="entity">
-            <a-textarea v-model:value="item.content" />
-          </a-form-item>
+        <a-row :gutter="6">
+          <a-col :span="12">
+            <div v-html="stage.content.table"/>
+          </a-col>
+          <a-col :span="12">
+              <a-textarea v-model:value="item.content" :rows="5" :placeholder="stage.content.placeholder"/>
+          </a-col>
+        </a-row>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
@@ -81,14 +86,6 @@ export default {
 
   },
   mounted(){
-    console.log('stage03');
-    if( this.stage ){
-      this.items = this.items.map( item => ({
-        ...item,
-        stage_id: this.stage.id
-      }))
-    }
-
     if( this.stage.tasks.length>0 ){
       this.items = this.stage.tasks
     }
@@ -147,5 +144,9 @@ export default {
   /* Sets the origin for the rotation */
   margin-left: -40px;
   /* Adjust this value based on the design */
+}
+table{
+  width:100%;
+  background-color: lightblue;
 }
 </style>

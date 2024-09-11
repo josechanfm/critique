@@ -8,18 +8,46 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
           <a-col :span="12" class="bg-red-100">
             <div style="height:150px">
-              upload videos
-              col-4
+              <ol>
+                <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500">X</a></li>
+              </ol>
+              <a-upload 
+                v-model:file-list="fileList" 
+                :before-upload="beforeUpload"
+                :on-change="handleChange"
+                :multiple="true"
+                :show-upload-list="true"
+                :custom-request="(options) => fileUploader(options, {uploadType:'video'})"
+              >
+                <a-button>
+                  <upload-outlined></upload-outlined>
+                  Upload
+                </a-button>
+              </a-upload>
             </div>
           </a-col>
           <a-col :span="12" class="bg-blue-100">
             <div style="height:150px">
-              upload pdf  
-              col-4
+              <ol>
+                <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
+              </ol>
+              <a-upload 
+                v-model:file-list="fileList" 
+                :before-upload="beforeUpload"
+                :on-change="handleChange"
+                :multiple="true"
+                :show-upload-list="true"
+                :custom-request="(options) => fileUploader(options, {uploadType:'file'})"
+              >
+                <a-button>
+                  <upload-outlined></upload-outlined>
+                  Upload
+                </a-button>
+              </a-upload>
             </div>
           </a-col>
         </a-row>
@@ -33,31 +61,25 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
-
+import { UploadOutlined } from '@ant-design/icons-vue';
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    UploadOutlined
   },
   props: ["configStages","mission","stage"],
   data() {
     return {
-      current: 1
+      current: 1,
+      fileList:[]
     };
   },
   created() {
 
   },
   mounted(){
-    console.log('stage03');
-    if( this.stage ){
-      this.items = this.items.map( item => ({
-        ...item,
-        stage_id: this.stage.id
-      }))
-    }
-
     if( this.stage.tasks.length>0 ){
       this.items = this.stage.tasks
     }
@@ -94,7 +116,32 @@ export default {
             },
           }
         );
+    },
+    beforeUpload(file){
+      const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isValid) {
+        message.error('You can only upload JPG/PNG file!');
+      }
+      return isValid;
+    },
+    handleChange(newFileList){
+      console.log(newFileList)
+      this.fileList = newFileList.fileList;
+    },
+    fileUploader({file, onSuccess, onError},{ uploadType }){
+      console.log(uploadType)
+      const formData = new FormData()
+      formData.append(uploadType, file)
+      axios.post(route('mission.stage.upload', this.stage.id), formData)
+        .then(response => {
+          console.log(response);
+          onSuccess(response.data);
+        })
+        .catch(error => {
+          onError(error);
+        });   
     }
+
   },
 };
 </script>

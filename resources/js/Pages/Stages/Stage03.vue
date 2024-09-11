@@ -8,22 +8,14 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
-        {{items}}
-        {{ stage.tasks }}
+      <div class="bg-white relative shadow rounded-lg p-5">
         <div>
-          <a-row>
-            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
-            <a-col><div>a</div></a-col>
-          </a-row>
-          <a-row>
-            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
-            <a-col><div>b</div></a-col>
-          </a-row>
-          <a-row>
-            <a-col><div><img src="images/site-logo.png" width="100px"/></div></a-col>
-            <a-col><div>c</div></a-col>
-          </a-row>
+          <template v-for="item in stage.content">
+            <a-row>
+              <a-col><div><img :src="item.image" width="100px"/></div></a-col>
+              <a-col><div>{{ item.title }}</div></a-col>
+            </a-row>
+          </template>
         </div>
         <a-form
           :model="items"
@@ -96,7 +88,6 @@ export default {
   },
   mounted(){
     if( this.stage.tasks.length>0 ){
-      
       this.items.title = this.stage.tasks[0].title==1?true:false
     }
   },

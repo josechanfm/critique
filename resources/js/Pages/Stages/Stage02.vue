@@ -5,13 +5,10 @@
         {{ $t('my_project') }}
       </h2>
     </template>
-    {{ stage }}
-    <hr>
-    {{ items }}
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
-
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
+        <div>{{ stage.content.note }}</div>
         <a-form
           :model="items"
           name="fund"
@@ -22,19 +19,16 @@
           :validate-messages="validateMessages"
           @finish="onFinish"
           enctype="multipart/form-data"
-
         >
-          <a-form-item :label="$t('project_entity')" name="entity">
-            <a-input v-model:value="items[0].title" />
-          </a-form-item>
-          <a-form-item :label="$t('project_entity')" name="entity">
-            <a-textarea v-model:value="items[0].content" />
+          <a-form-item :label="stage.content.inputCaption" name="entity">
+            <a-input v-model:value="items[0].title" :placeholder="stage.content.inputPlaceholder"/>
           </a-form-item>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
           </div>
         </a-form>
+        <div>实时聊天对话框, no real time chat room, instead use blogs, you may ask Jim to help</div>
       </div>
     </div>
 
@@ -59,7 +53,7 @@ export default {
     return {
       current: 1,
       items:[
-        {title:null,content:null}
+        {title:null,content:'discuss topic'}
       ],
       rules: {
           name: { required: true },

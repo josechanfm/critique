@@ -17,15 +17,10 @@ class MissionController extends Controller
 
     public function index()
     {
-        //$mission=Mission::find(1);
-        //dd($mission->members);
-        //dd(auth()->user()->mission());
-        //dd(Config::item('stages'));
+        
         $mission=auth()->user()->mission();
         $page=substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages->where('code','S'.$page)->first();
-
-        //$this->{'stage'.$page}($mission,$page);
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),
             'mission'=>$mission,

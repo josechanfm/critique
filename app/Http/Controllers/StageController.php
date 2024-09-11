@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\stage;
+use App\Models\Stage;
 use Illuminate\Http\Request;
 
 class StageController extends Controller
@@ -61,5 +61,23 @@ class StageController extends Controller
     public function destroy(stage $stage)
     {
         //
+    }
+    public function upload(Stage $stage, Request $request){
+        // Validate the request
+        $request->validate([
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048', // Adjust as needed
+        ]);
+        if($request->file('file')){
+            $stage->addMedia($request->file('file'))->toMediaCollection('file'); // Replace 'your_collection_name' with your actual collection name
+            return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
+        }
+        if($request->file('video')){
+            $stage->addMedia($request->file('video'))->toMediaCollection('video'); // Replace 'your_collection_name' with your actual collection name
+            return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
+        }
+        // //$stage->addMedia
+        // return redirect()->back();
+
+        // dd($request->all());
     }
 }

@@ -41,6 +41,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
     Route::resource('missions',App\Http\Controllers\MissionController::class)->names('missions');
+    Route::post('mission/stage/{stage}/upload',[App\Http\Controllers\StageController::class,'upload'])->name('mission.stage.upload'); 
 
  
 });

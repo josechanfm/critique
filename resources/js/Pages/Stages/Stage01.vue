@@ -8,16 +8,20 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
           <a-col :span="12" class="bg-red-100">
             <div style="height:150px">
-              col-4
+              <ol>
+                <li v-for="video in stage.content.videos">{{ video.name }}<a :href="video.path" target="_blank">Download</a></li>
+              </ol>
             </div>
           </a-col>
           <a-col :span="12" class="bg-blue-100">
             <div style="height:150px">
-              col-4
+              <ol>
+                <li v-for="file in stage.content.files">{{ file.name }}<a :href="file.path" target="_blank">Download</a></li>
+              </ol>
             </div>
           </a-col>
         </a-row>
@@ -25,7 +29,6 @@
           :model="items"
           name="fund"
           :label-col="labelCol"
-
           autocomplete="off"
           :rules="rules"
           :validate-messages="validateMessages"
@@ -51,20 +54,22 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
-
+import { UploadOutlined } from '@ant-design/icons-vue';
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    UploadOutlined
   },
   props: ["configStages","mission","stage"],
   data() {
     return {
       current: 1,
       items:[
-        {title:null,content:'已完成'}
+        {title:false,content:'已完成'}
       ],
+      fileList:[],
       rules: {
           name: { required: true },
           email: { required: true, type: "email" },
@@ -91,12 +96,8 @@ export default {
 
   },
   mounted(){
-    if( this.stage ){
-      this.items[0].title=this.stage.tasks[0].title;
-    }
-
+    this.updateItemData
   },
-
   computed: {
     containerStyle() {
       return {
@@ -116,21 +117,29 @@ export default {
     },
   },
   methods: {
+    updateItemData(){
+      if( this.stage ){
+        if(this.stage.tasks.length>0){
+          this.items=this.stage.tasks
+          this.items[0].title=this.stage.tasks[0].title==1?true:false;
+        }
+      }
+    },
     onFinish(){
       this.$inertia.patch(
           route("missions.update", this.mission.id),this.items,{
             onSuccess: (page) => {
-              this.items=this.stage.tasks
-              console.log(page);
+              this.updateItemData();
+              //console.log(page);
             },
             onError: (error) => {
               console.log(error);
             },
           }
         );
-    }
-  },
-};
+    },
+  }
+}
 </script>
 
 

@@ -8,7 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg">
+      <div class="bg-white relative shadow rounded-lg p-5">
         <a-form
           :model="item"
           name="fund"
@@ -81,7 +81,6 @@ export default {
 
   },
   mounted(){
-    console.log('stage03');
     if( this.stage ){
       this.items = this.items.map( item => ({
         ...item,
