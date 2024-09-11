@@ -34,6 +34,15 @@ class TemplateStageController extends Controller
     public function store(Request $request)
     {
         //
+        $templateStage = TemplateStage::create( $request->all() );
+        
+        if($request->file('files')){
+            foreach($request->file('files') as $file){
+                //dd($file['originFileObj']);
+                $templateStage->addMedia($file['originFileObj'])->toMediaCollection('templateStage');    
+            }
+        }
+        return redirect()->back();
     }
 
     /**
@@ -57,13 +66,25 @@ class TemplateStageController extends Controller
      */
     public function update(Request $request, TemplateStage $templateStage)
     {
+
+        if( array_key_exists('media', $request->all()) ){
+            // 刪除
+            $keepMediaIds =  array_column($request->all()['media'] , 'id');
+            foreach ($templateStage->getMedia('templateStage') as $media) {
+                if (!in_array($media->id, $keepMediaIds)) {
+                    $media->delete();
+                }
+            }
+        }
+
         $templateStage->update($request->all());
-        if($request->file('files')){
+        if($request->file('files') ){
             foreach($request->file('files') as $file){
                 //dd($file['originFileObj']);
                 $templateStage->addMedia($file['originFileObj'])->toMediaCollection('templateStage');    
             }
         }
+
         return redirect()->back();
     }
 
@@ -73,5 +94,9 @@ class TemplateStageController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function deleteMedia(){
+
     }
 }
