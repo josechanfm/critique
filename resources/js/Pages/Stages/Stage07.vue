@@ -10,7 +10,7 @@
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg md:p-5">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
-          <a-col :span="12" class="bg-red-100">
+          <a-col :span="12">
             <div style="height:150px">
               <ol>
                 <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500">X</a></li>
@@ -31,7 +31,7 @@
 
             </div>
           </a-col>
-          <a-col :span="12" class="bg-blue-100">
+          <a-col :span="12">
             <div style="height:150px">
               <ol>
                 <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
