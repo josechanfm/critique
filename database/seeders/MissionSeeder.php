@@ -27,7 +27,8 @@ class MissionSeeder extends Seeder
         foreach($stages as $stage){
             $mission->stages()->create([
                 'code'=>$stage->code,
-                'title'=>$stage->title
+                'title'=>$stage->title,
+                'content'=>$stage->content
             ]);
         }
         
