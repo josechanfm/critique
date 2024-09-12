@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('stage_id');
             $table->foreignId('user_id');
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->timestamps();
         });

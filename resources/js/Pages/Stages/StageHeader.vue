@@ -6,8 +6,8 @@
         <a-avatar size="large" :style="{ backgroundColor: '#1890FF', verticalAlign: 'middle' }">{{ current+1 }}</a-avatar>
         <div class="pl-5">{{ steps[current].label }}</div>
       </div>
-    <!-- <div :style="containerStyle" class="hidden sm:block"> -->
-    <div :style="containerStyle">
+    <div :style="containerStyle" class="hidden sm:block">
+    <!-- <div :style="containerStyle"> -->
       <a-steps :current="current" :style="stepsStyle" class="!flex !overflow-clip" :responsive="false">
         <template v-for="(step, index) in steps" :key="index">
           <a-step>

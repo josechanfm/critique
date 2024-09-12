@@ -8,7 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg md:p-5">
+      <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
           <a-col :span="12" class="bg-red-100">
             <div style="height:150px">

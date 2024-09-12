@@ -68,9 +68,13 @@ class BlogController extends Controller
     public function getBlog($stage_id)
     {
 
-        $blog = Blog::find(3);
-        $blog->parent;
-        $blog->children;
-        return response()->json( $blog );
+        $blogs = Blog::where('stage_id', $stage_id)->get();
+
+        $blogs->map(function ($blog) {
+            $blog->parent;
+            $blog->children;
+        });
+
+        return response()->json( $blogs );
     }
 }
