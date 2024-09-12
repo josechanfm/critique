@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::6CjdlNNa2OjGgGIK',
+            '_route' => 'generated::AjKhEUan6TLCi6K3',
           ),
           1 => NULL,
           2 => 
@@ -61,7 +61,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yG2IzPDulGKHasaI',
+            '_route' => 'generated::CDISLG4WKVt0Mqst',
           ),
           1 => NULL,
           2 => 
@@ -171,7 +171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4c20qJvmuHQOAwVv',
+            '_route' => 'generated::rKcWZBQVN6CZGybc',
           ),
           1 => NULL,
           2 => 
@@ -228,7 +228,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YdP3XXLxfXuICzsR',
+            '_route' => 'generated::7dlHmYoUgoWLZr3V',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nKQClIteeoZLZrCJ',
+            '_route' => 'generated::H506LxO3wilhSSm8',
           ),
           1 => NULL,
           2 => 
@@ -431,7 +431,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::bXtSsNTVKVObgWBh',
+            '_route' => 'generated::A7xeyiGJH8UYEQ0c',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +663,63 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::6zdglp15wrOQgKsp',
+            '_route' => 'generated::6lo6gwp7L1wMmXRx',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/blogs' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/blogs/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.create',
           ),
           1 => NULL,
           2 => 
@@ -683,7 +739,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wq88fOSstrUETDxB',
+            '_route' => 'generated::WsvRKOlmPEsyXDs9',
           ),
           1 => NULL,
           2 => 
@@ -964,7 +1020,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/language/([^/]++)(*:160)|/mission(?|s/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|/stage/([^/]++)/upload(*:244))|/admin/(?|configs/([^/]++)(?|(*:282)|/edit(*:295)|(*:303))|template_stages/([^/]++)(?|(*:339)|/edit(*:352)|(*:360))|mission(?|s/(?|([^/]++)(?|(*:395)|/edit(*:408)|(*:416))|approve/([^/]++)(*:441))|/([^/]++)/stages(?|(*:469)|/(?|create(*:487)|([^/]++)(?|(*:506)|/edit(*:519)|(*:527)))|(*:537)))))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/blogs/(?|([^/]++)(?|(*:163)|/edit(*:176)|(*:184))|getBlog/([^/]++)(*:209))|/language/([^/]++)(*:236)|/mission(?|s/([^/]++)(?|(*:268)|/edit(*:281)|(*:289))|/stage/([^/]++)/(?|upload(*:323)|([^/]++)/([^/]++)/delete(*:355)))|/admin/(?|configs/([^/]++)(?|(*:394)|/edit(*:407)|(*:415))|template_stages/([^/]++)(?|(*:451)|/edit(*:464)|(*:472))|mission(?|s/(?|([^/]++)(?|(*:507)|/edit(*:520)|(*:528))|approve/([^/]++)(*:553)|regret/([^/]++)(*:576))|/([^/]++)/stages(?|(*:604)|/(?|create(*:622)|([^/]++)(?|(*:641)|/edit(*:654)|(*:662)))|(*:672)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1159,7 +1215,118 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      160 => 
+      163 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.show',
+          ),
+          1 => 
+          array (
+            0 => 'blog',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      176 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.edit',
+          ),
+          1 => 
+          array (
+            0 => 'blog',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      184 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.update',
+          ),
+          1 => 
+          array (
+            0 => 'blog',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'blog',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      209 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'blogs.getBlog',
+          ),
+          1 => 
+          array (
+            0 => 'stage_id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      236 => 
       array (
         0 => 
         array (
@@ -1182,7 +1349,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      192 => 
+      268 => 
       array (
         0 => 
         array (
@@ -1205,7 +1372,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      205 => 
+      281 => 
       array (
         0 => 
         array (
@@ -1228,7 +1395,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      213 => 
+      289 => 
       array (
         0 => 
         array (
@@ -1270,7 +1437,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      244 => 
+      323 => 
       array (
         0 => 
         array (
@@ -1292,7 +1459,32 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      282 => 
+      355 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'mission.stage.deleteUpload',
+          ),
+          1 => 
+          array (
+            0 => 'stage',
+            1 => 'media_id',
+            2 => 'mediaType',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      394 => 
       array (
         0 => 
         array (
@@ -1315,7 +1507,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      295 => 
+      407 => 
       array (
         0 => 
         array (
@@ -1338,7 +1530,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      303 => 
+      415 => 
       array (
         0 => 
         array (
@@ -1380,7 +1572,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      339 => 
+      451 => 
       array (
         0 => 
         array (
@@ -1403,7 +1595,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      352 => 
+      464 => 
       array (
         0 => 
         array (
@@ -1426,7 +1618,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      360 => 
+      472 => 
       array (
         0 => 
         array (
@@ -1468,7 +1660,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      395 => 
+      507 => 
       array (
         0 => 
         array (
@@ -1491,7 +1683,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      408 => 
+      520 => 
       array (
         0 => 
         array (
@@ -1514,7 +1706,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      416 => 
+      528 => 
       array (
         0 => 
         array (
@@ -1556,7 +1748,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      441 => 
+      553 => 
       array (
         0 => 
         array (
@@ -1579,7 +1771,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      469 => 
+      576 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.missions.regret',
+          ),
+          1 => 
+          array (
+            0 => 'mission',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      604 => 
       array (
         0 => 
         array (
@@ -1602,7 +1817,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      487 => 
+      622 => 
       array (
         0 => 
         array (
@@ -1625,7 +1840,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      506 => 
+      641 => 
       array (
         0 => 
         array (
@@ -1649,7 +1864,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      519 => 
+      654 => 
       array (
         0 => 
         array (
@@ -1673,7 +1888,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      527 => 
+      662 => 
       array (
         0 => 
         array (
@@ -1717,7 +1932,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      537 => 
+      672 => 
       array (
         0 => 
         array (
@@ -1754,7 +1969,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::6CjdlNNa2OjGgGIK' => 
+    'generated::AjKhEUan6TLCi6K3' => 
     array (
       'methods' => 
       array (
@@ -1773,7 +1988,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::6CjdlNNa2OjGgGIK',
+        'as' => 'generated::AjKhEUan6TLCi6K3',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1828,7 +2043,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yG2IzPDulGKHasaI' => 
+    'generated::CDISLG4WKVt0Mqst' => 
     array (
       'methods' => 
       array (
@@ -1851,7 +2066,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yG2IzPDulGKHasaI',
+        'as' => 'generated::CDISLG4WKVt0Mqst',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2098,7 +2313,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4c20qJvmuHQOAwVv' => 
+    'generated::rKcWZBQVN6CZGybc' => 
     array (
       'methods' => 
       array (
@@ -2120,7 +2335,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4c20qJvmuHQOAwVv',
+        'as' => 'generated::rKcWZBQVN6CZGybc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2212,7 +2427,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YdP3XXLxfXuICzsR' => 
+    'generated::7dlHmYoUgoWLZr3V' => 
     array (
       'methods' => 
       array (
@@ -2235,7 +2450,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::YdP3XXLxfXuICzsR',
+        'as' => 'generated::7dlHmYoUgoWLZr3V',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2367,7 +2582,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::nKQClIteeoZLZrCJ' => 
+    'generated::H506LxO3wilhSSm8' => 
     array (
       'methods' => 
       array (
@@ -2390,7 +2605,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::nKQClIteeoZLZrCJ',
+        'as' => 'generated::H506LxO3wilhSSm8',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2643,7 +2858,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::bXtSsNTVKVObgWBh' => 
+    'generated::A7xeyiGJH8UYEQ0c' => 
     array (
       'methods' => 
       array (
@@ -2666,7 +2881,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::bXtSsNTVKVObgWBh',
+        'as' => 'generated::A7xeyiGJH8UYEQ0c',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3429,7 +3644,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::6zdglp15wrOQgKsp' => 
+    'generated::6lo6gwp7L1wMmXRx' => 
     array (
       'methods' => 
       array (
@@ -3452,7 +3667,301 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::6zdglp15wrOQgKsp',
+        'as' => 'generated::6lo6gwp7L1wMmXRx',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'blogs',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.index',
+        'uses' => 'App\\Http\\Controllers\\BlogController@index',
+        'controller' => 'App\\Http\\Controllers\\BlogController@index',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'blogs/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.create',
+        'uses' => 'App\\Http\\Controllers\\BlogController@create',
+        'controller' => 'App\\Http\\Controllers\\BlogController@create',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'blogs',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.store',
+        'uses' => 'App\\Http\\Controllers\\BlogController@store',
+        'controller' => 'App\\Http\\Controllers\\BlogController@store',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'blogs/{blog}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.show',
+        'uses' => 'App\\Http\\Controllers\\BlogController@show',
+        'controller' => 'App\\Http\\Controllers\\BlogController@show',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'blogs/{blog}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.edit',
+        'uses' => 'App\\Http\\Controllers\\BlogController@edit',
+        'controller' => 'App\\Http\\Controllers\\BlogController@edit',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'blogs/{blog}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.update',
+        'uses' => 'App\\Http\\Controllers\\BlogController@update',
+        'controller' => 'App\\Http\\Controllers\\BlogController@update',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'blogs/{blog}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'blogs.destroy',
+        'uses' => 'App\\Http\\Controllers\\BlogController@destroy',
+        'controller' => 'App\\Http\\Controllers\\BlogController@destroy',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'blogs.getBlog' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'blogs/getBlog/{stage_id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BlogController@getBlog',
+        'controller' => 'App\\Http\\Controllers\\BlogController@getBlog',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'blogs.getBlog',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3507,7 +4016,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wq88fOSstrUETDxB' => 
+    'generated::WsvRKOlmPEsyXDs9' => 
     array (
       'methods' => 
       array (
@@ -3528,13 +4037,13 @@ app('router')->setCompiledRoutes(
         \'laravelVersion\' => \\Illuminate\\Foundation\\Application::VERSION,
         \'phpVersion\' => PHP_VERSION,
     ]);
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006900000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000000000a570000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::wq88fOSstrUETDxB',
+        'as' => 'generated::WsvRKOlmPEsyXDs9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3569,7 +4078,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:73:"function () {
         return \\Inertia\\Inertia::render(\'Dashboard\');
-    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006940000000000000000";}}',
+    }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000000000a5b0000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -3893,6 +4402,46 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'mission.stage.upload',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'mission.stage.deleteUpload' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'mission/stage/{stage}/{media_id}/{mediaType}/delete',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+        ),
+        'uses' => 'App\\Http\\Controllers\\StageController@deleteUpload',
+        'controller' => 'App\\Http\\Controllers\\StageController@deleteUpload',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'mission.stage.deleteUpload',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4830,6 +5379,47 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'admin.missions.approve',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.missions.regret' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/missions/regret/{mission}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\MissionController@regret',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MissionController@regret',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.missions.regret',
       ),
       'fallback' => false,
       'defaults' => 

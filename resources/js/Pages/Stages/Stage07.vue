@@ -13,9 +13,10 @@
           <a-col :span="12">
             <div style="height:150px">
               <ol>
-                <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500">X</a></li>
+                <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a></li>
               </ol>
               <a-upload 
+                key="video"
                 v-model:file-list="fileList" 
                 :before-upload="beforeUpload"
                 :on-change="handleChange"
@@ -37,6 +38,7 @@
                 <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
               </ol>
               <a-upload 
+                key="file"
                 v-model:file-list="fileList" 
                 :before-upload="beforeUpload"
                 :on-change="handleChange"
@@ -64,12 +66,16 @@ import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
 import { UploadOutlined } from '@ant-design/icons-vue';
 
+import {
+    notification
+} from 'ant-design-vue';
 
 export default {
   components: {
     AdminLayout,
     StageHeader,
-    UploadOutlined
+    UploadOutlined,
+    notification
   },
   props: ["configStages","mission","stage"],
   data() {
@@ -138,10 +144,28 @@ export default {
         .then(response => {
           console.log(response.data);
           onSuccess(response.data);
+          
+          notification.open({
+            message: 'Finish',
+          });
         })
         .catch(error => {
           onError(error);
         });   
+    },
+    deleteMedia(media_id, mediaType){
+      this.$inertia.get( route('mission.stage.deleteUpload', {"stage": this.stage.id, "media_id": media_id , "mediaType": mediaType}) ,{
+            onSuccess: (page) => {
+              console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
+            },
+            onError: (error) => {
+              console.log(error);
+            },
+          }
+        );
     }
 
   },

@@ -12,7 +12,7 @@
         </div>
         <a-card :bordered="false" class="w-full">
             <template #title>
-                Stage - {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
+                {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
             </template>
             <div class="flex flex-row">
                 <div v-for="task in stage.tasks" v-if="stage.tasks.length>0">
@@ -23,37 +23,37 @@
                     No tasks
                 </div>
             </div>
-            <div class="my-4">
+            <div class="my-4 flex justify-between">
                 <a-popconfirm title="Are you sure approve to next stage?" ok-text="Yes" cancel-text="No" @confirm="approveToNextStage">
                     <a-button type="primary">Approve to Next Stage</a-button>
+                </a-popconfirm>
+                <a-popconfirm title="Are you sure back to previous stage?" ok-text="Yes" cancel-text="No" @confirm="backToPreviousStage">
+                    <a-button type="default" >Back to Previous Stage</a-button>
                 </a-popconfirm>
             </div>
         </a-card>
         <a-divider />
         <div class="text-lg mb-4">
-            <span>Pervious Stage:</span>
+            <span>Previous Stage:</span>
         </div>
-        
-        <div class="flex flex-row gap-2" v-for="stage in mission.stages">
-            <a-card :bordered="false" class="w-full">
-                <template #title>
-                    Stage - {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
-                </template>
-                <div class="flex flex-row">
-                    <div v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                        {{ task.title }} <br>
-                        {{ task.content }}
+
+        <div class="flex flex-col-reverse gap-4">
+            <template v-for="stage in mission.stages">
+                <a-card :bordered="false" class="" v-if="stage.code.slice(-2) < (this.mission.current_stage+1)">
+                    <template #title>
+                        {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
+                    </template>
+                    <div class="flex flex-row">
+                        <div v-for="task in stage.tasks" v-if="stage.tasks.length>0">
+                            {{ task.title }} <br>
+                            {{ task.content }}
+                        </div>
+                        <div v-else>
+                            No tasks
+                        </div>
                     </div>
-                    <div v-else>
-                        No tasks
-                    </div>
-                </div>
-                <div class="my-4">
-                    <a-popconfirm title="Are you sure approve to next stage?" ok-text="Yes" cancel-text="No" @confirm="approveToNextStage">
-                        <a-button type="primary">Approve to Next Stage</a-button>
-                    </a-popconfirm>
-                </div>
-            </a-card>
+                </a-card>
+            </template>
         </div>
 
     </div>
@@ -98,6 +98,7 @@ export default {
     props: ["stage", "mission"],
     data() {
         return {
+
             modal: {
                 isOpen: false,
                 data: {},
@@ -158,6 +159,20 @@ export default {
     methods: {
         approveToNextStage() {
             this.$inertia.get(route("admin.missions.approve", this.stage.mission_id), {
+                onSuccess: (page) => {
+                    console.log(page)
+                    notification.open({
+                        message: 'Finish',
+                    });
+                },
+                onError: (error) => {
+                    console.log(error);
+                },
+            });
+        },
+        backToPreviousStage(){
+            
+            this.$inertia.get(route("admin.missions.regret", this.stage.mission_id), {
                 onSuccess: (page) => {
                     notification.open({
                         message: 'Finish',

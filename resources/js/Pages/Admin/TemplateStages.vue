@@ -5,10 +5,10 @@
           Config
         </h2>
       </template>
-      <a-button @click="createRecord()" type="primary">
-        Create
-      </a-button>
-      <div class="container mx-auto pt-5">
+      <div class="container mx-auto pt-5 ">
+        <a-button @click="createRecord()" type="primary">
+          Create
+        </a-button>
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
           <a-table :dataSource="stages" :columns="columns">
             <template #bodyCell="{ column, text, record, index }">
@@ -64,7 +64,7 @@
           </a-form-item>
           <a-form-item label="Uploaded File">
             <ol>
-              <li v-for="file in modal.data.media">{{ file.file_name }}<a class="text-red-500">X</a></li>
+              <li v-for="file in modal.data.media" @click="removeMedia(file.id)">{{ file.file_name }}<a class="text-red-500">X</a></li>
             </ol>
           </a-form-item>
         </a-form>
@@ -119,6 +119,10 @@
             i18n: "title",
             dataIndex: "title",
           },{
+            title: "Content",
+            i18n: "content",
+            dataIndex: "content",
+          },{
             title: "Operation",
             i18n: "operation",
             dataIndex: "operation",
@@ -151,6 +155,9 @@
       
     },
     methods: {
+      removeMedia(media_id) {
+        this.modal.data.media = this.modal.data.media.filter(item => item.id !== media_id);
+      },
       createRecord() {
         this.modal.data = {};
         this.modal.mode = "CREATE";

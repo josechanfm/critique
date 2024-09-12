@@ -28,7 +28,9 @@
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
           </div>
         </a-form>
-        <div>实时聊天对话框, no real time chat room, instead use blogs, you may ask Jim to help</div>
+      </div>
+      <div class="my-4">
+        <ChatBlog :stage="stage"/>
       </div>
     </div>
 
@@ -40,12 +42,14 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
 import { notification } from 'ant-design-vue';
+import ChatBlog from '@/Components/ChatBlog.vue';
 
 
 export default {
   components: {
     AdminLayout,
     StageHeader,
+    ChatBlog,
     notification 
   },
   props: ["configStages","mission","stage"],
