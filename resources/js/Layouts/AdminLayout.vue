@@ -58,10 +58,10 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
+                                <NavLink v-role="['admin']" :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
                                     Mission
                                 </NavLink>
-                                <NavLink :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
+                                <NavLink v-role="['admin']" :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
                                     Stage Template
                                 </NavLink>
                             </div>
