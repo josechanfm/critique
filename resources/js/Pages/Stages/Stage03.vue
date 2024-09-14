@@ -8,35 +8,35 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
-        <div>
+      <div class="bg-white relative shadow rounded-lg md:p-5 p-4 ">
+        <div class="max-w-7xl mx-auto">
           <template v-for="item in stage.content">
             <a-row>
               <a-col><div><img :src="item.image" width="100px"/></div></a-col>
               <a-col><div>{{ item.title }}</div></a-col>
             </a-row>
           </template>
+          <a-form
+            :model="items"
+            name="fund"
+            :label-col="labelCol"
+
+            autocomplete="off"
+            :rules="rules"
+            :validate-messages="validateMessages"
+            @finish="onFinish"
+            enctype="multipart/form-data"
+          >
+            <a-form-item label="已完成" name="entity">
+              <a-checkbox v-model:checked="items[0].title">Checkbox</a-checkbox>
+            </a-form-item>
+
+            <div class="flex flex-row item-center justify-center gap-5 pt-5">
+              <a-button >{{ $t('back') }}</a-button>
+              <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
+            </div>
+          </a-form>
         </div>
-        <a-form
-          :model="items"
-          name="fund"
-          :label-col="labelCol"
-
-          autocomplete="off"
-          :rules="rules"
-          :validate-messages="validateMessages"
-          @finish="onFinish"
-          enctype="multipart/form-data"
-        >
-          <a-form-item label="已完成" name="entity">
-            <a-checkbox v-model:checked="items[0].title">Checkbox</a-checkbox>
-          </a-form-item>
-
-          <div class="flex flex-row item-center justify-center gap-5 pt-5">
-            <a-button >{{ $t('back') }}</a-button>
-            <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
-          </div>
-        </a-form>
       </div>
     </div>
 
@@ -47,6 +47,7 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import { notification } from 'ant-design-vue';
 
 
 export default {
@@ -116,6 +117,9 @@ export default {
             onSuccess: (page) => {
               this.items=this.stage.tasks
               console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
             },
             onError: (error) => {
               console.log(error);

@@ -21,6 +21,7 @@
           enctype="multipart/form-data"
 
         >
+        <div>{{ stage.content.note }}</div>
         <a-row :gutter="6">
           <a-col :span="12">
             <div v-html="stage.content.table"/>

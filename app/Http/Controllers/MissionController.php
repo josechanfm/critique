@@ -17,7 +17,7 @@ class MissionController extends Controller
 
     public function index()
     {
-        
+
         $mission=auth()->user()->mission();
         $page=substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages->where('code','S'.$page)->first();

@@ -115,6 +115,9 @@ export default {
             onSuccess: (page) => {
               this.items=this.stage.tasks
               console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
             },
             onError: (error) => {
               console.log(error);

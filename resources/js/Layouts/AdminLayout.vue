@@ -61,9 +61,9 @@ const logout = () => {
                                 <NavLink v-role="['admin']" :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
                                     Mission
                                 </NavLink>
-                                <NavLink v-role="['admin']" :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
+                                <!-- <NavLink v-role="['admin']" :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
                                     Stage Template
-                                </NavLink>
+                                </NavLink> -->
                             </div>
                         </div>
 

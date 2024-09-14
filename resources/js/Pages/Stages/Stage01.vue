@@ -55,6 +55,7 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
 import { UploadOutlined } from '@ant-design/icons-vue';
+import { notification } from 'ant-design-vue';
 
 export default {
   components: {
@@ -97,6 +98,10 @@ export default {
   },
   mounted(){
     this.updateItemData
+    
+    if( this.stage.tasks.length>0 ){
+      this.items = this.stage.tasks
+    }
   },
   computed: {
     containerStyle() {
@@ -131,6 +136,9 @@ export default {
             onSuccess: (page) => {
               this.updateItemData();
               //console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
             },
             onError: (error) => {
               console.log(error);
