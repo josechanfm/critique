@@ -52,9 +52,7 @@ import {
     UploadOutlined
 } from '@ant-design/icons-vue';
 
-import {
-    notification
-} from 'ant-design-vue';
+import { notification } from 'ant-design-vue';
 
 export default {
     components: {

@@ -24,13 +24,17 @@
             <label class="font-bold">{{ c.title }}</label>
             <p>{{ c.note }}</p>
             <a-input v-model:value="items[idx].title" :placeholder="c.placeholder"/>
-            <a-devider/>
+            <a-divider/>
           </template>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
           </div>
         </a-form>
+      </div>
+      
+      <div class="my-4">
+        <ChatBlog :stage="stage"/>
       </div>
     </div>
 
@@ -41,24 +45,27 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import ChatBlog from '@/Components/ChatBlog.vue';
+import { notification } from 'ant-design-vue';
 
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    ChatBlog
   },
   props: ["configStages","mission","stage"],
   data() {
     return {
       current: 1,
       items:[
-        {title:"理解困境",content:null},
-        {title:"第一次反思",content:null},
-        {title:"初步的决定",content:null},
-        {title:"初次的讨论",content:null},
-        {title:"第二次反思",content:null},
-        {title:"明确问题",content:null}
+        {title:null,content:null},
+        {title:null,content:null},
+        {title:null,content:null},
+        {title:null,content:null},
+        {title:null,content:null},
+        {title:null,content:null}
       ],
       rules: {
           name: { required: true },
@@ -118,6 +125,9 @@ export default {
             onSuccess: (page) => {
               this.items=this.stage.tasks
               console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
             },
             onError: (error) => {
               console.log(error);

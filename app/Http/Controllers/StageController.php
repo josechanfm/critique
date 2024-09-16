@@ -73,6 +73,10 @@ class StageController extends Controller
             $stage->addMedia($request->file('file'))->toMediaCollection('file'); // Replace 'your_collection_name' with your actual collection name
             return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
         }
+        if($request->uploadType=='finalFile'){
+            $stage->addMedia($request->file('finalFile'))->toMediaCollection('finalFile'); // Replace 'your_collection_name' with your actual collection name
+            return response()->json(['success' => true, 'message' => 'File uploaded successfully']);
+        }
         if($request->uploadType=='video'){
             $stage->addMedia($request->file('file'))->toMediaCollection('video'); // Replace 'your_collection_name' with your actual collection name
             return response()->json(['success' => true, 'message' => 'File uploaded successfully']);

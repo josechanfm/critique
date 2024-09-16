@@ -10,7 +10,7 @@
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
         <a-form
-          :model="item"
+          :model="items"
           name="fund"
           :label-col="labelCol"
 
@@ -22,15 +22,17 @@
 
         >
           <div>{{ stage.content.note }}</div>
-          <a-textarea v-model:value="item.content" :rows="5" :placeholder="stage.content.placeholder"/>
+          <a-textarea v-model:value="items[0].content" :rows="5" :placeholder="stage.content.placeholder"/>
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
             <a-button >{{ $t('back') }}</a-button>
             <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
           </div>
         </a-form>
       </div>
+      <div class="my-4">
+        <ChatBlog :stage="stage"/>
+      </div>
     </div>
-
   </AdminLayout>
 </template>
 
@@ -38,21 +40,24 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import ChatBlog from '@/Components/ChatBlog.vue';
+import { notification } from 'ant-design-vue';
 
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    ChatBlog,
   },
   props: ["configStages","mission","stage"],
   data() {
     return {
       current: 1,
-      item:{
+      items:[{
         title:null,
         content:null
-      },
+      }],
       rules: {
           name: { required: true },
           email: { required: true, type: "email" },
@@ -111,6 +116,9 @@ export default {
             onSuccess: (page) => {
               this.items=this.stage.tasks
               console.log(page);
+              notification.open({
+                message: 'Finish',
+              });
             },
             onError: (error) => {
               console.log(error);

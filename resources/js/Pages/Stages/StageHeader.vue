@@ -4,7 +4,7 @@
 
       <div class="block sm:hidden flex items-center p-5">
         <a-avatar size="large" :style="{ backgroundColor: '#1890FF', verticalAlign: 'middle' }">{{ current+1 }}</a-avatar>
-        <div class="pl-5">{{ steps[current].label }}</div>
+        <div class="pl-5">{{ steps[current]?  steps[current].label:'' }}</div>
       </div>
     <div :style="containerStyle" class="hidden sm:block">
     <!-- <div :style="containerStyle"> -->

@@ -1,128 +1,211 @@
 <template>
-  <AdminLayout title="Dashboard">
+<AdminLayout title="Dashboard">
     <template #header>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ $t('my_project') }}
-      </h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ $t('my_project') }}
+        </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages"/>
+    <StageHeader :current="mission.current_stage" :steps="configStages" />
 
     <div class="container mx-auto pt-5">
-      <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
-        <a-row justify="space-between" align="bottom" class="h-32 p-2">
-          <a-col :span="8" class="bg-red-100">
-            <div style="height:150px">
-              upload videos
-              col-4
+        <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
+            <div class="grid md:grid-cols-3 grid-cols-1 p-2" justify="space-between" align="bottom">
+
+                <div>
+                    <div class="text-wrap p-4 font-bold text-lg">上传实施的视频资料，限制大小为50M-500M</div>
+                    <ol>
+                        <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a></li>
+                    </ol>
+                    <a-upload key="video" v-model:file-list="videoList" :before-upload="beforeUpload" :on-change="handleChangeVideo" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'video' })">
+                        <a-button class="!mx-6">
+                            <upload-outlined></upload-outlined>
+                            Upload
+                        </a-button>
+                    </a-upload>
+                </div>
+                <div :span="8">
+                    <div class="text-wrap p-4 font-bold text-lg">上传 评估结果 （Word 或 PDF 版本均可以）</div>
+
+                    <ol>
+                        <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
+                    </ol>
+                    <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
+                        <a-button>
+                            <upload-outlined></upload-outlined>
+                            Upload
+                        </a-button>
+                    </a-upload>
+                </div>
+                <div :span="8">
+                    <div class="text-wrap p-4 font-bold text-lg">上传完善后的最终方案（Word 或 PDF 版本均可以）</div>
+
+                    <ol>
+                        <li v-for="file in stage.media.filter(m=>m.collection_name=='finalFile')">{{ file.file_name }} <a class="text-red-500">X</a></li>
+                    </ol>
+                    <a-upload key="finalFile" v-model:file-list="finalFileList" :before-upload="beforeUpload" :on-change="handleChangeFinalFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'finalFile' })">
+                        <a-button>
+                            <upload-outlined></upload-outlined>
+                            Upload
+                        </a-button>
+                    </a-upload>
+                </div>
             </div>
-          </a-col>
-          <a-col :span="8" class="bg-blue-100">
-            <div style="height:150px">
-              Evaluation result
-              upload word and pdf  
-              col-4
-            </div>
-          </a-col>
-          <a-col :span="8" class="bg-blue-100">
-            <div style="height:150px">
-              Final proposal
-              upload word pdf  
-              col-4
-            </div>
-          </a-col>
-        </a-row>
-      </div>
+        </div>
     </div>
 
-  </AdminLayout>
+</AdminLayout>
 </template>
 
 <script>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
-import { defineComponent, reactive } from "vue";
+import {
+    defineComponent,
+    reactive
+} from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import {
+    UploadOutlined
+} from '@ant-design/icons-vue';
 
+import {
+    notification
+} from 'ant-design-vue';
 
 export default {
-  components: {
-    AdminLayout,
-    StageHeader
-  },
-  props: ["configStages","mission","stage"],
-  data() {
-    return {
-      current: 1
-    };
-  },
-  created() {
-
-  },
-  mounted(){
-    console.log('stage03');
-    if( this.stage ){
-      this.items = this.items.map( item => ({
-        ...item,
-        stage_id: this.stage.id
-      }))
-    }
-
-    if( this.stage.tasks.length>0 ){
-      this.items = this.stage.tasks
-    }
-
-  },
-  computed: {
-    containerStyle() {
-      return {
-        maxWidth: '100%', // Ensures the container does not exceed screen width
-        overflow: 'hidden', // Prevents overflow of content
-        padding: '20px',
-        boxSizing: 'border-box',
-      };
+    components: {
+        AdminLayout,
+        StageHeader,
+        UploadOutlined,
+        notification
     },
-    stepsStyle() {
-      return {
-        display: 'flex',
-        justifyContent: 'space-between', // Distributes steps evenly
-        flexWrap: 'nowrap', // Prevents wrapping to the next line
-        height: '120px'
-      };
+    props: ["configStages", "mission", "stage"],
+    data() {
+        return {
+            current: 1,
+            videoList: [],
+            fileList: [],
+            finalFileList: [],
+        };
     },
-  },
-  methods: {
-    onFinish(){
-      this.$inertia.patch(
-          route("missions.update", this.mission.id),this.items,{
-            onSuccess: (page) => {
-              this.items=this.stage.tasks
-              console.log(page);
-            },
-            onError: (error) => {
-              console.log(error);
-            },
-          }
-        );
-    }
-  },
+    created() {
+
+    },
+    mounted() {
+        if (this.stage.tasks.length > 0) {
+            this.items = this.stage.tasks
+        }
+
+    },
+    computed: {
+        containerStyle() {
+            return {
+                maxWidth: '100%', // Ensures the container does not exceed screen width
+                overflow: 'hidden', // Prevents overflow of content
+                padding: '20px',
+                boxSizing: 'border-box',
+            };
+        },
+        stepsStyle() {
+            return {
+                display: 'flex',
+                justifyContent: 'space-between', // Distributes steps evenly
+                flexWrap: 'nowrap', // Prevents wrapping to the next line
+                height: '120px'
+            };
+        },
+    },
+    methods: {
+        onFinish() {
+            this.$inertia.patch(
+                route("missions.update", this.mission.id), this.items, {
+                    onSuccess: (page) => {
+                        this.items = this.stage.tasks
+                        console.log(page);
+                    },
+                    onError: (error) => {
+                        console.log(error);
+                    },
+                }
+            );
+        },
+
+        beforeUpload(file) {
+            const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
+            if (!isValid) {
+                message.error('You can only upload JPG/PNG file!');
+            }
+            return isValid;
+        },
+        handleChangeVideo(newVideoList) {
+            this.videoList = newVideoList.videoList;
+        },
+        handleChangeFile(newFileList) {
+            this.fileList = newFileList.fileList;
+        },
+        handleChangeFinalFile(newFinalFileList) {
+            this.finalFileList = newFinalFileList.fileList;
+        },
+        fileUploader({
+            file,
+            onSuccess,
+            onError
+        }, {
+            uploadType
+        }) {
+            const formData = new FormData();
+            formData.append('uploadType', uploadType);
+            formData.append('file', file);
+            formData.append('finalFile', file);
+
+            axios.post(route('mission.stage.upload', this.stage.id), formData)
+                .then(response => {
+                    console.log(response.data);
+                    onSuccess(response.data);
+
+                    notification.open({
+                        message: 'Finish',
+                    });
+                })
+                .catch(error => {
+                    onError(error);
+                });
+        },
+        deleteMedia(media_id, mediaType) {
+            this.$inertia.get(route('mission.stage.deleteUpload', {
+                "stage": this.stage.id,
+                "media_id": media_id,
+                "mediaType": mediaType
+            }), {
+                onSuccess: (page) => {
+                    console.log(page);
+                    notification.open({
+                        message: 'Finish',
+                    });
+                },
+                onError: (error) => {
+                    console.log(error);
+                },
+            });
+        }
+    },
 };
 </script>
 
-
 <style>
 .rotated-title {
-  display: inline-block;
-  /* Allows the transform to work correctly */
-  transform: rotate(45deg);
-  /* Rotates the title 45 degrees clockwise */
-  white-space: nowrap;
-  /* Prevents wrapping of the title text */
-  font-size: 12px;
-  /* Adjust font size as needed */
-  margin-top: 10px;
-  /* Space above the title */
-  transform-origin: left bottom;
-  /* Sets the origin for the rotation */
-  margin-left: -40px;
-  /* Adjust this value based on the design */
+    display: inline-block;
+    /* Allows the transform to work correctly */
+    transform: rotate(45deg);
+    /* Rotates the title 45 degrees clockwise */
+    white-space: nowrap;
+    /* Prevents wrapping of the title text */
+    font-size: 12px;
+    /* Adjust font size as needed */
+    margin-top: 10px;
+    /* Space above the title */
+    transform-origin: left bottom;
+    /* Sets the origin for the rotation */
+    margin-left: -40px;
+    /* Adjust this value based on the design */
 }
 </style>

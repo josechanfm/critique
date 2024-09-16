@@ -66,7 +66,6 @@ class MissionController extends Controller
     public function update(Request $request, Mission $mission)
     {
         $items=$request->all();
-        // dd($items);
         $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages()->where('code',$stageCode)->first();
         foreach($items as $item){

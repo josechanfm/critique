@@ -1,8 +1,16 @@
 <template>
+<div>
+    <a-page-header title="Chat Blog：" class="py-2 !bg-white rounded-t-lg" />
+</div>
 <div class="grid grid-cols-1 sm:grid-cols-2 w-full bg-white py-4">
     <div>
-        <a-form :model="form" name="basic" :label-col="{ span: 4 }" :wrapper-col="{ span: 16 }" autocomplete="off" enctype="multipart/form-data">
+        <a-form :model="form"  name="basic" :label-col="{ span: 4 }" :wrapper-col="{ span: 16 }" autocomplete="off" enctype="multipart/form-data">
 
+            <a-form-item :wrapper-col="{ offset: 3, span: 8 }" >
+            <div class="font-bold">
+                Enter your messge to Chat：
+            </div>
+            </a-form-item>
             <a-form-item label="Chat" name="content">
                 <a-textarea :rows="5" v-model:value="form.content" />
             </a-form-item>

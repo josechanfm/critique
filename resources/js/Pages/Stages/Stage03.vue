@@ -6,7 +6,6 @@
       </h2>
     </template>
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
-
     <div class="container mx-auto pt-5">
       <div class="bg-white relative shadow rounded-lg md:p-5 p-4 ">
         <div class="max-w-7xl mx-auto">
@@ -89,7 +88,7 @@ export default {
   },
   mounted(){
     if( this.stage.tasks.length>0 ){
-      this.items.title = this.stage.tasks[0].title==1?true:false
+      this.items = this.stage.tasks
     }
   },
   computed: {
