@@ -8,9 +8,14 @@
       </div>
     <div :style="containerStyle" class="hidden sm:block">
     <!-- <div :style="containerStyle"> -->
-      <a-steps :current="current" :style="stepsStyle" class="!flex !overflow-clip" :responsive="false">
+      <a-steps 
+        :current="current" 
+        :style="stepsStyle" 
+        class="!flex !overflow-clip" 
+        :responsive="false"
+        >
         <template v-for="(step, index) in steps" :key="index">
-          <a-step>
+          <a-step @click="viewStage(index)">
             <template v-slot:title>
               <div style="text-align: center;">
                 <div style="height: 40px;"> <!-- Space for the icon -->
@@ -43,6 +48,10 @@
     },
   });
   
+  const viewStage = (page) => {
+    window.location.href = route('missions.index', {"page":page} ) ;
+  };
+
   // Define computed styles
   const containerStyle = computed(() => ({
     maxWidth: '100%', // Ensures the container does not exceed screen width

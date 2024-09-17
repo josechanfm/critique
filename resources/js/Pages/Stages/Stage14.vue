@@ -8,7 +8,8 @@
     <StageHeader :current="mission.current_stage" :steps="configStages" />
 
     <div class="container mx-auto pt-5">
-        <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
+		<div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
+		<div class="bg-white relative shadow rounded-lg md:p-5 p-4">
             <div class="grid md:grid-cols-3 grid-cols-1 p-2" justify="space-between" align="bottom">
 
                 <div>
@@ -50,6 +51,10 @@
                     </a-upload>
                 </div>
             </div>
+			
+            <div class="flex item-center justify-center gap-5  pt-5 mx-auto">
+                <a-button @click="goBack()">{{ $t('back') }}</a-button>
+            </div>
         </div>
     </div>
 
@@ -78,7 +83,7 @@ export default {
         UploadOutlined,
         notification
     },
-    props: ["configStages", "mission", "stage"],
+    props: ["configStages", "mission", "stage","page"],
     data() {
         return {
             current: 1,
@@ -115,6 +120,13 @@ export default {
         },
     },
     methods: {
+		
+		goBack(){
+      window.history.back()
+    },
+		checkEditable(){
+			return this.mission.current_stage+1 !== (Number(this.page))
+		},
         onFinish() {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {

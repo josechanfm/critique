@@ -17,13 +17,20 @@ class MissionController extends Controller
 
     public function index()
     {
-
         $mission=auth()->user()->mission();
-        $page=substr('0'.$mission->current_stage+1,-2);
+
+        // 翻其他頁
+        if( array_key_exists("page",$_GET ) && $_GET['page'] != null ){
+            $page = substr('0'.$_GET['page']+1,-2);
+        }else{
+            $page = substr('0'.$mission->current_stage+1,-2);
+        }
+
         $stage=$mission->stages->where('code','S'.$page)->first();
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),
             'mission'=>$mission,
+            'page'=>$page,
             'stage'=>$stage
         ]);
     }

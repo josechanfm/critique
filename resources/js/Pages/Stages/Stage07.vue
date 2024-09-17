@@ -8,15 +8,19 @@
     <StageHeader :current="mission.current_stage" :steps="configStages" />
 
     <div class="container mx-auto pt-5">
+        <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
             <a-row justify="space-between" align="bottom" class="p-2">
                 <a-col :span="12">
                     <a-page-header class="py-3" title="上传视频资料" />
                     <ol>
-                        <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a></li>
+                        <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">
+                            {{ video.file_name }}
+                            <a v-if="!checkEditable()" class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a>
+                        </li>
                     </ol>
                     <a-upload key="video" v-model:file-list="videoList" :before-upload="beforeUpload" :on-change="handleChangeVideo" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'video' })">
-                        <a-button class="!mx-6">
+                        <a-button :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
@@ -25,15 +29,21 @@
                 <a-col :span="12">
                     <a-page-header class="py-3" title="上传PDF资料" />
                     <ol>
-                        <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
+                        <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">
+                            {{ file.file_name }} 
+                            <a v-if="!checkEditable()" class="text-red-500">X</a>
+                        </li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
-                        <a-button>
+                        <a-button :disabled="checkEditable()" >
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
                     </a-upload>
                 </a-col>
+                <div class="flex item-center justify-center gap-5 mt-4 pt-5 mx-auto">
+                    <a-button @click="goBack()">{{ $t('back') }}</a-button>
+                </div>
             </a-row>
         </div>
     </div>
@@ -52,7 +62,9 @@ import {
     UploadOutlined
 } from '@ant-design/icons-vue';
 
-import { notification } from 'ant-design-vue';
+import {
+    notification
+} from 'ant-design-vue';
 
 export default {
     components: {
@@ -61,7 +73,7 @@ export default {
         UploadOutlined,
         notification
     },
-    props: ["configStages", "mission", "stage"],
+    props: ["configStages", "mission", "stage", "page"],
     data() {
         return {
             current: 1,
@@ -97,6 +109,13 @@ export default {
         },
     },
     methods: {
+
+        goBack(){
+      window.history.back()
+    },
+        checkEditable() {
+            return this.mission.current_stage + 1 !== (Number(this.page))
+        },
         onFinish() {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {

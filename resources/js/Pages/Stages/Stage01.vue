@@ -8,6 +8,7 @@
     <StageHeader :current="mission.current_stage" :steps="configStages"/>
 
     <div class="container mx-auto pt-5">
+      <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
       <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
         <a-row justify="space-between" align="bottom" class="h-32 p-2">
           <a-col :span="12" class="bg-red-100">
@@ -40,8 +41,8 @@
           </a-form-item>
 
           <div class="flex flex-row item-center justify-center gap-5 pt-5">
-            <a-button >{{ $t('back') }}</a-button>
-            <a-button type="primary" html-type="submit">{{ $t('submit') }}</a-button>
+            <a-button @click="goBack()">{{ $t('back') }}</a-button>
+            <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
           </div>
         </a-form>
       </div>
@@ -63,7 +64,7 @@ export default {
     StageHeader,
     UploadOutlined
   },
-  props: ["configStages","mission","stage"],
+  props: ["configStages","mission","stage","page"],
   data() {
     return {
       current: 1,
@@ -122,6 +123,13 @@ export default {
     },
   },
   methods: {
+    
+    goBack(){
+      window.history.back()
+    },
+    checkEditable(){
+      return this.mission.current_stage+1 !== (Number(this.page))
+    },
     updateItemData(){
       if( this.stage ){
         if(this.stage.tasks.length>0){
