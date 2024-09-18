@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xN2GgdXMcWtpJSR9',
+            '_route' => 'generated::Bw2GP2zU4j8dXAcy',
           ),
           1 => NULL,
           2 => 
@@ -61,7 +61,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::A7c642P1ksfFFGBk',
+            '_route' => 'generated::zwioZR5pIYUgyoXY',
           ),
           1 => NULL,
           2 => 
@@ -171,7 +171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yIUldDLlZo7AQhZh',
+            '_route' => 'generated::WFO8tGJzm1Xk8Z1o',
           ),
           1 => NULL,
           2 => 
@@ -228,7 +228,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4v22AfNzTjdqDxjc',
+            '_route' => 'generated::S0KSvsXopsJ292wK',
           ),
           1 => NULL,
           2 => 
@@ -301,7 +301,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::luE1cDmDbQlmDpmd',
+            '_route' => 'generated::iXyBfvcPF0ZfII4a',
           ),
           1 => NULL,
           2 => 
@@ -431,7 +431,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::iz0ENVlaFaJxrEJw',
+            '_route' => 'generated::pPX5GYVCpAHyjr3p',
           ),
           1 => NULL,
           2 => 
@@ -663,7 +663,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8HKbIR5IOgMeps00',
+            '_route' => 'generated::7LLQexyrc7X2heYo',
           ),
           1 => NULL,
           2 => 
@@ -739,7 +739,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eLNUfX1e12tfdej4',
+            '_route' => 'generated::w7jcW7OcEld4FrtM',
           ),
           1 => NULL,
           2 => 
@@ -1017,10 +1017,66 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/files' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/files/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/blogs/(?|([^/]++)(?|(*:163)|/edit(*:176)|(*:184))|getBlog/([^/]++)(*:209))|/language/([^/]++)(*:236)|/mission(?|s/([^/]++)(?|(*:268)|/edit(*:281)|(*:289))|/stage/([^/]++)/(?|upload(*:323)|([^/]++)/([^/]++)/delete(*:355)))|/admin/(?|configs/([^/]++)(?|(*:394)|/edit(*:407)|(*:415))|template_stages/([^/]++)(?|(*:451)|/edit(*:464)|(*:472))|mission(?|s/(?|([^/]++)(?|(*:507)|/edit(*:520)|(*:528))|approve/([^/]++)(*:553)|regret/([^/]++)(*:576))|/([^/]++)/stages(?|(*:604)|/(?|create(*:622)|([^/]++)(?|(*:641)|/edit(*:654)|(*:662)))|(*:672)))))/?$}sDu',
+      0 => '{^(?|/reset\\-password/([^/]++)(*:32)|/team(?|s/([^/]++)(?|(*:60)|/members(?|(*:78)|/([^/]++)(?|(*:97))))|\\-invitations/([^/]++)(?|(*:132)))|/blogs/(?|([^/]++)(?|(*:163)|/edit(*:176)|(*:184))|getBlog/([^/]++)(*:209))|/language/([^/]++)(*:236)|/mission(?|s/([^/]++)(?|(*:268)|/edit(*:281)|(*:289))|/stage/([^/]++)/(?|upload(*:323)|([^/]++)/([^/]++)/delete(*:355)))|/admin/(?|configs/([^/]++)(?|(*:394)|/edit(*:407)|(*:415))|template_stages/([^/]++)(?|(*:451)|/edit(*:464)|(*:472))|mission(?|s/(?|([^/]++)(?|(*:507)|/edit(*:520)|(*:528))|approve/([^/]++)(*:553)|regret/([^/]++)(*:576))|/([^/]++)/stages(?|(*:604)|/(?|create(*:622)|([^/]++)(?|(*:641)|/edit(*:654)|(*:662)))|(*:672)))|files/([^/]++)(?|(*:699)|/edit(*:712)|(*:720))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1953,7 +2009,95 @@ app('router')->setCompiledRoutes(
           5 => false,
           6 => NULL,
         ),
+      ),
+      699 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.show',
+          ),
+          1 => 
+          array (
+            0 => 'file',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      712 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.edit',
+          ),
+          1 => 
+          array (
+            0 => 'file',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      720 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.update',
+          ),
+          1 => 
+          array (
+            0 => 'file',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.files.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'file',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        2 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -1969,7 +2113,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::xN2GgdXMcWtpJSR9' => 
+    'generated::Bw2GP2zU4j8dXAcy' => 
     array (
       'methods' => 
       array (
@@ -1988,7 +2132,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::xN2GgdXMcWtpJSR9',
+        'as' => 'generated::Bw2GP2zU4j8dXAcy',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2043,7 +2187,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::A7c642P1ksfFFGBk' => 
+    'generated::zwioZR5pIYUgyoXY' => 
     array (
       'methods' => 
       array (
@@ -2066,7 +2210,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::A7c642P1ksfFFGBk',
+        'as' => 'generated::zwioZR5pIYUgyoXY',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2313,7 +2457,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yIUldDLlZo7AQhZh' => 
+    'generated::WFO8tGJzm1Xk8Z1o' => 
     array (
       'methods' => 
       array (
@@ -2335,7 +2479,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yIUldDLlZo7AQhZh',
+        'as' => 'generated::WFO8tGJzm1Xk8Z1o',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2427,7 +2571,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4v22AfNzTjdqDxjc' => 
+    'generated::S0KSvsXopsJ292wK' => 
     array (
       'methods' => 
       array (
@@ -2450,7 +2594,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4v22AfNzTjdqDxjc',
+        'as' => 'generated::S0KSvsXopsJ292wK',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2582,7 +2726,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::luE1cDmDbQlmDpmd' => 
+    'generated::iXyBfvcPF0ZfII4a' => 
     array (
       'methods' => 
       array (
@@ -2605,7 +2749,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::luE1cDmDbQlmDpmd',
+        'as' => 'generated::iXyBfvcPF0ZfII4a',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2858,7 +3002,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::iz0ENVlaFaJxrEJw' => 
+    'generated::pPX5GYVCpAHyjr3p' => 
     array (
       'methods' => 
       array (
@@ -2881,7 +3025,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::iz0ENVlaFaJxrEJw',
+        'as' => 'generated::pPX5GYVCpAHyjr3p',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3644,7 +3788,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8HKbIR5IOgMeps00' => 
+    'generated::7LLQexyrc7X2heYo' => 
     array (
       'methods' => 
       array (
@@ -3667,7 +3811,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::8HKbIR5IOgMeps00',
+        'as' => 'generated::7LLQexyrc7X2heYo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4016,7 +4160,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eLNUfX1e12tfdej4' => 
+    'generated::w7jcW7OcEld4FrtM' => 
     array (
       'methods' => 
       array (
@@ -4043,7 +4187,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::eLNUfX1e12tfdej4',
+        'as' => 'generated::w7jcW7OcEld4FrtM',
       ),
       'fallback' => false,
       'defaults' => 
@@ -5702,6 +5846,291 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\Admin\\StageController@destroy',
         'namespace' => NULL,
         'prefix' => 'admin/mission/{mission}',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/files',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.index',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@index',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/files/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.create',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/files',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.store',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/files/{file}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.show',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@show',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/files/{file}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.edit',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@edit',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/files/{file}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.update',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@update',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.files.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/files/{file}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:sanctum',
+          2 => 'Laravel\\Jetstream\\Http\\Middleware\\AuthenticateSession',
+          3 => 'verified',
+          4 => 'role:admin',
+        ),
+        'as' => 'admin.files.destroy',
+        'uses' => 'App\\Http\\Controllers\\Admin\\FileController@destroy',
+        'controller' => 'App\\Http\\Controllers\\Admin\\FileController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
         'where' => 
         array (
         ),

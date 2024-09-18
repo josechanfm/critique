@@ -24,6 +24,7 @@
       </div>
       <!-- Modal Start-->
       <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
+        
         <a-form
           ref="modalRef"
           :model="modal.data"
@@ -99,7 +100,7 @@
       AdminLayout,
       UploadOutlined
     },
-    props: ["stages"],
+    props: ["stages","files"],
     data() {
       return {
         modal: {

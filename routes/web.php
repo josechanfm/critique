@@ -66,5 +66,6 @@ Route::group([
     Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');
     Route::get('missions/regret/{mission}',[App\Http\Controllers\Admin\MissionController::class,'regret'])->name('admin.missions.regret');
     Route::resource('mission/{mission}/stages',App\Http\Controllers\Admin\StageController::class)->names('admin.mission.stages');
+    Route::resource('files',App\Http\Controllers\Admin\FileController::class)->names('admin.files');
 });
 
