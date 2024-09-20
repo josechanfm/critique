@@ -2,7 +2,7 @@
 <AdminLayout title="Dashboard">
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Config
+            {{$t('config')}}
         </h2>
     </template>
 
@@ -61,10 +61,10 @@
     <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
         <a-form ref="modalRef" :model="modal.data" name="Teacher" :label-col="{ span: 8 }" :wrapper-col="{ span: 16 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages">
             <a-form-item label="Code" name="code">
-                <a-input v-model:value="modal.data.code" />
+                <a-input type="input" v-model:value="modal.data.code" />
             </a-form-item>
             <a-form-item label="Title" name="title">
-                <a-input v-model:value="modal.data.title" />
+                <a-input type="input" v-model:value="modal.data.title" />
             </a-form-item>
             <div>
                 {{ modal.data.tasks }}

@@ -14,7 +14,7 @@ class Stage extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
-    protected $fillable=['title','description','content'];
+    protected $fillable=['mission_id','code','title','description','content'];
     protected $casts=['content'=>'json'];
     protected $with=['media'];
 

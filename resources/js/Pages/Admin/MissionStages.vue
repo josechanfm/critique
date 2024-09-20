@@ -2,16 +2,16 @@
     <AdminLayout title="Dashboard">
       <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          Config
+          {{$t('config')}}
         </h2>
       </template>
-      <a-button @click="createRecord()" type="primary">
-        Create
-      </a-button>
       <div class="container mx-auto pt-5">
+        
+        <a-button @click="createRecord()" type="primary">
+          {{$t('create')}}
+        </a-button>
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
-          <div>stage column 顯示任務到哪個階段,並提供按鈕,進入下一階段.</div>
-          <div>current stage: {{ mission.current_stage }}</div>
+          <div class="text-base p-3">current stage: {{ mission.current_stage }}</div>
           <a-table :dataSource="mission.stages" :columns="columns" :pagination="{ pageSize: 20 }">
             <template #bodyCell="{ column, text, record, index }">
               <template v-if="column.dataIndex == 'operation'">
@@ -26,6 +26,7 @@
       </div>
       <!-- Modal Start-->
       <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
+        {{modal.data.files}}
         <a-form
           ref="modalRef"
           :model="modal.data"
@@ -37,14 +38,35 @@
           :validate-messages="validateMessages"
         >
         <a-form-item label="Code" name="code">
-            <a-input v-model:value="modal.data.code" />
+            <a-input type="input" v-model:value="modal.data.code" />
           </a-form-item>
           <a-form-item label="Title" name="title">
-            <a-input v-model:value="modal.data.title" />
+            <a-input type="input" v-model:value="modal.data.title" />
           </a-form-item>
-          <div>
-            {{ modal.data.tasks }}
-          </div>
+          <a-form-item label="Content" name="content">
+            <a-textarea v-model:value="modal.data.content" :rows="10" />
+          </a-form-item>
+          
+          <a-form-item label="Upload File">
+            <a-upload
+              :file-list="modal.data.files"
+              :before-upload="beforeUpload"
+              :on-change="handleChange"
+              :multiple="true"
+              :show-upload-list="true"
+              :custom-request="dummyRequest"
+            >
+              <a-button>
+                <UploadOutlined />
+                Click to upload
+              </a-button>
+            </a-upload>
+          </a-form-item>
+          <a-form-item label="Uploaded File">
+            <ol>
+              <li v-for="file in modal.data.media" @click="removeMedia(file.id)">{{ file.file_name }}<a class="text-red-500">X</a></li>
+            </ol>
+          </a-form-item>
         </a-form>
         <template #footer>
           <a-button
@@ -75,7 +97,7 @@
     components: {
       AdminLayout,
     },
-    props: ["mission"],
+    props: ["mission",'files'],
     data() {
       return {
         modal: {
@@ -95,13 +117,9 @@
             i18n: "title",
             dataIndex: "title",
           },{
-            title: "Start",
-            i18n: "started_at",
-            dataIndex: "started_at",
-          },{
-            title: "Stage",
-            i18n: "stage",
-            dataIndex: "stage",
+            title: "Content",
+            i18n: "content",
+            dataIndex: "content",
           },{
             title: "Operation",
             i18n: "operation",
@@ -135,6 +153,9 @@
       
     },
     methods: {
+      removeMedia(media_id) {
+        this.modal.data.media = this.modal.data.media.filter(item => item.id !== media_id);
+      },
       createRecord() {
         this.modal.data = {};
         this.modal.mode = "CREATE";
@@ -148,11 +169,29 @@
         this.modal.title = "edit";
         this.modal.isOpen = true;
       },
+      beforeUpload(file){
+        const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
+        if (!isValid) {
+          message.error('You can only upload JPG/PNG file!');
+        }
+        return isValid;
+      },
+      handleChange(newFileList){
+        this.modal.data.files = newFileList.fileList;
+      },
+      dummyRequest({file, onSuccess}){
+        setTimeout(() => {
+          onSuccess(file);
+        }, 0);
+      },
       storeRecord() {
+        
+        this.modal.data.content = JSON.parse(this.modal.data.content);
+
         this.$refs.modalRef
           .validateFields()
           .then(() => {
-            this.$inertia.post(route("admin.configs.store"), this.modal.data, {
+            this.$inertia.post(route("admin.stages.store"), this.modal.data, {
               onSuccess: (page) => {
                 this.modal.data = {};
                 this.modal.isOpen = false;
@@ -167,9 +206,11 @@
           });
       },
       updateRecord() {
+        this.modal.data.content = JSON.parse(this.modal.data.content);
         console.log(this.modal.data);
-        this.$inertia.patch(
-          route("admin.configs.update", this.modal.data.id),
+        this.modal.data._method='PATCH';
+        this.$inertia.post(
+          route("admin.mission.stages.update", {mission: this.mission.id, stage: this.modal.data.id } ),
           this.modal.data,
           {
             onSuccess: (page) => {

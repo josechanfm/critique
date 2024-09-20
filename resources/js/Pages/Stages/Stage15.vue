@@ -2,10 +2,10 @@
 <AdminLayout title="Dashboard">
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $t('my_project') }}
+           {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
         </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" />
+    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
 
     <div class="container mx-auto pt-5">
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">

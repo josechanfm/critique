@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mission extends Model
 {
+    protected $fillable=['title','title_en','description','remark', 'current_stage','status'];
+
     use HasFactory;
 
     public function stages(){

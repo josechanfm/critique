@@ -1,9 +1,9 @@
 <script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
+import AdminLayout from '@/Layouts/AdminLayout.vue';
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AdminLayout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -18,9 +18,9 @@ import AppLayout from '@/Layouts/AppLayout.vue';
                     You can edit the <u>Mission</u> & <u>Stages</u> Name that showing to user<br>
 
                     Futhermore, Task is what the user input. <br>
-                    <inertia-link :href="route('admin.missions.index')">Missions</inertia-link>
+                    <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.missions.index')">Missions</inertia-link class="border-b border-blue-600 text-blue-500">
                 </div>
             </div>
         </div>
-    </AppLayout>
+    </AdminLayout>
 </template>

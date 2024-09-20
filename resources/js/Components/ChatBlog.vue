@@ -1,6 +1,6 @@
 <template>
 <div>
-    <a-page-header title="Chat Blog：" class="py-2 !bg-white rounded-t-lg" />
+    <a-page-header :title="$t('chat_blog')" class="py-2 !bg-white rounded-t-lg" />
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 w-full bg-white py-4">
     <div>
@@ -8,10 +8,10 @@
 
             <a-form-item :wrapper-col="{ offset: 3, span: 8 }" >
             <div class="font-bold">
-                Enter your messge to Chat：
+                {{$t('chat_blog_message')}}：
             </div>
             </a-form-item>
-            <a-form-item label="Chat" name="content">
+            <a-form-item :label="$t('chat')" name="content">
                 <a-textarea :rows="5" v-model:value="form.content" />
             </a-form-item>
 
@@ -45,7 +45,7 @@
                 <!-- Reply Input -->
                 <template v-if="blog.reply && Object.keys(blog.reply).length !== 0">
                     <div class="flex gap-2">
-                        → <a-input v-model:value="blog.reply.content"></a-input>
+                        → <a-input type="input" v-model:value="blog.reply.content"></a-input>
                     </div>
                     <div class="mx-6">
                         <a-button size="small" class="my-1 !text-sm" type="primary" @click="submitReply(blog)">回复</a-button>

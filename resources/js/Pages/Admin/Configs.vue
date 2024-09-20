@@ -35,7 +35,7 @@
           :validate-messages="validateMessages"
         >
           <a-form-item label="Key" name="key">
-            <a-input v-model:value="modal.data.key" />
+            <a-input type="input" v-model:value="modal.data.key" />
           </a-form-item>
           <a-form-item label="Content" name="content">
             <a-textarea v-model:value="modal.data.content" :rows="15" />

@@ -24,7 +24,7 @@
       </div>
       <!-- Modal Start-->
       <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
-        
+        {{modal.data.files}}
         <a-form
           ref="modalRef"
           :model="modal.data"
@@ -37,10 +37,10 @@
            enctype="multipart/form-data"
         >
         <a-form-item label="Code" name="code">
-            <a-input v-model:value="modal.data.code" />
+            <a-input type="input" v-model:value="modal.data.code" />
           </a-form-item>
           <a-form-item label="Title" name="title">
-            <a-input v-model:value="modal.data.title" />
+            <a-input type="input" v-model:value="modal.data.title" />
           </a-form-item>
           <a-form-item label="Content" name="content">
             <a-textarea v-model:value="modal.data.content" :rows="10" />

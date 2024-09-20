@@ -69,9 +69,6 @@ class TemplateStageController extends Controller
     public function update(Request $request, TemplateStage $templateStage)
     {
 
-
-        
-
         if( array_key_exists('media', $request->all()) ){
             // 刪除
             $keepMediaIds =  array_column($request->all()['media'] , 'id');
@@ -86,25 +83,26 @@ class TemplateStageController extends Controller
         if($request->file('files') ){
             foreach($request->file('files') as $file){
                 //dd($file['originFileObj']);
-                $templateStage->addMedia($file['originFileObj'])->toMediaCollection('templateStage');    
+                $templateStage->addMedia($file['originFileObj'])->toMediaCollection('templateStage');
             }
         }
 
 
-        $files=$templateStage->media()->where('collection_name','file')->select('name','file_name as path')->get()->map(function ($item) {
+        $files=$templateStage->media()->where('collection_name','templateStage')->select('name','file_name as path')->get()->map(function ($item) {
             return [
                 'name' => $item->name,
                 'path' => 'images/'.$item->file_name, // or whatever custom logic you need
             ];
         });
-        $videos=$templateStage->media()->where('collection_name','video')->get()->map(function ($item) {
-            return [
-                'name' => $item->name,
-                'path' => 'images/'.$item->file_name, // or whatever custom logic you need
-            ];
-        });
+        // $videos=$templateStage->media()->where('collection_name','video')->get()->map(function ($item) {
+        //     return [
+        //         'name' => $item->name,
+        //         'path' => 'images/'.$item->file_name, // or whatever custom logic you need
+        //     ];
+        // });
 
-        $myFiles=['videos'=>$videos, 'files'=>$files];
+        $myFiles=['files'=>$files];
+        $templateStage->content=json_encode($myFiles);
         $templateStage->description=json_encode($myFiles);
         $templateStage->save();
         // dd(json_encode($myFiles));

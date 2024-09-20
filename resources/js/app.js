@@ -24,14 +24,13 @@ createInertiaApp({
             .use(LaravelPermissionToVueJS)
             .use(RolePermission)
             .use(i18nVue, {
-                lang: 'zh',
-                resolve: lang => {
-                    const langs = import.meta.glob('../../lang/*.json', { eager: true });
-                    return langs[`../../lang/${lang}.json`].default;
-                },
+                resolve: async lang => {
+                    const langs = import.meta.glob('../../lang/*.json');
+                    return await langs[`../../lang/${lang}.json`]();
+                }
             })
             .component('inertia-head',Head)
-            .component('inertia-link',Link)
+            .component('inertia-link class="border-b border-blue-600 text-blue-500"',Link)
             .mount(el);
     },
     progress: {

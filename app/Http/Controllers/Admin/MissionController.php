@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Config;
 use App\Models\Mission;
-
+use App\Models\TemplateStage;
+use App\Models\Stage;
 
 class MissionController extends Controller
 {
@@ -37,6 +38,22 @@ class MissionController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $data['current_stage'] = 0;
+        $mission = Mission::create($data);
+
+        // 拿template stage Clone一份
+        $stages = TemplateStage::whereBetween('code', ['S01', 'S15'])->get();
+        $stagesWithMission = $stages->map(function($stage) use ($mission) {
+            $stage['mission_id'] = $mission->id; // 添加 mission_id
+            return $stage; // 返回修改後的項目
+        });
+
+        foreach ($stagesWithMission->toArray() as $stageData) {
+            Stage::create($stageData);
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -64,6 +81,8 @@ class MissionController extends Controller
      */
     public function update(Request $request, Mission $mission)
     {
+        $mission->update($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -72,6 +91,16 @@ class MissionController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function changeStatus(Mission $mission){
+        // 全部關閉
+        Mission::query()->update(['status' => 0]);
+
+        // Active 
+        $mission->update(['status'=>1]);
+        
+        return redirect()->back();
     }
 
     public function approve(Mission $mission)

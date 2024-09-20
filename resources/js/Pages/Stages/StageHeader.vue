@@ -7,7 +7,6 @@
         <div class="pl-5">{{ steps[current]?  steps[current].label:'' }}</div>
       </div>
     <div :style="containerStyle" class="hidden sm:block">
-    <!-- <div :style="containerStyle"> -->
       <a-steps 
         :current="current" 
         :style="stepsStyle" 
@@ -15,13 +14,13 @@
         :responsive="false"
         >
         <template v-for="(step, index) in steps" :key="index">
-          <a-step @click="viewStage(index)">
+          <a-step @click="viewStage(index)" :status="current == index? 'finish': Number(page) == index+1 ? 'process' :'wait' ">
             <template v-slot:title>
               <div style="text-align: center;">
-                <div style="height: 40px;"> <!-- Space for the icon -->
+                <div style="height: 30px;"> <!-- Space for the icon -->
                   <!-- Optional: Add some icon or step marker here if needed -->
                 </div>
-                <div class="rotated-title">{{ step.label}}</div> <!-- Step Title -->
+                <div class="rotated-title">{{ step.label }}</div> <!-- Step Title -->
               </div>
             </template>
           </a-step>
@@ -46,6 +45,10 @@
       type: Array,
       required: true,
     },
+    page:{
+      type: String,
+      required: false,
+    }
   });
   
   const viewStage = (page) => {
@@ -56,7 +59,7 @@
   const containerStyle = computed(() => ({
     maxWidth: '100%', // Ensures the container does not exceed screen width
     overflow: 'hidden', // Prevents overflow of content
-    padding: '20px',
+    padding: '15px',
     boxSizing: 'border-box',
   }));
   
@@ -64,7 +67,7 @@
     display: 'flex',
     justifyContent: 'space-between', // Distributes steps evenly
     flexWrap: 'nowrap', // Prevents wrapping to the next line
-    height: '120px', // Set the height as desired
+    height: '130px', // Set the height as desired
   }));
   </script>
   
@@ -75,6 +78,10 @@
     display: inline-block;
     transform: rotate(-45deg); /* Adjust as needed */
     white-space: nowrap;
-    margin-top: 10px;
+    /* margin-top: 10px; */
   }
+
+  .ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+    background-color: rgba(5, 5, 5, 0.06);
+}
   </style>

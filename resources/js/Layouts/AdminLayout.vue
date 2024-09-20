@@ -8,8 +8,8 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { GlobalOutlined } from '@ant-design/icons-vue';
-import { loadLanguageAsync } from "laravel-vue-i18n";
-import { usePage } from "@inertiajs/vue3";
+// import { loadLanguageAsync } from "laravel-vue-i18n";
+// import { usePage } from "@inertiajs/vue3";
 
 defineProps({
     title: String,
@@ -17,9 +17,9 @@ defineProps({
 
 const showingNavigationDropdown = ref(false);
 
-const page = usePage();
+// const page = usePage();
 //loadLanguageAsync(page.props.value.lang);
-loadLanguageAsync('zh');
+// loadLanguageAsync('zh');
 
 const switchToTeam = (team) => {
     router.put(route('current-team.update'), {
@@ -56,10 +56,10 @@ const logout = () => {
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    {{ $t('dashboard') }}
                                 </NavLink>
                                 <NavLink v-role="['admin']" :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
-                                    Mission
+                                    {{ $t('mission') }}
                                 </NavLink>
                                 <!-- <NavLink v-role="['admin']" :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
                                     Stage Template
@@ -69,15 +69,14 @@ const logout = () => {
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative" v-role="['admin']">
-                                <inertia-link :href="route('admin.dashboard')">Admin</inertia-link>
+                                <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.dashboard')">{{ $t('admin') }}</inertia-link class="border-b border-blue-600 text-blue-500">
                             </div>
 
                             <div class="ms-3 relative">
                                 <form method="POST" @submit.prevent="logout">
-                                    <a-button type="submit" html-type="submit">Logout</a-button>
+                                    <a-button type="submit" html-type="submit">{{ $t('logout') }}</a-button>
                                 </form>
                             </div>
-
                             <!-- Settings Dropdown -->
                             <div class="ms-3 relative">
                                 <Dropdown align="right" width="48">
@@ -91,11 +90,11 @@ const logout = () => {
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.show')">
-                                            Chinese
+                                        <DropdownLink as="a" href="/language/zh">
+                                            {{ $t("chinese") }}
                                         </DropdownLink>
-                                        <DropdownLink :href="route('profile.show')">
-                                            English
+                                        <DropdownLink as="a" href="/language/en">
+                                            {{ $t("english") }}
                                         </DropdownLink>
                                     </template>
                                 </Dropdown>
@@ -135,7 +134,7 @@ const logout = () => {
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            {{ $t('dashboard') }}
                         </ResponsiveNavLink>
                     </div>
 
@@ -156,7 +155,7 @@ const logout = () => {
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <ResponsiveNavLink as="button">
-                                    Log Out
+                                    {{ $t('logout') }}
                                 </ResponsiveNavLink>
                             </form>
                         </div>

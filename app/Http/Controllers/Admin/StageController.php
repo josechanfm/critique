@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Task;
 use App\Models\Mission;
+use App\Models\Stage;
+use App\Models\File;
 
 class StageController extends Controller
 {
@@ -20,6 +22,7 @@ class StageController extends Controller
         //dd($stageCode);
         $stage=$mission->stages()->where('code',$stageCode)->first();
         return Inertia::render('Admin/StageTasks',[
+            'files'=>File::all(),
             'mission'=>$mission,
             'stage'=>$stage
         ]);
@@ -60,9 +63,37 @@ class StageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Mission $mission,  Stage $stage)
     {
         //
+        
+        if( array_key_exists('media', $request->all()) ){
+            // 刪除
+            $keepMediaIds =  array_column($request->all()['media'] , 'id');
+            foreach ($stage->getMedia('stage') as $media) {
+                if (!in_array($media->id, $keepMediaIds)) {
+                    $media->delete();
+                }
+            }
+        }
+        
+        $stage->update($request->all());
+        if($request->file('files') ){
+            foreach($request->file('files') as $file){
+                $stage->addMedia($file['originFileObj'])->toMediaCollection('stage');    
+            }
+        }
+        
+        $files=$stage->media()->where('collection_name','stage')->select(['name','file_name'])->get()->map(function ($item) {
+            return [
+                'name' => $item->name,
+                'path' => 'images/'.$item->file_name, // or whatever custom logic you need
+            ];
+        });
+
+        $myFiles=['files'=>$files];
+        $stage->content=($myFiles);
+        $stage->save();
     }
 
     /**

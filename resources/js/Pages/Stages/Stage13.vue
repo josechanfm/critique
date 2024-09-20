@@ -2,10 +2,10 @@
 <AdminLayout title="Dashboard">
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $t('my_project') }}
+           {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
         </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" />
+    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
 
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
@@ -28,7 +28,7 @@
             </a-row>
             
             <div class="flex item-center justify-center gap-5  pt-5 mx-auto">
-                <a-button @click="goBack()">{{ $t('back') }}</a-button>
+                <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
             </div>
         </div>
         <div class="my-4">

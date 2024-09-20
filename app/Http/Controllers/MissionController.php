@@ -18,6 +18,7 @@ class MissionController extends Controller
     public function index()
     {
         $mission=auth()->user()->mission();
+        //dd(session('applocale'));
 
         // 翻其他頁
         if( array_key_exists("page",$_GET ) && $_GET['page'] != null ){
