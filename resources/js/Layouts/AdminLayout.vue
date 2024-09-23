@@ -69,7 +69,7 @@ const logout = () => {
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative" v-role="['admin']">
-                                <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.dashboard')">{{ $t('admin') }}</inertia-link class="border-b border-blue-600 text-blue-500">
+                                <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.dashboard')">{{ $t('admin') }}</inertia-link>
                             </div>
 
                             <div class="ms-3 relative">

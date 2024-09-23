@@ -30,7 +30,7 @@ createInertiaApp({
                 }
             })
             .component('inertia-head',Head)
-            .component('inertia-link class="border-b border-blue-600 text-blue-500"',Link)
+            .component('inertia-link', Link)
             .mount(el);
     },
     progress: {

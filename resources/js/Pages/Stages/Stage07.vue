@@ -5,16 +5,16 @@
            {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
         </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
+    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page"/>
 
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
             <a-row justify="space-between" align="bottom" class="p-2">
-                <a-col :span="12">
+                <a-col :sm="24" :md="12"  >
                     <a-page-header class="py-3" title="上传视频资料" />
                     <ol>
-                        <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">
+                        <li  v-for="video in stage.media.filter(m=>m.collection_name=='video')">
                             {{ video.file_name }}
                             <a v-if="!checkEditable()" class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a>
                         </li>
@@ -26,7 +26,7 @@
                         </a-button>
                     </a-upload>
                 </a-col>
-                <a-col :span="12">
+                <a-col :sm="24" :md="12">
                     <a-page-header class="py-3" title="上传PDF资料" />
                     <ol>
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">
@@ -35,16 +35,31 @@
                         </li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
-                        <a-button :disabled="checkEditable()" >
+                        <a-button :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
                     </a-upload>
                 </a-col>
-                <div class="flex item-center justify-center gap-5 mt-4 pt-5 mx-auto">
+                
+                <!-- <div class="flex item-center justify-center gap-5 mt-4 pt-5 mx-auto">
+                    
+
                     <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-                </div>
+                    <a-button type="primary" html-type="submit" >{{ $t('submit') }}</a-button>
+                </div> -->
             </a-row>
+            
+            <a-form :model="items"  name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+                <a-form-item :label="$t('finish')" name="entity">
+                    <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
+                </a-form-item>
+
+                <div class="flex flex-row item-center justify-center gap-5 ">
+                    <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
+                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
+                </div>
+            </a-form>
         </div>
     </div>
 
@@ -79,6 +94,11 @@ export default {
             current: 1,
             videoList: [],
             fileList: [],
+            
+            items: [{
+                title: false,
+                content: '已完成'
+            }],
         };
     },
     created() {

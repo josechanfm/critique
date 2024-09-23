@@ -5,7 +5,7 @@
             {{ $page.props.lang == "en" ? mission.title_en : mission.title }}
         </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
+    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page"/>
 
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
@@ -17,7 +17,7 @@
                         <ol>
                             <li v-for="video in categorizeVideos(stage.content.files)">
 								<span class="font-semibold text-base mx-2">{{ video.name }}</span>
-								<a :href="video.path" target="_blank">{{$t('download')}} <ArrowDownOutlined /></a>
+								<a :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}} <ArrowDownOutlined /></a>
 							</li>
                         </ol>
                     </div>
@@ -28,7 +28,7 @@
                         <ol>
                             <li v-for="file in categorizeFiles(stage.content.files)">
 								<span class="font-bold text-base mx-2">{{ file.name }}</span>
-								<a :href="file.path" target="_blank">{{$t('download')}} <ArrowDownOutlined /> </a>
+								<a :href="file.path" target="_blank" class="text-blue-500 underline">{{$t('download')}} <ArrowDownOutlined /> </a>
 							</li>
                         </ol>
                     </div>
@@ -42,7 +42,7 @@
 
                     <div class="flex flex-row item-center justify-center gap-5 pt-5">
                         <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-                        <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('next') }}</a-button>
+                        <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
                     </div>
                 </a-form>
             </div>

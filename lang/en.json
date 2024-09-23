@@ -9,6 +9,7 @@
     "view": "View",
     "modify": "Modify",
     "upload": "Upload",
+    "update": "Update",
     "finish": "Finish",
     "download": "Download",
     "next": "Next",
@@ -29,15 +30,18 @@
     "mission_finish": "Finish",
     "mission_change_status": "Activate this Mission and turn off other Missions",
     "mission_status": "Status",
+    "mission_users": "Users",
+    "mission_edit_user_message": "Choose User to join this Mission",
     "chat": "Chat",
     "chat_blog": "Chat Blog",
     "chat_blog_message": "Enter your message to chat",
     "dashboard": "Dashboard",
+    "user": "User",
     "admin": "Admin",
     "login": "Login",
     "logout": "Logout",
     "active": "Active",
-"activating":"Activating",
+    "activating": "Activating",
 
     "zh-TW": "Chinese"
 }

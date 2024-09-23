@@ -9,6 +9,7 @@ use App\Models\Config;
 use App\Models\Mission;
 use App\Models\TemplateStage;
 use App\Models\Stage;
+use App\Models\User;
 
 class MissionController extends Controller
 {
@@ -17,9 +18,11 @@ class MissionController extends Controller
      */
     public function index()
     {
+        
         return Inertia::render('Admin/Missions',[
+            'users' => User::all(),
             'configStages'=>Config::item('stages'),
-            'missions'=>Mission::all()
+            'missions'=>Mission::with('users')->get()
         ]);
 
     }
@@ -93,13 +96,20 @@ class MissionController extends Controller
         //
     }
 
+    public function updateMissionUser(Request $request, Mission $mission){
+
+        $mission->users()->sync( $request->all() );
+
+        return redirect()->back();
+    }
+
     public function changeStatus(Mission $mission){
         // 全部關閉
         Mission::query()->update(['status' => 0]);
 
         // Active 
         $mission->update(['status'=>1]);
-        
+
         return redirect()->back();
     }
 

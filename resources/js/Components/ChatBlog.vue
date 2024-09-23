@@ -11,7 +11,7 @@
                 {{$t('chat_blog_message')}}：
             </div>
             </a-form-item>
-            <a-form-item :label="$t('chat')" name="content">
+            <a-form-item :label="$t('chat')" name="content" class="p-2">
                 <a-textarea :rows="5" v-model:value="form.content" />
             </a-form-item>
 
@@ -44,7 +44,7 @@
 
                 <!-- Reply Input -->
                 <template v-if="blog.reply && Object.keys(blog.reply).length !== 0">
-                    <div class="flex gap-2">
+                    <div class="flex gap-2 ">
                         → <a-input type="input" v-model:value="blog.reply.content"></a-input>
                     </div>
                     <div class="mx-6">

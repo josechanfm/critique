@@ -17,4 +17,8 @@ class Mission extends Model
     public function members(){
         return $this->belongsToMany(User::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }

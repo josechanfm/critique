@@ -5,7 +5,7 @@
            {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
         </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
+    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page"/>
 
     <div class="container mx-auto pt-5">
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">

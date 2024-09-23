@@ -5,7 +5,7 @@
        {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
       </h2>
     </template>
-    <StageHeader :current="mission.current_stage" :steps="configStages" :page="page"/>
+    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page"/>
     <div class="container mx-auto pt-5">
       <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
       <div class="bg-white relative shadow rounded-lg md:p-5 p-4 ">
@@ -38,6 +38,10 @@
           </a-form>
         </div>
       </div>
+      
+      <div class="my-4">
+        <ChatBlog :stage="stage"/>
+      </div>
     </div>
 
   </AdminLayout>
@@ -47,13 +51,15 @@
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import { defineComponent, reactive } from "vue";
 import StageHeader from "@/Pages/Stages/StageHeader.vue";
+import ChatBlog from '@/Components/ChatBlog.vue';
 import { notification } from 'ant-design-vue';
 
 
 export default {
   components: {
     AdminLayout,
-    StageHeader
+    StageHeader,
+    ChatBlog
   },
   props: ["configStages","mission","stage","page"],
   data() {

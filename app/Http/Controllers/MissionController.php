@@ -17,7 +17,9 @@ class MissionController extends Controller
 
     public function index()
     {
-        $mission=auth()->user()->mission();
+        $mission_id = $_GET['mission_id'];
+        $mission = Mission::find($mission_id);
+        // $mission=auth()->user()->mission();
         //dd(session('applocale'));
 
         // 翻其他頁

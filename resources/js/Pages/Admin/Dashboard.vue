@@ -18,7 +18,7 @@ import AdminLayout from '@/Layouts/AdminLayout.vue';
                     You can edit the <u>Mission</u> & <u>Stages</u> Name that showing to user<br>
 
                     Futhermore, Task is what the user input. <br>
-                    <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.missions.index')">Missions</inertia-link class="border-b border-blue-600 text-blue-500">
+                    <inertia-link class="border-b border-blue-600 text-blue-500" :href="route('admin.missions.index')">Missions</inertia-link>
                 </div>
             </div>
         </div>
