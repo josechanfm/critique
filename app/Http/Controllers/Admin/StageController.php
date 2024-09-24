@@ -91,12 +91,12 @@ class StageController extends Controller
             ]);
         }
 
-        $files=$stage->media()->where('collection_name','stage')->select(['name','file_name'])->get()->map(function ($item) {
+        $files=$stage->getMedia('stage')->map(function($item){
             return [
                 'name' => $item->name,
-                'path' => 'images/'.$item->file_name, // or whatever custom logic you need
+                'path' => $item->getUrl(), // or whatever custom logic you need
             ];
-        });
+        }) ;  
 
         $myFiles=['files'=>$files];
         $stage->content=($myFiles);
