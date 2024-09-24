@@ -50,7 +50,7 @@
             
             <div v-for="media in modal.data.media" class="flex flex-row">
               
-              <img :src="media.original_url" />
+              <img :src="media.original_url" class="mr-4" style="max-width:70%"/>
               <div class="flex flex-col gap-2">
                 {{$t('title')}}
                 <a-input type="input" v-model:value="media.title" placeholder="" />
