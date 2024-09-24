@@ -86,8 +86,8 @@ class StageController extends Controller
         
         foreach($request->all()['media'] as $value){
             Media::find($value['id'])->update([
-                'title' => $value['title'],
-                'link' => $value['link'],
+                'title' => $value['title']??"",
+                'link' => $value['link']??"",
             ]);
         }
 
