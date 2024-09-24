@@ -30,6 +30,7 @@ class MissionController extends Controller
         }
 
         $stage=$mission->stages->where('code','S'.$page)->first();
+
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),
             'mission'=>$mission,

@@ -9,6 +9,7 @@ use App\Models\Task;
 use App\Models\Mission;
 use App\Models\Stage;
 use App\Models\File;
+use App\Models\Media;
 
 class StageController extends Controller
 {
@@ -66,7 +67,6 @@ class StageController extends Controller
     public function update(Request $request, Mission $mission,  Stage $stage)
     {
         //
-        
         if( array_key_exists('media', $request->all()) ){
             // 刪除
             $keepMediaIds =  array_column($request->all()['media'] , 'id');
@@ -84,7 +84,14 @@ class StageController extends Controller
             }
         }
         
-        $files=$stage->media()->where('collection_name','stage')->select(['name','file_name'])->get()->map(function ($item) {
+        foreach($request->all()['media'] as $value){
+            Media::find($value['id'])->update([
+                'title' => $value['title'],
+                'link' => $value['link'],
+            ]);
+        }
+
+        $files=$stage->media()->where('collection_name','stage')->select(['name','file_name','original_url'])->get()->map(function ($item) {
             return [
                 'name' => $item->name,
                 'path' => 'images/'.$item->file_name, // or whatever custom logic you need

@@ -18,7 +18,7 @@
                         <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a></li>
                     </ol>
                     <a-upload key="video" v-model:file-list="videoList" :before-upload="beforeUpload" :on-change="handleChangeVideo" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'video' })">
-                        <a-button class="!mx-6">
+                        <a-button  :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
@@ -31,7 +31,7 @@
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500">X</a></li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
-                        <a-button>
+                        <a-button  :disabled="checkEditable()">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
@@ -44,7 +44,7 @@
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='finalFile')">{{ file.file_name }} <a class="text-red-500">X</a></li>
                     </ol>
                     <a-upload key="finalFile" v-model:file-list="finalFileList" :before-upload="beforeUpload" :on-change="handleChangeFinalFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'finalFile' })">
-                        <a-button>
+                        <a-button  :disabled="checkEditable()">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
@@ -52,9 +52,16 @@
                 </div>
             </div>
 			
-            <div class="flex item-center justify-center gap-5  pt-5 mx-auto">
-                <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-            </div>
+            <a-form :model="items"  name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+                <a-form-item :label="$t('finish')" name="entity">
+                    <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
+                </a-form-item>
+
+                <div class="flex flex-row item-center justify-center gap-5 ">
+                    <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
+                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
+                </div>
+            </a-form>
         </div>
     </div>
 
@@ -90,6 +97,11 @@ export default {
             videoList: [],
             fileList: [],
             finalFileList: [],
+            
+            items: [{
+                title: false,
+                content: '已完成'
+            }],
         };
     },
     created() {

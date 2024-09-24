@@ -19,7 +19,7 @@
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500" @click="deleteMedia(file.id, 'file')">X</a></li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
-                        <a-button class="!mx-6">
+                        <a-button  :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
@@ -27,9 +27,16 @@
                 </a-col>
             </a-row>
             
-            <div class="flex item-center justify-center gap-5  pt-5 mx-auto">
-                <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-            </div>
+            <a-form :model="items"  name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+                <a-form-item :label="$t('finish')" name="entity">
+                    <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
+                </a-form-item>
+
+                <div class="flex flex-row item-center justify-center gap-5 ">
+                    <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
+                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
+                </div>
+            </a-form>
         </div>
         <div class="my-4">
             <ChatBlog :stage="stage" />
@@ -66,6 +73,10 @@ export default {
         return {
             current: 1,
             fileList: [],
+            items: [{
+                title: false,
+                content: '已完成'
+            }],
         };
     },
     created() {

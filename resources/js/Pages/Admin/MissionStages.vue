@@ -46,7 +46,19 @@
           <a-form-item label="Content" name="content">
             <a-textarea v-model:value="modal.data.content" :rows="10" />
           </a-form-item>
-          
+          <a-form-item label="File Extra" name="file_extra">
+            
+            <div v-for="media in modal.data.media" class="flex flex-row">
+              
+              <img :src="media.original_url" />
+              <div class="flex flex-col gap-2">
+                {{$t('title')}}
+                <a-input type="input" v-model:value="media.title" placeholder="" />
+                {{$t('link')}}
+                <a-input type="input" v-model:value="media.link" placeholder="" />
+              </div>
+            </div>
+          </a-form-item>
           <a-form-item label="Upload File">
             <a-upload
               :file-list="modal.data.files"
