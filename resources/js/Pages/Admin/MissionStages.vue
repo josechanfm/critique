@@ -26,7 +26,6 @@
       </div>
       <!-- Modal Start-->
       <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
-        {{modal.data.files}}
         <a-form
           ref="modalRef"
           :model="modal.data"
@@ -50,12 +49,12 @@
             
             <div v-for="media in modal.data.media" class="flex flex-row">
               
-              <img :src="media.original_url" class="mr-4" style="max-width:70%"/>
-              <div class="flex flex-col gap-2">
+              <img :src="media.original_url" class="mr-4" style="max-width:60%"/>
+              <div class="flex flex-col gap-2 w-full">
                 {{$t('title')}}
                 <a-input type="input" v-model:value="media.title" placeholder="" />
-                {{$t('link')}}
-                <a-input type="input" v-model:value="media.link" placeholder="" />
+                {{$t('description')}}
+                <a-textarea :rows="5" v-model:value="media.description" placeholder="" />
               </div>
             </div>
           </a-form-item>

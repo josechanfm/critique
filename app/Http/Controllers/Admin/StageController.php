@@ -67,6 +67,7 @@ class StageController extends Controller
     public function update(Request $request, Mission $mission,  Stage $stage)
     {
         //
+        $stage_id = $stage->id;
         if( array_key_exists('media', $request->all()) ){
             // 刪除
             $keepMediaIds =  array_column($request->all()['media'] , 'id');
@@ -75,29 +76,33 @@ class StageController extends Controller
                     $media->delete();
                 }
             }
+
+            foreach($request->all()['media'] as $value){
+                if( array_key_exists('id', $value) ){
+                    Media::find($value['id'])->update([
+                        'title' => $value['title']??"",
+                        'description' => $value['description']??"",
+                    ]);
+                }
+            }
         }
         
         $stage->update($request->all());
+
         if($request->file('files') ){
             foreach($request->file('files') as $file){
                 $stage->addMedia($file['originFileObj'])->toMediaCollection('stage');    
             }
+            
         }
         
-        foreach($request->all()['media'] as $value){
-            Media::find($value['id'])->update([
-                'title' => $value['title']??"",
-                'link' => $value['link']??"",
-            ]);
-        }
-
-        $files=$stage->getMedia('stage')->map(function($item){
+        $files=Stage::find($stage_id)->getMedia('stage')->map(function($item){
             return [
                 'name' => $item->name,
                 'path' => $item->getUrl(), // or whatever custom logic you need
             ];
-        }) ;  
-
+        });
+        
         $myFiles=['files'=>$files];
         $stage->content=($myFiles);
         $stage->save();

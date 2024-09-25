@@ -14,7 +14,7 @@ return new class extends Migration
         //
         Schema::table('media', function (Blueprint $table) {
             $table->string('title')->after('id')->nullable();
-            $table->text('link')->after('title')->nullable();
+            $table->text('description')->after('title')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
         //
         Schema::table('media', function (Blueprint $table) {
             $table->dropColumn('title');
-            $table->dropColumn('link');
+            $table->dropColumn('description');
         });
     }
 };

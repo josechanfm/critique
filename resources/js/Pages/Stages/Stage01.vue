@@ -17,7 +17,7 @@
                         <ol>
                             <li v-for="video in categorizeVideos(stage.content.files)">
 								<span class="font-semibold text-base mx-2">{{ video.name }}</span>
-								<a :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}} <ArrowDownOutlined /></a>
+								<a download :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}} <ArrowDownOutlined /></a>
 							</li>
                         </ol>
                     </div>

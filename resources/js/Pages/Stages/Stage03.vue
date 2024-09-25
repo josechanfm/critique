@@ -10,9 +10,11 @@
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
             <div class="grid grid-cols-2 gap-10">
-                <div  class="mx-auto " v-for="media in stage.media">
+                <div class="mx-auto " v-for="media in stage.media">
                     <img :src="media.original_url" style="height:100%" />
-                    <a :href="media.link" class="underline text-blue-500 text-lg "><div class="text-center">{{media.title}}</div></a>
+                    <a @click="viewDescription(media)" class="cursor-pointer underline text-blue-500 text-lg ">
+                        <div class="text-center">{{media.title}}</div>
+                    </a>
                 </div>
             </div>
             <div class="">
@@ -28,6 +30,12 @@
                 </a-form>
             </div>
         </div>
+
+        <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
+            <div class="p-4 text-base ">
+                {{ modal.description }}
+            </div>
+        </a-modal>
 
         <div class="my-4">
             <ChatBlog :stage="stage" />
@@ -58,6 +66,13 @@ export default {
     props: ["configStages", "mission", "stage", "page"],
     data() {
         return {
+
+            modal: {
+                isOpen: false,
+                description: "",
+                title: "Description",
+                mode: "",
+            },
             current: 1,
             items: [{
                 title: null,
@@ -117,6 +132,11 @@ export default {
     },
     methods: {
 
+        viewDescription(data) {
+            this.modal.description = data.description;
+            this.modal.title = data.title;
+            this.modal.isOpen = true;
+        },
         goBack() {
             window.history.back()
         },
