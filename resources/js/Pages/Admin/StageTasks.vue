@@ -12,26 +12,32 @@
         </div>
         <a-card :bordered="false" class="w-full">
             <template #title>
-                {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
+                <div class="flex items-center">
+                    <div class="p-2 w-12 text-center mx-2 bg-blue-300 text-white rounded-full">{{ stage['code'].substring(-1).replace("S", '') }}</div> {{ stage['title'] }}
+                </div>
             </template>
-            <div class="flex flex-row">
-                <div v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                    {{ task.title }} <br>
-                    {{ task.content }}
+            <div class="flex flex-row gap-4" v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
+                <div v-if="stage.media.length> 0">Uploaded File: </div>
+
+                <div v-for="media in stage.media" >
+                    <a href="media.preview_url" class="px-4 underline text-blue-500">{{media.name}}</a>
                 </div>
-                <div v-else>
-                    No tasks
-                </div>
+
             </div>
-            <div class="my-4 flex justify-between">
-                <a-popconfirm title="Are you sure approve to next stage?" ok-text="Yes" cancel-text="No" @confirm="approveToNextStage">
-                    <a-button type="primary">Approve to Next Stage</a-button>
-                </a-popconfirm>
-                <a-popconfirm title="Are you sure back to previous stage?" ok-text="Yes" cancel-text="No" @confirm="backToPreviousStage">
-                    <a-button type="default" >Back to Previous Stage</a-button>
-                </a-popconfirm>
+            
+            <div class="flex flex-row " v-for="task in stage.tasks" v-if="stage.tasks.length>0">
+                {{ task.title }} <br>
+                {{ task.content }}
             </div>
         </a-card>
+        <div class="my-4 flex justify-between">
+            <a-popconfirm title="Are you sure approve to next stage?" ok-text="Yes" cancel-text="No" @confirm="approveToNextStage">
+                <a-button type="primary">Approve to Next Stage</a-button>
+            </a-popconfirm>
+            <a-popconfirm title="Are you sure back to previous stage?" ok-text="Yes" cancel-text="No" @confirm="backToPreviousStage">
+                <a-button type="default" >Back to Previous Stage</a-button>
+            </a-popconfirm>
+        </div>
         <a-divider />
         <div class="text-lg mb-4">
             <span>Previous Stage:</span>

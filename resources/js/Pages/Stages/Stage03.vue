@@ -8,16 +8,25 @@
     <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
-        <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
-            <div class="grid grid-cols-2 gap-10">
-                <div class="mx-auto " v-for="media in stage.media">
-                    <img :src="media.original_url" style="height:100%" />
-                    <a @click="viewDescription(media)" class="cursor-pointer underline text-blue-500 text-lg ">
-                        <div class="text-center">{{media.title}}</div>
-                    </a>
+        <div class="bg-white relative shadow rounded-lg md:p-3 p-4">
+
+            <div class="flex flex-col">
+                
+                <div class="flex items-center gap-4" v-for="(media,index) in stage.media">
+                    <div class="flex items-center justify-center h-full w-32 rounded-lg  text-center bg-gray-500 black-black text-lg text-white"><div>困境{{index+1}}:</div></div>
+                    <div   class=" flex items-center h-48 cursor-pointer underline text-blue-500 text-lg  ">
+                        <div @click="viewDescription(media)" v-if="isImageFile(media.file_name)" >
+                            <img :src="media.original_url"  class="h-32 object-contain " />
+                            <div class="text-center">{{media.title}}</div>
+                        </div>
+                        <div v-else><a  download :href="media.original_url" style="height:100%" >{{media.file_name}}</a> </div>
+                    </div>
+                    
+                    <div @click="viewDescription(media)">查看</div>
                 </div>
             </div>
-            <div class="">
+
+            <div class="mt-8">
                 <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
                     <a-form-item :label="$t('finish')" name="entity">
                         <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
@@ -131,6 +140,11 @@ export default {
         },
     },
     methods: {
+        isImageFile(fileName) {
+            const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'];
+            const extension = fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2).toLowerCase();
+            return imageExtensions.includes(`.${extension}`);
+        },
 
         viewDescription(data) {
             this.modal.description = data.description;

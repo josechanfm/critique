@@ -17,7 +17,7 @@
                     <ol>
                         <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">{{ video.file_name }} <a class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a></li>
                     </ol>
-                    <a-upload key="video" v-model:file-list="videoList" :before-upload="beforeUpload" :on-change="handleChangeVideo" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'video' })">
+                    <a-upload key="video" v-model:file-list="videoList" :before-upload="beforeVideoUpload" :on-change="handleChangeVideo" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'video' })">
                         <a-button  :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
@@ -153,6 +153,15 @@ export default {
             );
         },
 
+        beforeVideoUpload(file) {
+                if( file.size >= 550 ){
+                notification.error({
+                    message: '视频大小过大',
+                });
+                return false
+            }
+            return true
+        },
         beforeUpload(file) {
             const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
             if (!isValid) {

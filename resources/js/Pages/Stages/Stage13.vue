@@ -14,7 +14,7 @@
                 <a-col :span="12">
                     <div> {{ stage.content.note }} </div>
 
-                    <a-page-header class="py-3" title="上传视频资料" />
+                    <a-page-header class="py-3" title="上传 Word 或PDF 的方案" />
                     <ol>
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500" @click="deleteMedia(file.id, 'file')">X</a></li>
                     </ol>

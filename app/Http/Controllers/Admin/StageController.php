@@ -103,9 +103,13 @@ class StageController extends Controller
             ];
         });
         
-        $myFiles=['files'=>$files];
-        $stage->content=($myFiles);
-        $stage->save();
+        if( count($files) !== 0 ){
+            dd($files);
+
+            $myFiles=['files'=>$files];
+            $stage->content=($myFiles);
+            $stage->save();
+        }
     }
 
     /**
