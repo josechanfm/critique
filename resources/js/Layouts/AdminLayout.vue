@@ -81,7 +81,7 @@ const logout = () => {
 
                             <div class="ms-3 relative">
                                 <form method="POST" @submit.prevent="logout">
-                                    <a-button class="text-blue-600 underline underline-offset-4	 hover:text-blue-700 text-base" type="submit" html-type="submit">{{ $t('logout') }} <LogoutOutlined /> </a-button>
+                                    <a-button class="text-blue-600 !underline underline-offset-4	hover:text-blue-700 text-base" type="submit" html-type="submit">{{ $t('logout') }} <LogoutOutlined /> </a-button>
                                 </form>
                             </div>
                             <!-- Settings Dropdown -->
