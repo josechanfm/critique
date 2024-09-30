@@ -8,41 +8,48 @@
     <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
-        <div class="bg-white relative shadow rounded-lg md:p-3 p-4">
+        <div class="bg-white relative shadow rounded-lg ">
 
-            <div class="flex flex-col">
-                
+            <div class="flex flex-col md:p-5 p-4">
                 <div class="flex items-center gap-4" v-for="(media,index) in stage.media">
-                    <div class="flex items-center justify-center h-full w-32 rounded-lg  text-center bg-gray-500 black-black text-lg text-white"><div>困境{{index+1}}:</div></div>
-                    <div   class=" flex items-center h-48 cursor-pointer underline text-blue-500 text-lg  ">
-                        <div @click="viewDescription(media)" v-if="isImageFile(media.file_name)" >
-                            <img :src="media.original_url"  class="h-32 object-contain " />
+                    <div class="flex items-center justify-center h-full w-32 rounded-lg  text-center bg-gray-500 black-black text-lg text-white">
+                        <div>困境{{index+1}}:</div>
+                    </div>
+                    <div class=" flex items-center h-48 cursor-pointer underline text-blue-500 text-lg  ">
+                        <div @click="viewDescription(media)" v-if="isImageFile(media.file_name)">
+                            <img :src="media.original_url" class="h-32 object-contain " />
                             <div class="text-center">{{media.title}}</div>
                         </div>
-                        <div v-else><a  download :href="media.original_url" style="height:100%" >{{media.file_name}}</a> </div>
+                        <div v-else><a download :href="media.original_url" style="height:100%">{{media.file_name}}</a> </div>
                     </div>
-                    
-                    <div @click="viewDescription(media)">查看</div>
+
+                    <div class="cursor-pointer text-blue-500 hover:text-blue-600" @click="viewDescription(media)">查看</div>
                 </div>
             </div>
+            <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
 
-            <div class="mt-8">
-                <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+                <div class="mt-8 md:p-1 px-6">
                     <a-form-item :label="$t('finish')" name="entity">
                         <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
                     </a-form-item>
+                </div>
 
-                    <div class="flex flex-row item-center justify-center gap-5 pt-5">
-                        <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-                        <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
-                    </div>
-                </a-form>
-            </div>
+                <div class="flex flex-row item-center justify-center gap-5 py-2 bg-slate-200/50 border-t-2">
+                    <a-button @click="goBack()">
+                        <ArrowLeftOutlined />{{ $t('go_back') }}</a-button>
+                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}
+                        <CheckOutlined />
+                    </a-button>
+                </div>
+            </a-form>
         </div>
 
         <a-modal v-model:open="modal.isOpen" :title="modal.title" width="60%">
             <div class="p-4 text-base ">
-                {{ modal.description }}
+
+                <img :src="modal.media.original_url" class="h-48 object-contain " />
+
+                {{ modal.media.description }}
             </div>
         </a-modal>
 
@@ -65,12 +72,14 @@ import ChatBlog from '@/Components/ChatBlog.vue';
 import {
     notification
 } from 'ant-design-vue';
+import * as AntdIcons from '@ant-design/icons-vue';
 
 export default {
     components: {
         AdminLayout,
         StageHeader,
-        ChatBlog
+        ChatBlog,
+        ...AntdIcons,
     },
     props: ["configStages", "mission", "stage", "page"],
     data() {
@@ -78,8 +87,6 @@ export default {
 
             modal: {
                 isOpen: false,
-                description: "",
-                title: "Description",
                 mode: "",
             },
             current: 1,
@@ -117,8 +124,16 @@ export default {
 
     },
     mounted() {
-        if (this.stage.tasks.length > 0) {
-            this.items = this.stage.tasks
+        this.updateItemData()
+
+        if (this.stage) {
+
+            this.items = this.items.map(item => {
+                return {
+                    ...item, // 確保保留原對象的所有屬性
+                    stage_id: this.stage.id // 添加 stage_id
+                };
+            });
         }
     },
     computed: {
@@ -147,21 +162,29 @@ export default {
         },
 
         viewDescription(data) {
-            this.modal.description = data.description;
-            this.modal.title = data.title;
+            this.modal.media = data;
             this.modal.isOpen = true;
         },
         goBack() {
             window.history.back()
         },
+
+        updateItemData() {
+            if (this.stage) {
+                if (this.stage.tasks.length > 0) {
+                    this.items = this.stage.tasks
+                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                }
+            }
+        },
         checkEditable() {
-            return this.mission.current_stage + 1 !== (Number(this.page))
+            return this.mission.current_stage + 1 < (Number(this.page))
         },
         onFinish() {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {
                     onSuccess: (page) => {
-                        this.items = this.stage.tasks
+                        this.updateItemData();
                         console.log(page);
                         notification.open({
                             message: 'Finish',

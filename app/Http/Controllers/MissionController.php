@@ -7,6 +7,7 @@ use App\Models\Mission;
 use Inertia\Inertia;
 use App\Models\Config;
 use App\Models\Task;
+use App\Models\Stage;
 
 class MissionController extends Controller
 {
@@ -79,13 +80,20 @@ class MissionController extends Controller
         $items=$request->all();
         $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         $stage=$mission->stages()->where('code',$stageCode)->first();
+
         foreach($items as $item){
-            // Task::updateOrCreate(
-            //     ['stage_id' => $stage->id],
-            //     ['title' => $item['title'], 'content'=> $item['content']]
-            // );
+            
+            if( isset( $item['stage_id']) && $item['stage_id'] <= $mission->current_stage ){
+                $stage=Stage::find($item['stage_id']);
+            }
+            
             if(array_key_exists('id', $item)){
-                Task::find($item['id'])->update($item);
+                
+                Task::updateOrCreate(
+                    ['id' => $item['id'], 'stage_id' => $item['stage_id']],
+                    ['title' => $item['title'], 'content'=> $item['content']]
+                );
+                // Task::find($item['id'])->update($item);
             }else{
                 //Task::create($items);
                 $stage->tasks()->create($item);

@@ -11,6 +11,6 @@
 
 }
 
-.ant-btn-danger{
-    @apply bg-red-300 w-7;
+.anticon svg {
+    display: block !important;
 }

@@ -7,7 +7,7 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import { GlobalOutlined } from '@ant-design/icons-vue';
+import { GlobalOutlined, LogoutOutlined } from '@ant-design/icons-vue';
 // import { loadLanguageAsync } from "laravel-vue-i18n";
 // import { usePage } from "@inertiajs/vue3";
 
@@ -34,6 +34,13 @@ const logout = () => {
 };
 </script>
 
+<style>
+.banner{
+    background: rgb(153,247,247);
+    background: linear-gradient(90deg, rgba(153,247,247,1) 0%, rgba(223,250,255,1) 25%, rgba(208,235,255,1) 60%, rgba(189,251,255,1) 100%);
+}
+</style>
+
 <template>
     <div>
         <Head :title="title" />
@@ -41,15 +48,15 @@ const logout = () => {
         <Banner />
 
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="bg-white border-b-2 border-blue-800 border-gray-100 ">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+                    <div class="flex justify-between h-16 ">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationMark class="block h-9 w-auto" />
+                                    <ApplicationMark class="block h-9 w-auto " />
                                 </Link>
                             </div>
 
@@ -74,7 +81,7 @@ const logout = () => {
 
                             <div class="ms-3 relative">
                                 <form method="POST" @submit.prevent="logout">
-                                    <a-button type="submit" html-type="submit">{{ $t('logout') }}</a-button>
+                                    <a-button class="text-blue-600 underline underline-offset-4	 hover:text-blue-700 text-base" type="submit" html-type="submit">{{ $t('logout') }} <LogoutOutlined /> </a-button>
                                 </form>
                             </div>
                             <!-- Settings Dropdown -->
@@ -155,7 +162,7 @@ const logout = () => {
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <ResponsiveNavLink as="button">
-                                    {{ $t('logout') }}
+                                    {{ $t('logout') }} 
                                 </ResponsiveNavLink>
                             </form>
                         </div>
@@ -164,8 +171,8 @@ const logout = () => {
             </nav>
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header v-if="$slots.header" class="bg-white shadow banner shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
                     <slot name="header" />
                 </div>
             </header>

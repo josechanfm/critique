@@ -4,8 +4,6 @@ import Welcome from '@/Components/Welcome.vue';
 
 const props = defineProps({
     user: {
-        type: Array,
-        required: true
     },
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
 <div class="container mx-auto pt-5">
-    <div class="bg-white relative shadow rounded-lg">
+    <div class="bg-white relative shadow rounded-lg border-green-600 border-t-2">
 
         <div class="block sm:hidden flex items-center p-5">
             <a-avatar size="large" :style="{ backgroundColor: '#1890FF', verticalAlign: 'middle' }">{{ page }}</a-avatar>

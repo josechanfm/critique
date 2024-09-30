@@ -8,26 +8,46 @@
 
     <div class="container mx-auto pt-5">
         <div class="text-lg mb-4">
-            <span>Now Stage:</span>
+            <span>{{$t('current_stage')}}:</span>
         </div>
-        <a-card :bordered="false" class="w-full">
+        <a-card :bordered="false" class="!border-t border-blue-700 w-full">
             <template #title>
                 <div class="flex items-center">
-                    <div class="p-2 w-12 text-center mx-2 bg-blue-300 text-white rounded-full">{{ stage['code'].substring(-1).replace("S", '') }}</div> {{ stage['title'] }}
+                    <div class="p-3 w-12 text-center mx-2 bg-blue-300 text-white rounded-full">{{ stage['code'].substring(-1).replace("S", '') }}</div> {{ stage['title'] }}
                 </div>
             </template>
-            <div class="flex flex-row gap-4" v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
-                <div v-if="stage.media.length> 0">Uploaded File: </div>
 
-                <div v-for="media in stage.media" >
-                    <a href="media.preview_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+            <div v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
+                <div v-if="stage.media.length> 0" class="text-base my-2">Uploaded File: </div>
+                <div class="flex flex-row gap-4">
+
+                    <div class="flex flex-col gap-2">
+                        视频
+                        <a v-for="media in filterCollection( stage.media ,'video') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        档案
+                        <a v-for="media in filterCollection( stage.media ,'file') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        最终方案
+                        <a v-for="media in filterCollection( stage.media ,'finalFile') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                    </div>
+
                 </div>
-
             </div>
             
             <div class="flex flex-row " v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                {{ task.title }} <br>
-                {{ task.content }}
+                <div v-if="task.title == '1'"> 
+                    <CheckOutlined class="text-green-500"/> 用戶已完成
+                </div>
+                <div v-else-if="task.title == '0'"> 
+                    用戶未完成
+                </div>
+                <div v-else class="text-base py-1">
+                    <span class="">{{ task.title }}</span> <br>
+                    <span class="font-bold">{{ task.content }}</span>
+                </div>
             </div>
         </a-card>
         <div class="my-4 flex justify-between">
@@ -35,12 +55,12 @@
                 <a-button type="primary">Approve to Next Stage</a-button>
             </a-popconfirm>
             <a-popconfirm title="Are you sure back to previous stage?" ok-text="Yes" cancel-text="No" @confirm="backToPreviousStage">
-                <a-button type="default" >Back to Previous Stage</a-button>
+                <a-button type="default">Back to Previous Stage</a-button>
             </a-popconfirm>
         </div>
         <a-divider />
         <div class="text-lg mb-4">
-            <span>Previous Stage:</span>
+            <span>{{$t('previous_stage')}}:</span>
         </div>
 
         <div class="flex flex-col-reverse gap-4">
@@ -95,11 +115,13 @@ import {
     defineComponent,
     reactive
 } from "vue";
+import * as AntdIcons from '@ant-design/icons-vue';
 
 export default {
     components: {
         AdminLayout,
-        notification
+        notification,
+		...AntdIcons,
     },
     props: ["stage", "mission"],
     data() {
@@ -163,6 +185,9 @@ export default {
 
     },
     methods: {
+        filterCollection(media, collection_name) {
+            return media.filter(x => x.collection_name == collection_name)
+        },
         approveToNextStage() {
             this.$inertia.get(route("admin.missions.approve", this.stage.mission_id), {
                 onSuccess: (page) => {
@@ -176,8 +201,8 @@ export default {
                 },
             });
         },
-        backToPreviousStage(){
-            
+        backToPreviousStage() {
+
             this.$inertia.get(route("admin.missions.regret", this.stage.mission_id), {
                 onSuccess: (page) => {
                     notification.open({

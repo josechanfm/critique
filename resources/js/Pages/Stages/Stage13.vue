@@ -2,39 +2,41 @@
 <AdminLayout title="Dashboard">
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-           {{ $page.props.lang == "en" ? mission.title_en : mission.title }} 
+            {{ $page.props.lang == "en" ? mission.title_en : mission.title }}
         </h2>
     </template>
-    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page"/>
+    <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
 
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
-        <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
-            <a-row justify="space-between" align="bottom" class="p-2">
+        <div class="bg-white relative shadow rounded-lg">
+            <a-row justify="space-between" align="bottom" class=" md:p-7 p-6">
                 <a-col :span="12">
-                    <div> {{ stage.content.note }} </div>
+                    <div class="pb-4"> {{ stage.content.note }} </div>
 
                     <a-page-header class="py-3" title="上传 Word 或PDF 的方案" />
-                    <ol>
+                    <ol class="px-4">
                         <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">{{ file.file_name }} <a class="text-red-500" @click="deleteMedia(file.id, 'file')">X</a></li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
-                        <a-button  :disabled="checkEditable()" class="!mx-6">
+                        <a-button :disabled="checkEditable()" class="!mx-6">
                             <upload-outlined></upload-outlined>
                             Upload
                         </a-button>
                     </a-upload>
                 </a-col>
             </a-row>
-            
-            <a-form :model="items"  name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+
+            <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
                 <a-form-item :label="$t('finish')" name="entity">
                     <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
                 </a-form-item>
-
-                <div class="flex flex-row item-center justify-center gap-5 ">
-                    <a-button @click="goBack()">{{ $t('go_back') }}</a-button>
-                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}</a-button>
+                <div class="flex flex-row item-center justify-center gap-5 py-2 bg-slate-200/50 border-t-2">
+                    <a-button @click="goBack()">
+                        <ArrowLeftOutlined />{{ $t('go_back') }}</a-button>
+                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}
+                        <CheckOutlined />
+                    </a-button>
                 </div>
             </a-form>
         </div>
@@ -58,17 +60,21 @@ import {
     UploadOutlined
 } from '@ant-design/icons-vue';
 
-import { notification } from 'ant-design-vue';
+import {
+    notification
+} from 'ant-design-vue';
 import ChatBlog from '@/Components/ChatBlog.vue';
+import * as AntdIcons from '@ant-design/icons-vue';
 
 export default {
     components: {
         AdminLayout,
         StageHeader,
         UploadOutlined,
-		ChatBlog
+        ChatBlog,
+        ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage","page"],
+    props: ["configStages", "mission", "stage", "page"],
     data() {
         return {
             current: 1,
@@ -83,12 +89,17 @@ export default {
 
     },
     mounted() {
-        console.log('stage03');
+        this.updateItemData()
 
-        if (this.stage.tasks.length > 0) {
-            this.items = this.stage.tasks
+        if (this.stage) {
+
+            this.items = this.items.map(item => {
+                return {
+                    ...item, // 確保保留原對象的所有屬性
+                    stage_id: this.stage.id // 添加 stage_id
+                };
+            });
         }
-
     },
     computed: {
         containerStyle() {
@@ -109,19 +120,30 @@ export default {
         },
     },
     methods: {
-        
-    goBack(){
-      window.history.back()
-    },
-    checkEditable(){
-        return this.mission.current_stage+1 !== (Number(this.page))
-    },
+
+        goBack() {
+            window.history.back()
+        },
+        checkEditable() {
+            return this.mission.current_stage + 1 < (Number(this.page))
+        },
+        updateItemData() {
+            if (this.stage) {
+                if (this.stage.tasks.length > 0) {
+                    this.items = this.stage.tasks
+                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                }
+            }
+        },
         onFinish() {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {
                     onSuccess: (page) => {
-                        this.items = this.stage.tasks
-                        console.log(page);
+                        this.updateItemData();
+                        //console.log(page);
+                        notification.open({
+                            message: 'Finish',
+                        });
                     },
                     onError: (error) => {
                         console.log(error);
@@ -129,7 +151,7 @@ export default {
                 }
             );
         },
-		
+
         beforeUpload(file) {
             const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
             if (!isValid) {
