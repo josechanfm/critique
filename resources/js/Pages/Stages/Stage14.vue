@@ -12,7 +12,8 @@
         <div class="bg-white relative shadow rounded-lg ">
             <div class="grid md:grid-cols-3 grid-cols-1 md:p-7 p-6" justify="space-between" align="bottom">
                 <div>
-                    <div class="text-wrap p-4 font-bold text-lg">上传实施的视频资料，限制大小为50M-500M</div>
+                    <div class="text-wrap px-4 py-2 font-bold text-lg">上传实施的视频资料，限制大小为50M-500M</div>
+                    <div class="px-4 text-sm">可将影片上传至云端硬碟(如百度云、阿里云、google drive)，并输入链接</div>
                     <div class="flex flex-row w-[80%]">
                         <div class="flex flex-col flex-1">
                             <a-input class="my-1" type="input" v-for="v in video" v-model:value="v.content" :placeholder="stage.content.inputPlaceholder" />
