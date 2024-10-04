@@ -46,6 +46,8 @@
                         <a-input type="input" v-model:value="media.title" placeholder="" />
                         {{$t('description')}}
                         <a-textarea :rows="5" v-model:value="media.description" placeholder="" />
+						{{$t('link')}}
+                        <a-input type="input" v-model:value="media.link" placeholder="Click Link" />
                     </div>
                 </div>
             </a-form-item>

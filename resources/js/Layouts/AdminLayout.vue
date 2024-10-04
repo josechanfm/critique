@@ -39,6 +39,10 @@ const logout = () => {
     background: rgb(153,247,247);
     background: linear-gradient(90deg, rgba(153,247,247,1) 0%, rgba(223,250,255,1) 25%, rgba(208,235,255,1) 60%, rgba(189,251,255,1) 100%);
 }
+.background{
+    background: rgb(212,254,255);
+background: linear-gradient(135deg, rgba(212,254,255,0.5746673669467788) 0%, rgba(225,239,240,0.4766281512605042) 25%, rgba(235,245,246,0.40940126050420167) 60%, rgba(191,246,211,0.4682247899159664) 100%);
+}
 </style>
 
 <template>
@@ -47,7 +51,7 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen background">
             <nav class="bg-white border-b-2 border-blue-800 border-gray-100 ">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">

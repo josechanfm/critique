@@ -21,7 +21,7 @@
                 </a-form-item>
             </a-form>
         </div>
-        <div class="flex flex-col gap-6 shadow-m py-4 px-2 bg-slate-200 h-[500px] overflow-x-hidden relative rounded-lg grass-background " >
+        <div class="flex flex-col gap-6 shadow-m py-4 px-2 bg-slate-200 h-[700px] overflow-x-hidden relative rounded-lg chat-blog-background" >
             
             <div class=" rounded shadow px-3 text-base w-[80%] z-10 relative" v-for="(blog,index) in blogs" :key="index" :class="$page.props.auth.user.id == blog.user.id?'ml-auto  bg-green-300 float-right':'bg-white' " style="border-left:1px solid lightgray">
                 
@@ -142,11 +142,11 @@ export default {
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(241,255,239,0.8379726890756303) 49%, rgba(227,255,241,0.7539390756302521) 100%);
 }
-.grass-background{
+.chat-blog-background{
     
     content: "";
     background-size: cover;
-    background-image: url('https://png.pngtree.com/background/20230413/original/pngtree-grassland-outdoor-verdant-picture-image_2423119.jpg');
+    background-image: url('images/chat-blog-background.jpg');
 }
 
 </style>

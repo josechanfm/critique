@@ -11,19 +11,18 @@
         <div class="bg-white relative shadow rounded-lg ">
 
             <div class="flex flex-col md:p-5 p-4">
-                <div class="flex items-center gap-4" v-for="(media,index) in stage.media">
-                    <div class="flex items-center justify-center h-full w-32 rounded-lg  text-center bg-gray-500 black-black text-lg text-white">
+                <div class="flex flex-col p-2 md:grid md:grid-cols-5 border-2 border-slate-100 items-center gap-4" v-for="(media,index) in stage.media">
+                    <div class="flex justify-center items-center w-48 rounded-lg  text-center bg-gray-500 black-black text-lg text-white">
                         <div>困境{{index+1}}:</div>
                     </div>
-                    <div class=" flex items-center h-48 cursor-pointer underline text-blue-500 text-lg  ">
+                    <div class="col-span-1 flex items-center min-h-48 cursor-pointer underline text-blue-500 text-lg  ">
                         <div @click="viewDescription(media)" v-if="isImageFile(media.file_name)">
-                            <img :src="media.original_url" class="h-32 object-contain " />
+                            <img :src="media.original_url" class="w-full object-contain " />
                             <div class="text-center">{{media.title}}</div>
                         </div>
                         <div v-else><a download :href="media.original_url" style="height:100%">{{media.file_name}}</a> </div>
                     </div>
-
-                    <div class="cursor-pointer text-blue-500 hover:text-blue-600" @click="viewDescription(media)">查看</div>
+                    <div class="col-span-3">{{media.description}}</div>
                 </div>
             </div>
             <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
@@ -162,8 +161,12 @@ export default {
         },
 
         viewDescription(data) {
-            this.modal.media = data;
-            this.modal.isOpen = true;
+            if(data.link){
+                window.open(data.link , "_blank")
+            }else{
+                this.modal.media = data;
+                this.modal.isOpen = true;
+            }
         },
         goBack() {
             window.history.back()

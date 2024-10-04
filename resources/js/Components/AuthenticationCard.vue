@@ -1,11 +1,11 @@
 <template>
 <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 login-background">
-    <div class="grid grid-cols-2 max-w-7xl">
+    <div class="grid grid-cols-2 max-w-7xl shadow-md">
         <div >
             <!-- <div class="flex h-[100%] w-[100%] bg-blue-600" ></div> -->
-            <div class="h-[100%] bg-cover w-[700px]" style="background-image: url('login-background.jpg') "></div>
+            <div class="h-[100%] bg-cover w-[600px]" style="background-image: url('images/login_logo.jpg') "></div>
         </div>
-        <div class="border-2 bg-white">
+        <div class="bg-white">
             <div class="flex justify-center">
                 <slot name="logo" />
             </div>

@@ -82,6 +82,7 @@ class StageController extends Controller
                     Media::find($value['id'])->update([
                         'title' => $value['title']??"",
                         'description' => $value['description']??"",
+                        'link' => $value['link']??"",
                     ]);
                 }
             }
@@ -104,7 +105,6 @@ class StageController extends Controller
         });
         
         if( count($files) !== 0 ){
-            dd($files);
 
             $myFiles=['files'=>$files];
             $stage->content=($myFiles);
