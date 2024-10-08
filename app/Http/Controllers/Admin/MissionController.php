@@ -115,6 +115,9 @@ class MissionController extends Controller
 
     public function approve(Mission $mission)
     {
+        if( $mission->current_stage == '14' ){
+            return ;
+        }
         $mission->current_stage = $mission->current_stage+1;
         $mission->update();
         return ;
@@ -123,7 +126,7 @@ class MissionController extends Controller
     public function regret(Mission $mission)
     {
         $stage = $mission->current_stage-1;
-        $mission->current_stage = $stage<0? '0' : $stage;
+        $mission->current_stage = $stage < 0? '0' : $stage;
         $mission->update();
         return ;
     }

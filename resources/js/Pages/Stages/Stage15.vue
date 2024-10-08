@@ -11,7 +11,7 @@
         <div class="bg-white relative shadow rounded-lg md:p-5 p-4">
             <div class="flex justify-center">
                 <div class="flex flex-col items-center gap-4">
-                    <img src="images/site-logo.png" width="100px" />
+                    <img src="images/final_reward.png" width="600px" />
                     <div class="text-2xl font-black text-red-500">
                         恭喜您已经成功的完成了批判性思维训练的所有步骤。
                     </div>
