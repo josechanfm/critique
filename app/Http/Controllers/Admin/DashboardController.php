@@ -11,6 +11,8 @@ use App\Models\Mission;
 class DashboardController extends Controller
 {
     public function index(){
+
+        
         return Inertia::render('Admin/Dashboard',[
             'configStages'=>Config::item('stages'),
             'missions'=>Mission::all()

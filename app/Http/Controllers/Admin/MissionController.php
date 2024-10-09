@@ -18,7 +18,7 @@ class MissionController extends Controller
      */
     public function index()
     {
-        
+
         return Inertia::render('Admin/Missions',[
             'users' => User::all(),
             'configStages'=>Config::item('stages'),

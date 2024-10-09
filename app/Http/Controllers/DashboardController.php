@@ -12,6 +12,9 @@ use App\Models\Mission;
 class DashboardController extends Controller
 {
     public function index(){
+
+        
+
         $user = auth()->user();
         $user->missions;
         return Inertia::render('Dashboard', [
