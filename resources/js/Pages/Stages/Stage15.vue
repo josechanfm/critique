@@ -36,7 +36,7 @@ export default {
         AdminLayout,
         StageHeader
     },
-    props: ["configStages", "mission", "stage"],
+    props: ["configStages", "mission", "stage" , "page"],
     data() {
         return {
             current: 1

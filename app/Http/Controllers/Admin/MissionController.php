@@ -52,8 +52,20 @@ class MissionController extends Controller
             return $stage; // 返回修改後的項目
         });
 
+        $sourceStage = Stage::where('code', 'S03')->first();
+
         foreach ($stagesWithMission->toArray() as $stageData) {
-            Stage::create($stageData);
+            if( $stageData['code'] == 'S03' ){
+                $mediaItems = $sourceStage->media; 
+
+                $stage = Stage::create($stageData);
+
+                foreach ($mediaItems as $media) {
+                    $media->copy($stage); 
+                }
+            }else{
+                Stage::create($stageData);
+            }
         }
 
         return redirect()->back();

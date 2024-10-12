@@ -12,6 +12,7 @@
 
             <div class="flex flex-col md:p-5 p-4">
                 <div class="flex flex-col p-2 md:grid md:grid-cols-5 border-2 border-slate-100 items-center gap-4" v-for="(media,index) in stage.media">
+                    
                     <div class="flex justify-center items-center w-48 rounded-lg  text-center bg-gray-500 black-black text-lg text-white">
                         <div>困境{{index+1}}:</div>
                     </div>
