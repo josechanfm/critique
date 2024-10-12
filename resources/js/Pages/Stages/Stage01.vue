@@ -28,9 +28,17 @@
                         <div class="mx-4 my-2 text-lg font-bold">{{$t('file_title')}}</div>
                         <ol>
                             <li v-for="file in categorizeFiles(stage.content.files)">
-                                <span class="font-bold text-base mx-2">{{ file.name }}</span>
-                                <a :href="file.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
-                                    <ArrowDownOutlined /> </a>
+                                
+                                <div v-if="isImageFile(file.path)" class="flex gap-4">
+                                    <img :src='file.path' class="min-w-24 max-w-48"/> <span class="py-4">{{ file.name }}</span>
+                                </div>
+                                <div v-else>
+                                    
+                                    <span class="font-bold text-base mx-2">{{ file.name }}</span>
+                                    <a :href="file.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
+                                        <ArrowDownOutlined /> </a>
+                                </div>
+                                <br/>
                             </li>
                         </ol>
                     </div>
@@ -148,6 +156,13 @@ export default {
         },
     },
     methods: {
+        
+        isImageFile(fileName) {
+            const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'];
+            const extension = fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2).toLowerCase();
+            return imageExtensions.includes(`.${extension}`);
+        },
+
         categorizeFiles(data) {
             return data.filter(item => !this.isVideo(item.path))
         },
