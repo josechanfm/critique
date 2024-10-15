@@ -120,7 +120,7 @@ defineProps({
                 </div>
 
                 <div class="text-center text-sm text-gray-500  sm:text-end sm:ms-0">
-                    Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+                    <a href="https://hubis.ltd">Hubis</a>
                 </div>
             </div>
         </div>
