@@ -38,17 +38,31 @@
             </a-form-item>
             <a-form-item label="File Extra" name="file_extra">
                 <div v-for="media in modal.data.media" class="flex flex-row my-2 border-b-2 py-2 border-slate-500">
-
-                    <img v-if="isImageFile(media.file_name)" :src="media.original_url" class="mr-4" style="max-width:60%" />
-					<a class="text-blue-500 w-48 text-lg text-center pt-6" :href="media.original_url" v-else ><FileOutlined />{{media.file_name}}</a>
+                    
+                    <img v-if="isImageFile(media.file_name)" :src="media.original_url" class="mr-4 w-[400px]" />
+                    <a class="text-blue-500 w-48 text-lg text-center pt-6" :href="media.original_url" v-else>
+                        <FileOutlined />{{media.file_name}}</a>
                     <div class="flex flex-col gap-2 w-full">
+
                         {{$t('title')}}
                         <a-input type="input" v-model:value="media.title" placeholder="" />
                         {{$t('description')}}
                         <a-textarea :rows="5" v-model:value="media.description" placeholder="" />
-						{{$t('link')}}
+                        {{$t('link')}}
                         <a-input type="input" v-model:value="media.link" placeholder="Click Link" />
+                        {{$t('thumbnail')}} <br />
+
+                        <a v-if="media.thumbnail" :href="media.thumbnail.original_url" target="_blank">{{ media.thumbnail.file_name }}</a>
+
+                        <a-upload  :before-upload="beforeUploadThumbnail" :on-change="handleChangeThumbnail" :multiple="false" :show-upload-list="true" :custom-request="dummyRequest">
+                            <a-button @click="setUpload(media)">
+                                <UploadOutlined />
+                                Click to upload
+                            </a-button>
+                        </a-upload>
+                        <a-button class="w-32" type="primary" @click="uploadMediaThumbnail(media)">Confirm</a-button>
                     </div>
+
                 </div>
             </a-form-item>
             <a-form-item label="Upload File">
@@ -74,8 +88,6 @@
 </AdminLayout>
 </template>
 
-  
-  
 <script>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import {
@@ -84,11 +96,10 @@ import {
 } from "vue";
 import * as AntdIcons from '@ant-design/icons-vue';
 
-
 export default {
     components: {
         AdminLayout,
-		...AntdIcons,
+        ...AntdIcons,
     },
     props: ["mission", 'files'],
     data() {
@@ -151,7 +162,7 @@ export default {
 
     },
     methods: {
-		
+
         isImageFile(fileName) {
             const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'];
             const extension = fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2).toLowerCase();
@@ -182,8 +193,32 @@ export default {
             }
             return isValid;
         },
+        setUpload(media){
+            this.modal.data.media_id = media.id
+        },
+        uploadMediaThumbnail(media){
+            console.log(this.modal.data.thumbnails)
+
+            this.$inertia.post(route("admin.stages.updateMediaThumbnail", {'media':media.id, 'stage': this.modal.data.id}), this.modal.data, {
+                onSuccess: (page) => {
+                    this.modal.data = {};
+                    this.modal.isOpen = false;
+                },
+                onError: (err) => {
+                    console.log(err);
+                },
+            });
+        },
+
+        beforeUploadThumbnail(file) {
+            return true
+        },
+
         handleChange(newFileList) {
             this.modal.data.files = newFileList.fileList;
+        },
+        handleChangeThumbnail(newFileList) {
+            this.modal.data.thumbnails = newFileList.fileList;
         },
         dummyRequest({
             file,
@@ -193,7 +228,8 @@ export default {
                 onSuccess(file);
             }, 0);
         },
-        storeRecord() {
+        storeRecord() {            
+            console.log(this.modal.data.thumbnails)
 
             this.modal.data.content = JSON.parse(this.modal.data.content);
 
@@ -215,7 +251,7 @@ export default {
                 });
         },
         updateRecord() {
-            this.modal.data.content = JSON.parse(this.modal.data.content);
+            this.modal.data.content = this.modal.data.content == ''?JSON.parse(this.modal.data.content):''
             console.log(this.modal.data);
             this.modal.data._method = 'PATCH';
             this.$inertia.post(

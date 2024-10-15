@@ -15,10 +15,14 @@
                     <div class="min-h-36 ">
                         <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
                         <ol>
-                            <li v-for="video in categorizeVideos(stage.content.files)">
-                                <span class="font-semibold text-base mx-2">{{ video.name }}</span>
-                                <a download :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
-                                    <ArrowDownOutlined /></a>
+                            <li v-for="video in categorizeVideos(stage.content.files)" class="flex items-center">
+                                <img class="w-48" v-if="stage.media.find( x => x.name == video.name )" :src=" stage.media.find( x => x.name == video.name ).thumbnail " />
+
+                                <div class="text-wrap flex md:flex-row flex-col items-center">
+                                    <span class="font-semibold text-base mx-2">{{ video.name }}</span>
+                                    <a download :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
+                                        <ArrowDownOutlined /></a>
+                                </div>
                             </li>
                         </ol>
                     </div>
@@ -27,14 +31,13 @@
                     <div class="min-h-40 ">
                         <div class="mx-4 my-2 text-lg font-bold">{{$t('file_title')}}</div>
                         <ol>
-                            <li v-for="file in categorizeFiles(stage.content.files)">
-                                
+                            <li v-for="file in categorizeFiles(stage.content.files)" class="flex items-center">
+                                <img class="w-48" v-if="stage.media.find( x => x.name == file.name )" :src=" stage.media.find( x => x.name == file.name ).thumbnail " />
                                 <div v-if="isImageFile(file.path)" class="flex gap-4">
                                     <img :src='file.path' class="min-w-24 max-w-48"/> <span class="py-4">{{ file.name }}</span>
                                 </div>
-                                <div v-else>
-                                    
-                                    <span class="font-bold text-base mx-2">{{ file.name }}</span>
+                                <div v-else class="text-wrap flex md:flex-row flex-col items-center">
+                                    <span class="font-bold text-base mx-2 ">{{ file.name }}</span>
                                     <a :href="file.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
                                         <ArrowDownOutlined /> </a>
                                 </div>

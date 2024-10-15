@@ -65,6 +65,7 @@ Route::group([
     Route::resource('template_stages',App\Http\Controllers\Admin\TemplateStageController::class)->names('admin.templateStages');
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
     Route::resource('stages',App\Http\Controllers\Admin\StageController::class)->names('admin.stages');
+    Route::post('stages/update_media_thumbnail/{media}/{stage}',[App\Http\Controllers\Admin\StageController::class, 'updateMediaThumbnail'])->name('admin.stages.updateMediaThumbnail');
     Route::post('missions/update_mission_user/{mission}',[App\Http\Controllers\Admin\MissionController::class,'updateMissionUser'])->name('admin.missions.updateMissionUser');
     Route::get('missions/change_status/{mission}',[App\Http\Controllers\Admin\MissionController::class,'changeStatus'])->name('admin.missions.change_status');
     Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');

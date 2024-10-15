@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\Config;
 use App\Models\Task;
 use App\Models\Stage;
+use App\Models\Media;
 
 class MissionController extends Controller
 {
@@ -31,6 +32,14 @@ class MissionController extends Controller
         }
 
         $stage=$mission->stages->where('code','S'.$page)->first();
+
+        foreach( $stage->media as $key => $m ){
+            $find_media = Media::find($m->id)->getMedia('*')->first();
+            if( $find_media ){
+                $stage->media[$key]->thumbnail = $find_media->getFullUrl();
+            }
+        }
+        
 
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),

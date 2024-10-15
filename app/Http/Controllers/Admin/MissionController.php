@@ -10,6 +10,7 @@ use App\Models\Mission;
 use App\Models\TemplateStage;
 use App\Models\Stage;
 use App\Models\User;
+use App\Models\Media;
 
 class MissionController extends Controller
 {
@@ -18,7 +19,6 @@ class MissionController extends Controller
      */
     public function index()
     {
-
         return Inertia::render('Admin/Missions',[
             'users' => User::all(),
             'configStages'=>Config::item('stages'),
@@ -77,6 +77,19 @@ class MissionController extends Controller
     public function show(Mission $mission)
     {
         $mission->stages;
+        // array_map( function($m){
+        //     $m->media;
+        // }, $mission->stages ) ;
+        
+        foreach($mission->stages as $index => $s){
+            foreach( $s->media as $key => $m ){
+                $media = Media::find($m->id)->getMedia('*')->first();
+                if( $media){
+                    $mission->stages[$index]->media[$key]->thumbnail = $media->first();
+                }
+            }
+        };
+
         return Inertia::render('Admin/MissionStages',[
             'mission'=>$mission
         ]);

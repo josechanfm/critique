@@ -103,6 +103,7 @@ class StageController extends Controller
                 'path' => $item->getUrl(), // or whatever custom logic you need
             ];
         });
+
         
         if( count($files) !== 0 ){
 
@@ -118,5 +119,16 @@ class StageController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function updateMediaThumbnail(Request $request, Media $media, Stage $stage){
+        
+        if($request->file('thumbnails') ){
+
+            foreach($request->file('thumbnails') as $file){
+                $thumbnail = $stage->addMedia($file['originFileObj'])->toMediaCollection('thumbnail');    
+                $thumbnail->update(['model_type' => 'App\Models\Media' , 'model_id' => $media->id]);
+            }
+        }
     }
 }
