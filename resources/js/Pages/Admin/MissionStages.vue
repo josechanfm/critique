@@ -52,7 +52,11 @@
                         <a-input type="input" v-model:value="media.link" placeholder="Click Link" />
                         {{$t('thumbnail')}} <br />
 
-                        <a v-if="media.thumbnail" :href="media.thumbnail.original_url" target="_blank">{{ media.thumbnail.file_name }}</a>
+                        <div class="flex " v-if="media.thumbnail_path">
+                            {{ media.thumbnail_name }}
+                            <a v-if="media.thumbnail" :href="media.thumbnail_path" target="_blank">{{ media.thumbnail_name }}</a> &nbsp;
+                            <span @click="removeThumbnail(media.thumbnail_id)"><a class="text-red-500">X</a></span>
+                        </div>
 
                         <a-upload  :before-upload="beforeUploadThumbnail" :on-change="handleChangeThumbnail" :multiple="false" :show-upload-list="true" :custom-request="dummyRequest">
                             <a-button @click="setUpload(media)">
@@ -207,6 +211,16 @@ export default {
                 onError: (err) => {
                     console.log(err);
                 },
+            });
+        },
+        removeThumbnail(media_id) {
+            this.$inertia.get(route('admin.stages.deleteMediaThumbnail', media_id), {
+                onSuccess: (page) => {
+                    console.log()
+                },
+                onError: (error) => {
+                    console.log(message);
+                }
             });
         },
 

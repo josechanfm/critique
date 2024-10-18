@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +68,7 @@ Route::group([
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
     Route::resource('stages',App\Http\Controllers\Admin\StageController::class)->names('admin.stages');
     Route::post('stages/update_media_thumbnail/{media}/{stage}',[App\Http\Controllers\Admin\StageController::class, 'updateMediaThumbnail'])->name('admin.stages.updateMediaThumbnail');
+    Route::get('stages/delete_media_thumbnail/{media_id}',[App\Http\Controllers\Admin\StageController::class, 'deleteMediaThumbnail'])->name('admin.stages.deleteMediaThumbnail');
     Route::post('missions/update_mission_user/{mission}',[App\Http\Controllers\Admin\MissionController::class,'updateMissionUser'])->name('admin.missions.updateMissionUser');
     Route::get('missions/change_status/{mission}',[App\Http\Controllers\Admin\MissionController::class,'changeStatus'])->name('admin.missions.change_status');
     Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');
@@ -74,3 +77,8 @@ Route::group([
     Route::resource('files',App\Http\Controllers\Admin\FileController::class)->names('admin.files');
 });
 
+Route::get('/download', function ( Request $request) {
+    $path = str_replace( url('/')  , '', $request->query('path') );
+    $path = str_replace( 'storage'  , 'public', $path );
+    return Storage::response( $path );
+})->name('download');

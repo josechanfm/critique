@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-span-1 flex items-center min-h-48 cursor-pointer underline text-blue-500 text-lg  ">
                         <div @click="viewDescription(media)" v-if="isImageFile(media.file_name)">
-                            <img :src="media.original_url" class="w-full object-contain " />
+                            <img :src=" route('download' , {path : media.original_url }) " class="w-full object-contain " />
                             <div class="text-center">{{media.title}}</div>
                         </div>
                         <div v-else><a download :href="media.original_url" style="height:100%">{{media.file_name}}</a> </div>

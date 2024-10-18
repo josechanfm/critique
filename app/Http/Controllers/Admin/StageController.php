@@ -121,6 +121,12 @@ class StageController extends Controller
         //
     }
 
+    public function deleteMediaThumbnail($id){
+        
+        $media = Media::find($id);
+        $media->delete();
+    }
+
     public function updateMediaThumbnail(Request $request, Media $media, Stage $stage){
         
         if($request->file('thumbnails') ){

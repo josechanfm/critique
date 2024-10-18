@@ -85,7 +85,9 @@ class MissionController extends Controller
             foreach( $s->media as $key => $m ){
                 $media = Media::find($m->id)->getMedia('*')->first();
                 if( $media){
-                    $mission->stages[$index]->media[$key]->thumbnail = $media->first();
+                    $mission->stages[$index]->media[$key]->thumbnail_id = $media->id;
+                    $mission->stages[$index]->media[$key]->thumbnail_name = $media->file_name;
+                    $mission->stages[$index]->media[$key]->thumbnail_path = $media->getFullUrl();
                 }
             }
         };
