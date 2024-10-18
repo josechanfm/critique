@@ -16,7 +16,7 @@
                         <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
                         <ol>
                             <li v-for="video in categorizeVideos(stage.content.files)" class="flex items-center">
-                                <img class="w-48" v-if="stage.media.find( x => x.name == video.name ).thumbnail" :src=" route('download' , {path : stage.media.find( x => x.name == file.name ).thumbnail })" />
+                                <img class="w-48" v-if="stage.media.find( x => x.name == video.name ).thumbnail" :src=" route('download' , {path : stage.media.find( x => x.name == video.name ).thumbnail })" />
 
                                 <div class="text-wrap flex md:flex-row flex-col items-center">
                                     <span class="font-semibold text-base mx-2">{{ video.name }}</span>
