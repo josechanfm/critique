@@ -92,7 +92,9 @@ class MissionController extends Controller
 
         foreach($items as $item){
             
-            if( isset( $item['stage_id']) && $item['stage_id'] <= $mission->current_stage ){
+            $currentStage = Stage::find($item['stage_id']);
+            
+            if( isset( $item['stage_id']) && (int)( str_replace('S','', $currentStage->code) ) <= $mission->current_stage ){
                 $stage=Stage::find($item['stage_id']);
             }
             

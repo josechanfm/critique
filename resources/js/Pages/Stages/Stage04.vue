@@ -15,7 +15,6 @@
                     <template v-for="(c,idx) in stage.content">
                         <label class="font-bold">{{ c.title }}</label>
                         <p>{{ c.note }}</p>
-                        {{items[idx]}}
                         <a-input hidden type="input" v-if="items[idx]" v-model:value="items[idx].title" :placeholder="c.placeholder" />
                         <a-input type="input" v-model:value="items[idx].content" :placeholder="c.placeholder" />
                         <a-divider />
@@ -130,7 +129,8 @@ export default {
         console.log( this.stage.content )
 
         this.stage.content.map((x, index) => {
-            if( x.title !== undefined ){
+            console.log( this.items[index] )
+            if( x.title !== undefined && this.items[index]){
                 this.items[index].title = x.title
             }
         })
