@@ -16,7 +16,7 @@
                         <label class="font-bold">{{ c.title }}</label>
                         <p>{{ c.note }}</p>
                         {{items[idx]}}
-                        <a-input hidden type="input" v-model:value="items[idx].title" :placeholder="c.placeholder" />
+                        <a-input hidden type="input" v-if="items[idx]" v-model:value="items[idx].title" :placeholder="c.placeholder" />
                         <a-input type="input" v-model:value="items[idx].content" :placeholder="c.placeholder" />
                         <a-divider />
                     </template>
@@ -127,8 +127,12 @@ export default {
             this.items = this.stage.tasks
         }
 
+        console.log( this.stage.content )
+
         this.stage.content.map((x, index) => {
-            this.items[index].title = x.title
+            if( x.title !== undefined ){
+                this.items[index].title = x.title
+            }
         })
 
         if (this.stage) {
