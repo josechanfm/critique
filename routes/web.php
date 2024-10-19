@@ -79,6 +79,6 @@ Route::group([
 
 Route::get('/download', function ( Request $request) {
     $path = str_replace( url('/')  , '', $request->query('path') );
-    $path = str_replace( 'storage'  , 'public', $path );
+    $path = str_replace( 'storage'  , 'public' , $path );
     return Storage::response( $path );
 })->name('download');

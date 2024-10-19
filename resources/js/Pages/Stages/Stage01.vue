@@ -20,7 +20,7 @@
 
                                 <div class="text-wrap flex md:flex-row flex-col items-center">
                                     <span class="font-semibold text-base mx-2">{{ video.name }}</span>
-                                    <a download :href="video.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
+                                    <a download :href="route('download' , {path : video.path} ) " target="_blank" class="text-blue-500 underline">{{$t('download')}}
                                         <ArrowDownOutlined /></a>
                                 </div>
                             </li>
@@ -34,12 +34,12 @@
                             <li v-for="file in categorizeFiles(stage.content.files)" class="flex items-center">
 
                                 <img class="w-48" v-if="stage.media.find( x => x.name == file.name ).thumbnail" :src="route('download' , {path : stage.media.find( x => x.name == file.name ).thumbnail } ) " />
-                                <div v-if="isImageFile(file.path)" class="flex gap-4">
+                                <!-- <div v-if="isImageFile(file.path)" class="flex gap-4">
                                     <img :src='file.path' class="min-w-24 max-w-48"/> <span class="py-4">{{ file.name }}</span>
-                                </div>
-                                <div v-else class="text-wrap flex md:flex-row flex-col items-center">
+                                </div> -->
+                                <div  class="text-wrap flex md:flex-row flex-col items-center">
                                     <span class="font-bold text-base mx-2 ">{{ file.name }}</span>
-                                    <a :href="file.path" target="_blank" class="text-blue-500 underline">{{$t('download')}}
+                                    <a :href="route('download' , {path :  file.path} )" download class="text-blue-500 underline">{{$t('download')}}
                                         <ArrowDownOutlined /> </a>
                                 </div>
                                 <br/>
