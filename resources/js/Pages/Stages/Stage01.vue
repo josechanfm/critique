@@ -16,7 +16,7 @@
                         <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
                         <ol>
                             <li v-for="video in categorizeVideos(stage.content.files)" class="flex items-center">
-                                <img class="w-48" v-if="stage.media.find( x => x.name == video.name ).thumbnail" :src=" route('download' , {path : stage.media.find( x => x.name == video.name ).thumbnail })" />
+                                <img class="w-48" v-if="stage.media.find( x => x.name == video.name )" :src=" route('download' , {path : stage.media.find( x => x.name == video.name ).thumbnail })" />
 
                                 <div class="text-wrap flex md:flex-row flex-col items-center">
                                     <span class="font-semibold text-base mx-2">{{ video.name }}</span>
@@ -33,7 +33,7 @@
                         <ol>
                             <li v-for="file in categorizeFiles(stage.content.files)" class="flex items-center">
 
-                                <img class="w-48" v-if="stage.media.find( x => x.name == file.name ).thumbnail" :src="route('download' , {path : stage.media.find( x => x.name == file.name ).thumbnail } ) " />
+                                <img class="w-48" v-if="stage.media.find( x => x.name == file.name )" :src="route('download' , {path : stage.media.find( x => x.name == file.name ).thumbnail } ) " />
                                 <!-- <div v-if="isImageFile(file.path)" class="flex gap-4">
                                     <img :src='file.path' class="min-w-24 max-w-48"/> <span class="py-4">{{ file.name }}</span>
                                 </div> -->

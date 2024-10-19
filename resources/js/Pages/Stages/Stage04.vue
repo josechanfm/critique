@@ -15,6 +15,7 @@
                     <template v-for="(c,idx) in stage.content">
                         <label class="font-bold">{{ c.title }}</label>
                         <p>{{ c.note }}</p>
+                        {{items[idx]}}
                         <a-input hidden type="input" v-model:value="items[idx].title" :placeholder="c.placeholder" />
                         <a-input type="input" v-model:value="items[idx].content" :placeholder="c.placeholder" />
                         <a-divider />
