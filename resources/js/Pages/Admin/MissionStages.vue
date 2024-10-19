@@ -246,6 +246,12 @@ export default {
             console.log(this.modal.data.thumbnails)
 
             // this.modal.data.content = JSON.parse(this.modal.data.content);
+            
+            if (typeof this.modal.data.content === 'string' && this.modal.data.content !== '') {
+                this.modal.data.content = JSON.parse(this.modal.data.content);
+            } else if (this.modal.data.content === '') {
+                this.modal.data.content = '';
+            }
 
             this.$refs.modalRef
                 .validateFields()
@@ -265,7 +271,11 @@ export default {
                 });
         },
         updateRecord() {
-            console.log(this.modal.data.content)
+            if (typeof this.modal.data.content === 'string' && this.modal.data.content !== '') {
+                this.modal.data.content = JSON.parse(this.modal.data.content);
+            } else if (this.modal.data.content === '') {
+                this.modal.data.content = '';
+            }
             // this.modal.data.content = this.modal.data.content == ''?JSON.parse(this.modal.data.content):''
             console.log(this.modal.data);
             this.modal.data._method = 'PATCH';
