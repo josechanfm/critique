@@ -7,7 +7,6 @@
     </template>
     <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
 
-    {{items}}
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="flex flex-row">
