@@ -7,6 +7,7 @@
     </template>
     <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
 
+    {{items}}
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="flex flex-row">
@@ -64,7 +65,7 @@ export default {
         ChatBlog,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page" , "task"],
     data() {
         return {
             current: 1,
@@ -127,8 +128,9 @@ export default {
         console.log(this.$router)
     },
     mounted() {
-        if (this.stage.tasks.length > 0) {
-            this.items = this.stage.tasks
+        if (this.task.length > 0) {
+            this.items = this.task
+            // this.items = this.stage.tasks
         }
 
         console.log( this.stage.content )
@@ -179,7 +181,7 @@ export default {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {
                     onSuccess: (page) => {
-                        this.items = this.stage.tasks
+                        // this.items = this.stage.tasks
                         console.log(page);
                         notification.open({
                             message: 'Finish',

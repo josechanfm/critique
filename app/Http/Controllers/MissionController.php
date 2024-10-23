@@ -22,7 +22,7 @@ class MissionController extends Controller
         $mission_id = $_GET['mission_id'];
         $mission = Mission::find($mission_id);
         // $mission=auth()->user()->mission();
-        //dd(session('applocale'));
+        // dd('test');
 
         // 翻其他頁
         if( array_key_exists("page",$_GET ) && $_GET['page'] != null ){
@@ -40,12 +40,14 @@ class MissionController extends Controller
             }
         }
         
+        $task = Task::where('user_id' , auth()->user()->id )->where('stage_id', $stage->id)->get();
 
         return Inertia::render('Stages/Stage'.$page,[
             'configStages'=>Config::item('stages'),
             'mission'=>$mission,
             'page'=>$page,
-            'stage'=>$stage
+            'stage'=>$stage,
+            'task'=>$task,
         ]);
     }
 
@@ -91,6 +93,7 @@ class MissionController extends Controller
         $stage=$mission->stages()->where('code',$stageCode)->first();
 
         foreach($items as $item){
+            $item['user_id'] = auth()->user()->id;
             
             $currentStage = Stage::find($item['stage_id']);
             
@@ -101,13 +104,13 @@ class MissionController extends Controller
             if(array_key_exists('id', $item)){
                 
                 Task::updateOrCreate(
-                    ['id' => $item['id'], 'stage_id' => $item['stage_id']],
+                    ['id' => $item['id'], 'stage_id' => $item['stage_id'], 'user_id'=> $item['user_id']],
                     ['title' => $item['title'], 'content'=> $item['content']]
                 );
                 // Task::find($item['id'])->update($item);
             }else{
                 //Task::create($items);
-                $stage->tasks()->create($item);
+                $task = $stage->tasks()->create($item);
             }
             
         };

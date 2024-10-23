@@ -17,7 +17,7 @@
                 </div>
             </template>
 
-            <div v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
+            <div v-if="['S07', 'S13', 'S14'].includes( stage.code ) " class="pb-4">
                 <div v-if="stage.media.length> 0" class="text-base my-2">Uploaded File: </div>
                 <div class="flex flex-row gap-4">
 
@@ -37,16 +37,23 @@
                 </div>
             </div>
 
-            <div class="flex flex-row gap-4 py-2 border-b" v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                <div v-if="task.title == '1'">
-                    <CheckOutlined class="text-green-500" /> 用戶已完成
-                </div>
-                <div v-else-if="task.title == '0'">
-                    用戶未完成
-                </div>
-                <div v-else class="text-base py-1">
-                    <span class="">{{ task.title }}</span> <br>
-                    <span class="font-bold">{{ task.content }}</span>
+            <div class="grid grid-cols-3">
+                <div class=" border px-5" v-for="(tasks,index) in groupUserTasks(stage.tasks) ">
+                    <div class="flex gap-4 py-1" v-for="task in tasks" v-if="tasks.length>0">
+                        <div v-if="task.title == '1'">
+                            <CheckOutlined class="text-green-500" /> 用戶已完成
+                        </div>
+                        <div v-else-if="task.title == '0'">
+                            用戶未完成
+                        </div>
+                        <div v-else class="text-base py-1">
+                            <span class="">{{ task.title }}</span> <br>
+                            <span class="font-bold">{{ task.content }}</span>
+                        </div>
+                        <div class="flex items-center">
+                            @{{ task.user.name }}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="my-4 p-4 bg-slate-200 rounded-lg shadow-md">
@@ -95,17 +102,26 @@
 
                         </div>
                     </div>
-
-                    <div class="flex flex-row gap-4 py-2 border-b" v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                        <div v-if="task.title == '1'">
-                            <CheckOutlined class="text-green-500" /> 用戶已完成
-                        </div>
-                        <div v-else-if="task.title == '0'">
-                            用戶未完成
-                        </div>
-                        <div v-else class="text-base py-1">
-                            <span class="">{{ task.title }}</span> <br>
-                            <span class="font-bold">{{ task.content }}</span>
+                    
+                    <div class="grid grid-cols-3">
+                        <div class=" border px-5" v-for="(tasks,index) in groupUserTasks(stage.tasks) ">
+                            <div class="flex gap-4 py-1" v-for="task in tasks" v-if="tasks.length>0">
+                                <div class="flex flex-row ">
+                                    <div v-if="task.title == '1'">
+                                        <CheckOutlined class="text-green-500" /> 用戶已完成
+                                    </div>
+                                    <div v-else-if="task.title == '0'">
+                                        用戶未完成
+                                    </div>
+                                    <div v-else class="text-base py-1">
+                                        <span class="">{{ task.title }}</span> <br>
+                                        <span class="font-bold">{{ task.content }}</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        @{{ task.user.name }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -226,6 +242,16 @@ export default {
 
     },
     methods: {
+        groupUserTasks(task){
+            return task.reduce((acc, t) => {
+                const userId = t.user_id;
+                if (!acc[userId]) {
+                    acc[userId] = []; // 如果没有该用户的数组，初始化一个
+                }
+                acc[userId].push(t); // 将记录添加到对应用户的数组中
+                return acc;
+            }, {});
+        },
         filterCollection(media, collection_name) {
             return media.filter(x => x.collection_name == collection_name)
         },

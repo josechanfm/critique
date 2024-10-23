@@ -59,7 +59,7 @@
             </div>
 
             <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" @finish="onFinish" enctype="multipart/form-data">
-                <a-form-item :label="$t('finish')" name="entity">
+                <a-form-item :label="$t('read_finish')" name="entity">
                     <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
                 </a-form-item>
                 <div class="flex flex-row item-center justify-center gap-5 py-2 bg-slate-200/50 border-t-2">
@@ -96,7 +96,7 @@ export default {
         notification,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page", "task"],
     data() {
         return {
             current: 1,
@@ -113,7 +113,7 @@ export default {
     },
     created() {
         this.addNewVideo()
-        let exist = this.stage.tasks.filter( x => x. title == "video")
+        let exist = this.task.filter( x => x. title == "video")
 
         if( exist.length > 0 ){
             this.video = exist
@@ -166,9 +166,10 @@ export default {
         },
         updateItemData() {
             if (this.stage) {
-                if (this.stage.tasks.length > 0) {
-                    this.items = this.stage.tasks
-                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                if (this.task.length > 0) {
+                    // this.items = this.stage.tasks
+                    this.items = this.task
+                    this.items[0].title = this.task[0].title == 1 ? true : false;
                 }
             }
         },

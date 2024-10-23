@@ -7,14 +7,14 @@
     </template>
     <StageHeader :mission="mission" :current="mission.current_stage" :steps="configStages" :page="page" />
 
-    <div class="container mx-auto pt-5">
+        <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
         <div class="bg-white relative shadow rounded-lg ">
             <a-row justify="space-between" align="bottom" class="md:p-5 p-4">
                 <a-col :sm="24" :md="12">
                     <a-page-header class="py-3" title="上传视频资料" />
                     <ol>
-                        <li v-for="video in stage.media.filter(m=>m.collection_name=='video')">
+                        <li class="px-6" v-for="video in stage.media.filter(m=>m.collection_name=='video')">
                             {{ video.file_name }}
                             <a v-if="!checkEditable()" class="text-red-500" @click="deleteMedia(video.id, 'video')">X</a>
                         </li>
@@ -29,7 +29,7 @@
                 <a-col :sm="24" :md="12">
                     <a-page-header class="py-3" title="上传PDF资料" />
                     <ol>
-                        <li v-for="file in stage.media.filter(m=>m.collection_name=='file')">
+                        <li class="px-6" v-for="file in stage.media.filter(m=>m.collection_name=='file')">
                             {{ file.file_name }}
                             <a v-if="!checkEditable()" class="text-red-500">X</a>
                         </li>
@@ -92,7 +92,7 @@ export default {
         notification,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page", "task"],
     data() {
         return {
             current: 1,
@@ -149,9 +149,10 @@ export default {
         },
         updateItemData() {
             if (this.stage) {
-                if (this.stage.tasks.length > 0) {
-                    this.items = this.stage.tasks
-                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                if (this.task.length > 0) {
+                    // this.items = this.stage.tasks
+                    this.items = this.task
+                    this.items[0].title = this.task[0].title == 1 ? true : false;
                 }
             }
         },

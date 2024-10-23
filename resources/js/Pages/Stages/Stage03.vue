@@ -29,7 +29,7 @@
             <a-form :model="items" name="fund" :label-col="{ span: 10 }" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
 
                 <div class="mt-8 md:p-1 px-6">
-                    <a-form-item :label="$t('finish')" name="entity">
+                    <a-form-item :label="$t('read_finish')" name="entity">
                         <a-checkbox v-model:checked="items[0].title" value="1"></a-checkbox>
                     </a-form-item>
                 </div>
@@ -81,7 +81,7 @@ export default {
         ChatBlog,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page","task"],
     data() {
         return {
 
@@ -175,9 +175,10 @@ export default {
 
         updateItemData() {
             if (this.stage) {
-                if (this.stage.tasks.length > 0) {
-                    this.items = this.stage.tasks
-                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                if (this.task.length > 0) {
+                    // this.items = this.stage.tasks
+                    this.items = this.task
+                    this.items[0].title = this.task[0].title == 1 ? true : false;
                 }
             }
         },

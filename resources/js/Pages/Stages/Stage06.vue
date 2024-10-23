@@ -61,7 +61,7 @@ export default {
         ChatBlog,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page", "task"],
     data() {
         return {
             current: 1,
@@ -103,9 +103,11 @@ export default {
 
     },
     mounted() {
-        if (this.stage.tasks.length > 0) {
-            this.items = this.stage.tasks
+        if (this.task.length > 0) {
+            this.items = this.task
+            // this.items = this.stage.tasks
         }
+        this.items[0].title = this.stage.content.note
 
         if (this.stage) {
 
@@ -147,7 +149,7 @@ export default {
             this.$inertia.patch(
                 route("missions.update", this.mission.id), this.items, {
                     onSuccess: (page) => {
-                        this.items = this.stage.tasks
+                        // this.items = this.stage.tasks
                         console.log(page);
                         notification.open({
                             message: 'Finish',

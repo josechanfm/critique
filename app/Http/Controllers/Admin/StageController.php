@@ -26,6 +26,13 @@ class StageController extends Controller
         
         foreach($mission->stages as $s){
             $s->blogs;
+
+            foreach($s->tasks as $t){
+                $t->user;
+            }
+        }
+        foreach($stage->tasks as $t){
+            $t->user;
         }
 
         return Inertia::render('Admin/StageTasks',[

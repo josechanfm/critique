@@ -87,7 +87,7 @@ export default {
         StageHeader,
         ...AntdIcons,
     },
-    props: ["configStages", "mission", "stage", "page"],
+    props: ["configStages", "mission", "stage", "page", "task"],
     data() {
         return {
             current: 1,
@@ -125,6 +125,11 @@ export default {
     },
     mounted() {
         this.updateItemData()
+        
+        // if (this.stage.tasks.length > 0) {
+        //     this.items = this.task
+        //     // this.items = this.stage.tasks
+        // }
 
         if (this.stage) {
 
@@ -181,9 +186,10 @@ export default {
         },
         updateItemData() {
             if (this.stage) {
-                if (this.stage.tasks.length > 0) {
-                    this.items = this.stage.tasks
-                    this.items[0].title = this.stage.tasks[0].title == 1 ? true : false;
+                if (this.task.length > 0) {
+                    // this.items = this.stage.tasks
+                    this.items = this.task
+                    this.items[0].title = this.task[0].title == 1 ? true : false;
                 }
             }
         },
