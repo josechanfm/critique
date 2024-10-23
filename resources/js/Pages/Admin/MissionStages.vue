@@ -36,6 +36,9 @@
             <a-form-item label="Content" name="content">
                 <a-textarea v-model:value="modal.data.content" :rows="10" />
             </a-form-item>
+            <a-form-item label="Remark" name="remark">
+                <a-textarea v-model:value="modal.data.remark" :rows="4" />
+            </a-form-item>
             <a-form-item label="File Extra" name="file_extra">
                 <div v-for="media in modal.data.media" class="flex flex-row my-2 border-b-2 py-2 border-slate-500">
                     

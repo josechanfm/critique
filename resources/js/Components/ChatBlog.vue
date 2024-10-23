@@ -3,7 +3,7 @@
     <div class="border-b-2 border-green-700 ">
         <a-page-header :title="$t('chat_blog')" class="py-2 " />
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 w-full py-4">
+    <div class="grid grid-cols-1 sm:grid-cols-1 w-full py-4">
         <div>
             <a-form :model="form" name="basic" :label-col="{ span: 4 }" :wrapper-col="{ span: 16 }" autocomplete="off" enctype="multipart/form-data">
 
@@ -13,7 +13,7 @@
                     </div>
                 </a-form-item>
                 <a-form-item :label="$t('chat')" name="content" class="p-2">
-                    <a-textarea :rows="5" v-model:value="form.content" />
+                    <a-textarea :rows="4" v-model:value="form.content" />
                 </a-form-item>
 
                 <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
@@ -21,9 +21,9 @@
                 </a-form-item>
             </a-form>
         </div>
-        <div class="flex flex-col gap-6 shadow-m py-4 px-2 bg-slate-200 h-[700px] overflow-x-hidden relative rounded-lg bg-cover" style="background-image: url('images/chat-blog-background.jpg');">
+        <div class="flex flex-col m-4 gap-6 shadow-m py-4 px-6 bg-slate-200 h-[700px] overflow-x-hidden relative rounded-lg bg-cover" style="background-image: url('images/chat-blog-background.jpg');">
             
-            <div class=" rounded shadow px-3 text-base w-[80%] z-10 relative" v-for="(blog,index) in blogs" :key="index" :class="$page.props.auth.user.id == blog.user.id?'ml-auto  bg-green-300 float-right':'bg-white' " style="border-left:1px solid lightgray">
+            <div class=" rounded shadow px-3 text-base w-[80%] z-10 relative " v-for="(blog,index) in blogs" :key="index" :class="$page.props.auth.user.id == blog.user.id?'ml-auto  bg-green-300 float-right':'bg-white' " style="border-left:1px solid lightgray">
                 
                 <div class="bg-slate-100 m-2 rounded-lg px-2" v-if="blog.parent">
                     →　{{ blog.parent.content }} <span class="text-slate-500 text-sm">@{{ blog.parent.user.name }} &nbsp; {{ blog.parent.created_at?displayDate(blog.parent.created_at):"" }}</span>

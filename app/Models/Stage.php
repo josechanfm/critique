@@ -14,7 +14,7 @@ class Stage extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
-    protected $fillable=['mission_id','code','title','description','content'];
+    protected $fillable=['mission_id','code','title','remark','description','content'];
     protected $casts=['content'=>'json'];
     protected $with=['media'];
 
@@ -35,5 +35,8 @@ class Stage extends Model implements HasMedia
     }
     public function tasks(){
         return $this->hasMany(Task::class);
+    }
+    public function blogs(){
+        return $this->hasMany(Blog::class);
     }
 }

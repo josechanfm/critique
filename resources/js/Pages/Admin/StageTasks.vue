@@ -36,17 +36,24 @@
 
                 </div>
             </div>
-            
-            <div class="flex flex-row " v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                <div v-if="task.title == '1'"> 
-                    <CheckOutlined class="text-green-500"/> 用戶已完成
+
+            <div class="flex flex-row gap-4 py-2 border-b" v-for="task in stage.tasks" v-if="stage.tasks.length>0">
+                <div v-if="task.title == '1'">
+                    <CheckOutlined class="text-green-500" /> 用戶已完成
                 </div>
-                <div v-else-if="task.title == '0'"> 
+                <div v-else-if="task.title == '0'">
                     用戶未完成
                 </div>
                 <div v-else class="text-base py-1">
                     <span class="">{{ task.title }}</span> <br>
                     <span class="font-bold">{{ task.content }}</span>
+                </div>
+            </div>
+            <div class="my-4 p-4 bg-slate-200 rounded-lg shadow-md">
+                留言區：
+                <div v-for="blogs in stage.blogs">
+                    <span class="text-base font-bold">{{ blogs.user.name }}</span>&nbsp;<span>{{ displayDate(blogs.created_at) }}</span>
+                    <div class="text-base">{{ blogs.content }}</div>
                 </div>
             </div>
         </a-card>
@@ -69,17 +76,50 @@
                     <template #title>
                         {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
                     </template>
-                    <div class="flex flex-row">
-                        <div v-for="task in stage.tasks" v-if="stage.tasks.length>0">
-                            {{ task.title }} <br>
-                            {{ task.content }}
+                    <div v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
+                        <div v-if="stage.media.length> 0" class="text-base my-2">Uploaded File: </div>
+                        <div class="flex flex-row gap-4">
+
+                            <div class="flex flex-col gap-2">
+                                视频
+                                <a v-for="media in filterCollection( stage.media ,'video') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                档案
+                                <a v-for="media in filterCollection( stage.media ,'file') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                最终方案
+                                <a v-for="media in filterCollection( stage.media ,'finalFile') " :href="media.original_url" class="px-4 underline text-blue-500">{{media.name}}</a>
+                            </div>
+
                         </div>
-                        <div v-else>
-                            No tasks
+                    </div>
+
+                    <div class="flex flex-row gap-4 py-2 border-b" v-for="task in stage.tasks" v-if="stage.tasks.length>0">
+                        <div v-if="task.title == '1'">
+                            <CheckOutlined class="text-green-500" /> 用戶已完成
+                        </div>
+                        <div v-else-if="task.title == '0'">
+                            用戶未完成
+                        </div>
+                        <div v-else class="text-base py-1">
+                            <span class="">{{ task.title }}</span> <br>
+                            <span class="font-bold">{{ task.content }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="my-4 p-4 bg-slate-200 rounded-lg shadow-md" >
+                        留言區：
+                        <div v-for="blogs in stage.blogs">
+                            <span class="text-base font-bold">{{ blogs.user.name }}</span>&nbsp;<span>{{ displayDate(blogs.created_at) }}</span>
+                            <div class="text-base">{{ blogs.content }}</div>
                         </div>
                     </div>
                 </a-card>
+                
             </template>
+            
         </div>
 
     </div>
@@ -110,6 +150,7 @@ import AdminLayout from "@/Layouts/AdminLayout.vue";
 import {
     notification
 } from 'ant-design-vue';
+import dayjs, { Dayjs }from 'dayjs';
 
 import {
     defineComponent,
@@ -121,7 +162,7 @@ export default {
     components: {
         AdminLayout,
         notification,
-		...AntdIcons,
+        ...AntdIcons,
     },
     props: ["stage", "mission"],
     data() {
@@ -262,6 +303,9 @@ export default {
                     },
                 }
             );
+        },
+        displayDate(date) {
+            return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
         },
     },
 };

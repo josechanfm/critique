@@ -9,26 +9,31 @@
 
     <div class="container mx-auto pt-5">
         <div class="bg-white flex w-40 justify-center p-3 my-2 rounded shadow">{{ configStages[Number(page)-1].label }}</div>
-        <div class="bg-white relative shadow rounded-lg ">
-            <a-form :model="items" name="fund" :label-col="labelCol" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
-                <div class="md:p-5 p-4">
-                    <template v-for="(c,idx) in stage.content">
-                        <label class="font-bold">{{ c.title }}</label>
-                        <p>{{ c.note }}</p>
-                        <a-input hidden type="input" v-if="items[idx]" v-model:value="items[idx].title" :placeholder="c.placeholder" />
-                        <a-input type="input" v-model:value="items[idx].content" :placeholder="c.placeholder" />
-                        <a-divider />
-                    </template>
-                </div>
+        <div class="flex flex-row">
+            <div class="bg-white rounded shadow w-48 p-4" v-if="stage.remark">
+                {{ stage.remark }}
+            </div>
+            <div class="bg-white relative shadow rounded-lg flex-1 ">
+                <a-form :model="items" name="fund" :label-col="labelCol" autocomplete="off" :rules="rules" :validate-messages="validateMessages" @finish="onFinish" enctype="multipart/form-data">
+                    <div class="md:p-5 p-4">
+                        <template v-for="(c,idx) in stage.content">
+                            <label class="font-bold">{{ c.title }}</label>
+                            <p>{{ c.note }}</p>
+                            <a-input hidden type="input" v-if="items[idx]" v-model:value="items[idx].title" :placeholder="c.placeholder" />
+                            <a-input type="input" v-model:value="items[idx].content" :placeholder="c.placeholder" />
+                            <a-divider />
+                        </template>
+                    </div>
 
-                <div class="flex flex-row item-center justify-center gap-5 py-2 bg-slate-200/50 border-t-2">
-                    <a-button @click="goBack()">
-                        <ArrowLeftOutlined />{{ $t('go_back') }}</a-button>
-                    <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}
-                        <CheckOutlined />
-                    </a-button>
-                </div>
-            </a-form>
+                    <div class="flex flex-row item-center justify-center gap-5 py-2 bg-slate-200/50 border-t-2">
+                        <a-button @click="goBack()">
+                            <ArrowLeftOutlined />{{ $t('go_back') }}</a-button>
+                        <a-button type="primary" html-type="submit" :disabled="checkEditable()">{{ $t('submit') }}
+                            <CheckOutlined />
+                        </a-button>
+                    </div>
+                </a-form>
+            </div>
         </div>
 
         <div class="my-4">

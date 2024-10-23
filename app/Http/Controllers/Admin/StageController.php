@@ -22,6 +22,12 @@ class StageController extends Controller
         $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         //dd($stageCode);
         $stage=$mission->stages()->where('code',$stageCode)->first();
+        $stage->blogs;
+        
+        foreach($mission->stages as $s){
+            $s->blogs;
+        }
+
         return Inertia::render('Admin/StageTasks',[
             'files'=>File::all(),
             'mission'=>$mission,

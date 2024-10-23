@@ -7,7 +7,7 @@
     'url' => 'http://127.0.0.1:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
-    'locale' => 'en',
+    'locale' => 'zh',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'key' => 'base64:aPSg6gQVk23CGNObeWXkBT6Hyq8wz+burNxXUtddWco=',
