@@ -51,7 +51,7 @@
                             <span class="font-bold">{{ task.content }}</span>
                         </div>
                         <div class="flex items-center">
-                            @{{ task.user.name }}
+                            @{{ task.user?.name }}
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                                         <span class="font-bold">{{ task.content }}</span>
                                     </div>
                                     <div class="flex items-center">
-                                        @{{ task.user.name }}
+                                        @{{ task.user?.name }}
                                     </div>
                                 </div>
                             </div>
