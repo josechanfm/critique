@@ -31,7 +31,7 @@
                     <ol>
                         <li class="px-6" v-for="file in stage.media.filter(m=>m.collection_name=='file')">
                             {{ file.file_name }}
-                            <a v-if="!checkEditable()" class="text-red-500">X</a>
+                            <a v-if="!checkEditable()" class="text-red-500" @click="deleteMedia(file.id, 'file')">X</a>
                         </li>
                     </ol>
                     <a-upload key="file" v-model:file-list="fileList" :before-upload="beforeUpload" :on-change="handleChangeFile" :multiple="true" :show-upload-list="true" :custom-request="(options) => fileUploader(options, { uploadType: 'file' })">
