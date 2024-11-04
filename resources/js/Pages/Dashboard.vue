@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-<AdminLayout title="Dashboard">
+<AdminLayout title="首页">
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{$t('dashboard')}}
@@ -27,8 +27,16 @@ const props = defineProps({
                     </p>
                 </div>
             </div>
-            <div class="bg-white p-4 gap-4 my-2 rounded-lg shadow-md" v-for="mission in user.missions">
-                <a :href="route('missions.index', {mission_id: mission.id})" class="text-blue-500 underline">{{ $page.props.lang == "en" ? mission.title_en : mission.title }}</a>
+            <div class="flex bg-white p-4 my-2 rounded-lg shadow-md" v-for="mission in user.missions">
+                <div class="pr-4">
+                    <a :href="route('missions.index', {mission_id: mission.id})" class="text-blue-500 underline hover:text-blue-600">{{ $page.props.lang == "en" ? mission.title_en : mission.title }}</a>
+                </div>
+                <div class="px-4 border-x-2">
+                    <a :href="route('missions.evaluation', {mission_id: mission.id})" class="text-white bg-green-500 hover:bg-green-600 rounded-lg shadow-md p-2"> 评估量表</a>
+                </div>
+                <div class="pl-4">
+                    <a :href="route('missions.report', {mission_id: mission.id})" class="text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md p-2"> 查看总览</a>
+                </div>
             </div>
         </div>
     </div>

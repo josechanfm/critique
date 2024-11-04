@@ -30,12 +30,14 @@ class Stage extends Model implements HasMedia
             ->nonQueued();
     }
     
-    public function mession(){
+    public function mission(){
         return $this->belongsTo(Mission::class);
     }
     public function tasks(){
         return $this->hasMany(Task::class);
     }
+
+
     public function blogs(){
         return $this->hasMany(Blog::class);
     }

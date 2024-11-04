@@ -47,6 +47,9 @@ Route::middleware([
     Route::get('dashboard', [App\Http\Controllers\DashboardController::class,'index'])->name('dashboard');
     
     Route::resource('missions',App\Http\Controllers\MissionController::class)->names('missions');
+    Route::get('missions/report/{mission_id}',[App\Http\Controllers\MissionController::class,'report'])->name('missions.report');
+    Route::get('missions/evaluation/{mission_id}',[App\Http\Controllers\MissionController::class,'evaluation'])->name('missions.evaluation');
+    Route::post('missions/evaluation/save',[App\Http\Controllers\MissionController::class,'evaluation_save'])->name('missions.evaluation.save');
     
     Route::post('mission/stage/{stage}/upload',[App\Http\Controllers\StageController::class,'upload'])->name('mission.stage.upload'); 
     Route::get('mission/stage/{stage}/{media_id}/{mediaType}/delete',[App\Http\Controllers\StageController::class,'deleteUpload'])->name('mission.stage.deleteUpload'); 

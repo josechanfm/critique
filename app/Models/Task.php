@@ -10,8 +10,13 @@ class Task extends Model
     use HasFactory;
     protected $fillable=['stage_id','title','content','user_id'];
 
-    
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function stage()
+    {
+        return $this->belongsTo(Stage::class);
     }
 }

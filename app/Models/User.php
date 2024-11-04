@@ -71,4 +71,9 @@ class User extends Authenticatable
     public function missions(){
         return $this->belongsToMany(Mission::class);
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

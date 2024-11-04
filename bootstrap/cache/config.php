@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'Critique',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://127.0.0.1:8000',
@@ -246,7 +246,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'laravel_cache_',
+    'prefix' => 'critique_cache_',
   ),
   'cors' => 
   array (
@@ -345,7 +345,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'critique_database_',
       ),
       'default' => 
       array (
@@ -692,7 +692,7 @@
     'from' => 
     array (
       'address' => 'hello@example.com',
-      'name' => 'Laravel',
+      'name' => 'Critique',
     ),
     'markdown' => 
     array (
@@ -968,7 +968,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'critique_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
