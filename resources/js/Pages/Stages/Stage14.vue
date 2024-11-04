@@ -203,11 +203,7 @@ export default {
             return true
         },
         beforeUpload(file) {
-            const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
-            if (!isValid) {
-                message.error('You can only upload JPG/PNG file!');
-            }
-            return isValid;
+            
         },
         handleChangeVideo(newVideoList) {
             this.videoList = newVideoList.videoList;

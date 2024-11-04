@@ -154,11 +154,7 @@ export default {
         },
 
         beforeUpload(file) {
-            const isValid = file.type === 'image/jpeg' || file.type === 'image/png';
-            if (!isValid) {
-                message.error('You can only upload JPG/PNG file!');
-            }
-            return isValid;
+            
         },
         handleChangeFile(newFileList) {
             this.fileList = newFileList.fileList;
