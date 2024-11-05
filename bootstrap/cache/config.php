@@ -706,7 +706,7 @@
   'media-library' => 
   array (
     'disk_name' => 'public',
-    'max_file_size' => 104857600,
+    'max_file_size' => 1073741824,
     'queue_connection_name' => 'sync',
     'queue_name' => '',
     'queue_conversions_by_default' => true,

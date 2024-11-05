@@ -66,7 +66,7 @@ class StageController extends Controller
     public function upload(Stage $stage, Request $request){
         // Validate the request
         $request->validate([
-            'file' => 'required|file|mimes:jpg,jpeg,png,pdf,mp4,mov,avi|max:2048', // 允许的文件类型
+            'file' => 'required|file|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx,txt,rtf,mp4,mov,avi,mkv,wmv,flv,webm|max:512000',
         ]);
         
         if($request->uploadType=='file'){

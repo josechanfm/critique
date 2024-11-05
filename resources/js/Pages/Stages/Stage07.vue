@@ -175,7 +175,7 @@ export default {
             
         },
         handleChangeVideo(newVideoList) {
-            this.videoList = newVideoList.videoList;
+            this.videoList = newVideoList.fileList;
         },
         handleChangeFile(newFileList) {
             this.fileList = newFileList.fileList;
