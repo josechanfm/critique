@@ -16,6 +16,7 @@
                         <a-button @click="editRecord(record)">{{ $t('edit') }}</a-button>
                         <a-button :href="route('admin.missions.show',record.id)">{{ $t('mission_stage') }}</a-button>
                         <a-button :href="route('admin.mission.stages.index',record.id)">{{ $t('mission_task') }}</a-button>
+                        <a-button :href="route('admin.missions.evaluation',record.id)">评量表结果</a-button>
                     </template>
                     <template v-if="column.dataIndex == 'mission_users'">
                         <a class="text-blue-500 underline" @click="editMissionUser(record.id)">{{$t('user')}}</a>

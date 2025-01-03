@@ -12,20 +12,35 @@
             <div class="my-4">
                 <div class="px-2 py-4 bg-white shadow-sm rounded-lg my-2">这份批判性思维自我评估量表共包括 17个题目, 采用 Likert 7点量表计分, 从“完全不同意”到“完全同意”, 分别计为 1~7 分。您的最后得分越高, 表明您的批判性思维得分越高。</div>
 
-                <div v-if="evaluation">
-                    <div class="bg-white p-3 shadow-md rounded">
+                <div v-if="evaluation" class="shadow-lg rounded bg-white "> 
+                    <div class="p-3  ">
                         批判性思维评估量表已完成
                     </div>
+
+                    <div class="py-2 px-2 bg-white ">
+                        <div class="bg-slate-100 p-4">
+                            <div class="font-bold text-base">{{ evaluation.user.name }} &nbsp; {{ evaluation.user.email }}</div>
+                            <div v-for="(ans,index) in JSON.parse(evaluation.answers) " class="flex flex-col px-4 py-2">
+                                <div>
+                                    {{ ans.label }}
+                                </div>
+                                <div class="font-bold text-base px-4"> {{ displayOption(ans.value) }} </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div v-else>
-                    <a-form :model="form" ref="form" name="evaluation" autocomplete="off" enctype="multipart/form-data" layout="vertical">
+                    <a-form :model="evaluationForm" ref="form" name="evaluation" autocomplete="off" enctype="multipart/form-data" layout="vertical">
                         <div class="py-2 px-4 bg-white">
                             <div class="py-2 px-4 text-xl font-bold border-b-2 mb-4 ">
                                 批判性思维评估量表
                             </div>
-                            <a-form-item v-for="(item, index) in items" :key="index" :name="item.name" :label="item.label" :rules="[{ required: true, message: '必填欄位' }]">
-                                <a-radio-group v-model:value="form[item.name]">
-                                    <a-radio class="p-2" v-for="o in options" :value="o.value">{{o.label}}</a-radio>
+                            
+                            <a-form-item v-for="(item, index) in items" :name="item.name" :key="index" :label="item.label" :rules="[{ required: true, message: '必填欄位' }]">
+                                <!-- <a-radio-group v-model:value="form[item.name]"> -->
+                                <a-radio-group v-model:value="evaluationForm[item.name]">
+                                    <a-radio class="p-2" v-for="o in options" :value="o.value" >{{o.label}}</a-radio>
                                 </a-radio-group>
                             </a-form-item>
                         </div>
@@ -47,9 +62,6 @@
 <script>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import * as AntdIcons from '@ant-design/icons-vue';
-import {
-    notification
-} from 'ant-design-vue';
 
 export default {
     components: {
@@ -182,7 +194,12 @@ export default {
             },
             errorMessage: '', // 用于存储错误信息
 
+            evaluationForm:{},
+            optionItem:[],
         }
+    },
+    created(){
+        // this.optionItem = items.map( x => )
     },
     methods: {
         onFinish() {
@@ -197,6 +214,12 @@ export default {
             });
         },
         handleSubmit() {
+
+            for (const item of this.items) {
+                if (this.evaluationForm[item.name] !== undefined) {
+                    item.value = this.evaluationForm[item.name]; // 更新 value
+                }
+            }
 
             this.$inertia.post(
                 route("missions.evaluation.save"), {
@@ -216,6 +239,9 @@ export default {
                     },
                 }
             );
+        },
+        displayOption(value) {
+            return this.options.find(x => x.value == value)?.label
         }
     }
 }

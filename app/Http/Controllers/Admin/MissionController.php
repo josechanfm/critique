@@ -10,6 +10,7 @@ use App\Models\Mission;
 use App\Models\TemplateStage;
 use App\Models\Stage;
 use App\Models\User;
+use App\Models\Evaluation;
 use App\Models\Media;
 
 class MissionController extends Controller
@@ -156,5 +157,12 @@ class MissionController extends Controller
         $mission->current_stage = $stage < 0? '0' : $stage;
         $mission->update();
         return ;
+    }
+
+    public function evaluation($mission_id = null){
+        
+        return Inertia::render('Admin/MissionEvaluation',[
+            'evaluations' => Evaluation::where('mission_id', $mission_id)->with('user')->get()
+        ]);
     }
 }

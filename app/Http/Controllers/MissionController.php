@@ -145,7 +145,7 @@ class MissionController extends Controller
 
         $user_id = Auth()->user()->id;
 
-        $evaluation = Evaluation::where('user_id', $user_id)->where('mission_id', $mission_id)->first();
+        $evaluation = Evaluation::where('user_id', $user_id)->where('mission_id', $mission_id)->with('user')->first();
 
         return Inertia::render('MissionEvaluation', [
             'mission_id' => $mission_id,

@@ -10,4 +10,9 @@ class Evaluation extends Model
     use HasFactory;
 
     protected $fillable = ['mission_id','answers', 'user_id'];
+
+    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -76,6 +76,7 @@ Route::group([
     Route::get('missions/change_status/{mission}',[App\Http\Controllers\Admin\MissionController::class,'changeStatus'])->name('admin.missions.change_status');
     Route::get('missions/approve/{mission}',[App\Http\Controllers\Admin\MissionController::class,'approve'])->name('admin.missions.approve');
     Route::get('missions/regret/{mission}',[App\Http\Controllers\Admin\MissionController::class,'regret'])->name('admin.missions.regret');
+    Route::get('missions/evaluation/{mission}',[App\Http\Controllers\Admin\MissionController::class,'evaluation'])->name('admin.missions.evaluation');
     Route::resource('mission/{mission}/stages',App\Http\Controllers\Admin\StageController::class)->names('admin.mission.stages');
     Route::resource('files',App\Http\Controllers\Admin\FileController::class)->names('admin.files');
 });
