@@ -5,6 +5,9 @@ import Welcome from '@/Components/Welcome.vue';
 const props = defineProps({
     user: {
     },
+    missions:{
+
+    },
 });
 </script>
 
@@ -27,7 +30,7 @@ const props = defineProps({
                     </p>
                 </div>
             </div>
-            <div class="flex bg-white p-4 my-2 rounded-lg shadow-md" v-for="mission in user.missions">
+            <div class="flex bg-white p-4 my-2 rounded-lg shadow-md" v-for="mission in missions">
                 <div class="pr-4">
                     <a :href="route('missions.index', {mission_id: mission.id})" class="text-blue-500 underline hover:text-blue-600">{{ $page.props.lang == "en" ? mission.title_en : mission.title }}</a>
                 </div>

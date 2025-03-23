@@ -19,6 +19,7 @@ class DashboardController extends Controller
         $user->missions;
         return Inertia::render('Dashboard', [
             'user' => $user,
+            'missions' => Mission::all(),
         ]);
     }
 }

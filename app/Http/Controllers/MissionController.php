@@ -34,21 +34,25 @@ class MissionController extends Controller
 
         $stage = $mission->stages->where('code', 'S' . $page)->first();
 
-        foreach ($stage->media as $key => $m) {
-            $find_media = Media::find($m->id)->getMedia('*')->first();
-            if ($find_media) {
-                $stage->media[$key]->thumbnail = $find_media->getFullUrl();
-            }
-        }
+        if( $stage  ){
 
-        $task = Task::where('user_id', auth()->user()->id)->where('stage_id', $stage->id)->get();
+            foreach ($stage->media as $key => $m) {
+                $find_media = Media::find($m->id)->getMedia('*')->first();
+                if ($find_media) {
+                    $stage->media[$key]->thumbnail = $find_media->getFullUrl();
+                }
+            }
+
+            $task = Task::where('user_id', auth()->user()->id)->where('stage_id', $stage->id)->get();
+        } 
+
 
         return Inertia::render('Stages/Stage' . $page, [
             'configStages' => Config::item('stages'),
             'mission' => $mission,
             'page' => $page,
-            'stage' => $stage,
-            'task' => $task,
+            'stage' => $stage??[],
+            'task' => $task??[],
         ]);
     }
 
