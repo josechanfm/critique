@@ -69,7 +69,10 @@ Route::group([
     Route::resource('configs',App\Http\Controllers\Admin\ConfigController::class)->names('admin.configs');
     Route::resource('template_stages',App\Http\Controllers\Admin\TemplateStageController::class)->names('admin.templateStages');
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
+
     Route::resource('stages',App\Http\Controllers\Admin\StageController::class)->names('admin.stages');
+    Route::get('stages/task/{mission}/{user_id}',[App\Http\Controllers\Admin\StageController::class, 'task'])->name('admin.stages.viewTask');
+   
     Route::post('stages/update_media_thumbnail/{media}/{stage}',[App\Http\Controllers\Admin\StageController::class, 'updateMediaThumbnail'])->name('admin.stages.updateMediaThumbnail');
     Route::get('stages/delete_media_thumbnail/{media_id}',[App\Http\Controllers\Admin\StageController::class, 'deleteMediaThumbnail'])->name('admin.stages.deleteMediaThumbnail');
     Route::post('missions/update_mission_user/{mission}',[App\Http\Controllers\Admin\MissionController::class,'updateMissionUser'])->name('admin.missions.updateMissionUser');

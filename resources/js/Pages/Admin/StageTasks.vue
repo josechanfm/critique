@@ -74,9 +74,9 @@
         </div>
         <a-divider />
         <div class="text-lg mb-4">
+            <!-- 之前步骤 -->
             <span>{{$t('previous_stage')}}:</span>
         </div>
-
         <div class="flex flex-col-reverse gap-4">
             <template v-for="stage in mission.stages">
                 <a-card :bordered="false" class="" v-if="stage.code.slice(-2) < (this.mission.current_stage+1)">
@@ -84,7 +84,7 @@
                         {{ stage['code'].substring(-1) }} : {{ stage['title'] }}
                     </template>
                     <div v-if="['S07', 'S13', 'S14'].includes( stage.code ) ">
-                        <div v-if="stage.media.length> 0" class="text-base my-2">Uploaded File: </div>
+                        <div v-if="stage.media.length> 0" class="text-base my-2">已上傳的檔案: </div>
                         <div class="flex flex-row gap-4">
 
                             <div class="flex flex-col gap-2">
@@ -102,9 +102,27 @@
 
                         </div>
                     </div>
+                    <a-divider />
                     
-                    <div class="grid grid-cols-3">
-                        <div class=" border px-5" v-for="(tasks,index) in groupUserTasks(stage.tasks) ">
+                    <div class="grid grid-cols-2">
+                            <div class="flex gap-4 py-1" v-for="task in tasks.filter( x => x.stage_id == stage.id)" v-if="tasks.filter( x => x.stage_id == stage.id).length>0">
+                                <div class="flex flex-row ">
+                                    <div v-if="task.title == '1'">
+                                        <CheckOutlined class="text-green-500" /> 用戶已完成
+                                    </div>
+                                    <div v-else-if="task.title == '0'">
+                                        用戶未完成
+                                    </div>
+                                    <div v-else class="text-base py-1">
+                                        <span class="">{{ task.title }}</span> <br>
+                                        <span class="font-bold">{{ task.content }}</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        @{{ task.user?.name }}
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- <div class=" border px-5" v-for="(tasks,index) in groupUserTasks(stage.tasks) ">
                             <div class="flex gap-4 py-1" v-for="task in tasks" v-if="tasks.length>0">
                                 <div class="flex flex-row ">
                                     <div v-if="task.title == '1'">
@@ -122,7 +140,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div class="my-4 p-4 bg-slate-200 rounded-lg shadow-md" >
@@ -180,7 +198,7 @@ export default {
         notification,
         ...AntdIcons,
     },
-    props: ["stage", "mission"],
+    props: ["stage", "mission", "tasks"],
     data() {
         return {
 

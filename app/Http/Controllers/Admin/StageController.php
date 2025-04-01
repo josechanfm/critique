@@ -9,6 +9,7 @@ use App\Models\Task;
 use App\Models\Mission;
 use App\Models\Stage;
 use App\Models\File;
+use App\Models\User;
 use App\Models\Media;
 
 class StageController extends Controller
@@ -18,6 +19,21 @@ class StageController extends Controller
      */
     public function index(Mission $mission)
     {
+        $mission->stages;
+
+        $stageIds = array_column($mission->stages->toArray(), 'id');
+
+        $users = User::whereHas('tasks', function($query) use ($stageIds) {
+            $query->whereIn('stage_id', $stageIds);
+        })->get();
+
+        return Inertia::render('Admin/Stage',[
+            'mission' => $mission,
+            'users' => $users,
+        ]);
+    }
+
+    public function task(Mission $mission, $user_id){
         $mission->stages;
         $stageCode='S'.substr('0'.$mission->current_stage+1,-2);
         //dd($stageCode);
@@ -34,11 +50,13 @@ class StageController extends Controller
         foreach($stage->tasks as $t){
             $t->user;
         }
+        $tasks = Task::with('user')->where('user_id', $user_id)->get(); 
 
         return Inertia::render('Admin/StageTasks',[
             'files'=>File::all(),
             'mission'=>$mission,
-            'stage'=>$stage
+            'stage'=>$stage,
+            'tasks'=>$tasks
         ]);
     }
 
