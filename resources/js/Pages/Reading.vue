@@ -6,7 +6,6 @@
         </h2>
     </template>
 
-    {{ readingFinish }}
     <div class="w-[1000px] mx-auto my-4 " v-if="!readingFinish">
         <!-- 引导页 -->
         <div v-if="currentStage === 'guide'" class="guide flex flex-col gap-4">
