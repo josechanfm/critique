@@ -9,8 +9,12 @@
     <div class="py-4">
         <div class="max-w-7xl mx-auto ">
             <a class="bg-white border shadow p-2 rounded" :href="route('dashboard')">← 返回</a>
-            <div class="my-4">
+            <div class="my-4 flex flex-col gap-2">
                 <div class="px-2 py-4 bg-white shadow-sm rounded-lg my-2">这份批判性思维自我评估量表共包括 17个题目, 采用 Likert 7点量表计分, 从“完全不同意”到“完全同意”, 分别计为 1~7 分。您的最后得分越高, 表明您的批判性思维得分越高。</div>
+
+                <a v-if="evaluation" class="cursor-pointer w-32 text-center px-4 py-2 rounded-lg shadow bg-blue-600 hover:bg-blue-700 text-white" @click="generateEvaluationReport(evaluation)">
+                    下载报告 <DownloadOutlined />
+                </a>
 
                 <div v-if="evaluation" class="shadow-lg rounded bg-white "> 
                     <div class="p-3  ">
@@ -239,6 +243,12 @@ export default {
                     },
                 }
             );
+        },
+        generateEvaluationReport(evaluation){
+            
+            window.location.href = route("missions.evaluation.report" , {
+                    evaluation: this.evaluation.id,
+                })
         },
         displayOption(value) {
             return this.options.find(x => x.value == value)?.label

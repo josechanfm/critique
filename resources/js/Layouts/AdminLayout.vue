@@ -69,6 +69,9 @@ background: linear-gradient(135deg, rgba(212,254,255,0.5746673669467788) 0%, rgb
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     {{ $t('dashboard') }}
                                 </NavLink>
+                                <NavLink :href="route('reading')" :active="route().current('reading')">
+                                    {{ $t('reading') }}
+                                </NavLink>
                                 <NavLink v-role="['admin']" :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
                                     {{ $t('mission') }}
                                 </NavLink>

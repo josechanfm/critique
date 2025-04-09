@@ -8,7 +8,7 @@
 
     <div class="container mx-auto pt-5">
         <div class="bg-white relative shadow rounded-lg overflow-x-auto">
-            <a-table :dataSource="users" :columns="columns">
+            <a-table :dataSource="users" :columns="columns" :pagination="{ pageSize:50  }"> 
                 <template #bodyCell="{ column, text, record, index }">
                     <template v-if="column.dataIndex == 'operation'">
                         <a-button :href="route('admin.stages.viewTask', {'mission': mission.id, 'user_id':record.id } )">查看结果</a-button>

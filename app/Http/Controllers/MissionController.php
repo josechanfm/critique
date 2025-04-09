@@ -10,6 +10,8 @@ use App\Models\Task;
 use App\Models\Stage;
 use App\Models\Media;
 use App\Models\Evaluation;
+use App\Exports\EvaluationsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MissionController extends Controller
 {
@@ -155,6 +157,70 @@ class MissionController extends Controller
             'mission_id' => $mission_id,
             'evaluation' => $evaluation
         ]);
+    }
+    public function evaluation_report(Evaluation $evaluation)
+    {
+        $answers = json_decode( $evaluation->answers );
+        
+        $group1 = []; $group2 = []; $group3 = [];
+        $group1_score = 0; $group2_score = 0; $group3_score = 0;
+        $group1_message = ''; $group2_message = ''; $group3_message = '';
+        $options = [ 
+            1 => '完全不同意',
+            2 => '不同意',
+            3 => '有些不同意',
+            4 => '中立',
+            5 => '有些不同意',
+            6 => '同意',
+            7 => '完全同意',
+        ];
+
+        foreach ($answers as $answer) {
+            if (in_array($answer->name, ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'])) {
+                $group1[] = ['label'=>$answer->label, 'value'=>$options[$answer->value]] ;
+                $group1_score += (int) $answer->value;
+            } elseif (in_array($answer->name, ['q9', 'q10', 'q11', 'q12', 'q13'])) {
+                $group2[] = ['label'=>$answer->label, 'value'=>$options[$answer->value]] ;
+                $group2_score += (int) $answer->value;
+            } elseif (in_array($answer->name, ['q14', 'q15', 'q16', 'q17'])) {
+                $group3[] = ['label'=>$answer->label, 'value'=>$options[$answer->value]] ;
+                $group3_score += (int) $answer->value;
+            }
+        }
+
+        if( $group1_score < 56){
+            $group1_message = '在整个批判性思维训练步骤中需要注重第4步和第6步的练习。';
+        }
+        if( $group1_score == 56){
+            $group1_message = '您具有较强的分析技能，在整个批判性思维训练步骤注重第4步和第6步的练习可更加强化您的分析技能。';
+        }
+        if( $group2_score > 5){
+            $group2_message = '在整个批判性思维训练步骤中需要注重第4步，第6步，第8步，第9步和第11步的练习。';
+        }
+        if( $group2_score == 5){
+            $group2_message = '您具有较强的开放性技能，在整个批判性思维训练步骤注重第4步，第6步，第8步，第9步和第11步的练习可更加强化您的开放性的技能。';
+        }
+        if( $group3_score < 28){
+            $group3_message = '在整个批判性思维训练步骤中您都需要保持运用批判性思维的意识。';
+        }
+        if( $group3_score == 28){
+            $group3_message = '您具有较强的运用批判性思维的意识，在整个批判性思维训练步骤中保持运用批判性思维的意识，可以提升您的批判性思维水平。';
+        }
+
+        $result = [ 
+            ['分析技能', $group1_message,''], 
+            ...$group1,
+            [''],
+            ['开放性', $group2_message,''], 
+            ...$group2, 
+            [''],
+            ['运用批判性思维倾向', $group3_message,''], 
+            ...$group3 
+        ];
+        
+        $instance=new EvaluationsExport();
+        $instance->set_export_data($result);
+        return Excel::download($instance, '评量表报告.xlsx');
     }
 
     public function evaluation_save(Request $request){

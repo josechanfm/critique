@@ -33,6 +33,7 @@
             <a-form-item label="Title" name="title">
                 <a-input type="input" v-model:value="modal.data.title" />
             </a-form-item>
+
             <a-form-item label="Content" name="content">
                 <a-textarea v-model:value="modal.data.content" :rows="10" />
             </a-form-item>
