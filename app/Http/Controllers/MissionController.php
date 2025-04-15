@@ -208,14 +208,22 @@ class MissionController extends Controller
         }
 
         $result = [ 
-            ['分析技能', $group1_message,''], 
+            ['批判性思维评估结果', '',''], 
+            ['您的批判性思维最终得分为'.$group1_score+$group2_score+$group3_score.'分', '',''], 
+            ['分析技能维度', '您的选项',''], 
             ...$group1,
+            ['这个维度得分', $group1_score,''], 
+            ['推荐训练步骤', $group1_message,''], 
             [''],
-            ['开放性', $group2_message,''], 
-            ...$group2, 
+            ['开放性维度', '您的选项',''], 
+            ...$group2,
+            ['这个维度得分', $group2_score,''], 
+            ['推荐训练步骤', $group2_message,''], 
             [''],
-            ['运用批判性思维倾向', $group3_message,''], 
-            ...$group3 
+            ['运用批判性思维倾向维度', '您的选项',''], 
+            ...$group3,
+            ['这个维度得分', $group3_score,''], 
+            ['推荐训练步骤', $group3_message,''], 
         ];
         
         $instance=new EvaluationsExport();
