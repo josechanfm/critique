@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TemplateStage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Reading;
 
 class ReadingController extends Controller
 {
@@ -13,10 +14,8 @@ class ReadingController extends Controller
      */
     public function index()
     {
-        //
-        
-
         return Inertia::render('Reading', [
+            'readings' => Reading::all(),
         ]);
     }
 

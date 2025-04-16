@@ -70,6 +70,8 @@ Route::group([
     Route::resource('configs',App\Http\Controllers\Admin\ConfigController::class)->names('admin.configs');
     Route::resource('template_stages',App\Http\Controllers\Admin\TemplateStageController::class)->names('admin.templateStages');
     Route::resource('missions',App\Http\Controllers\Admin\MissionController::class)->names('admin.missions');
+    Route::resource('readings',App\Http\Controllers\Admin\ReadingController::class)->names('admin.readings');
+    Route::post('readings/{reading}/upload',[App\Http\Controllers\Admin\ReadingController::class,'upload'])->name('admin.readings.upload'); 
 
     Route::resource('stages',App\Http\Controllers\Admin\StageController::class)->names('admin.stages');
     Route::get('stages/task/{mission}/{user_id}',[App\Http\Controllers\Admin\StageController::class, 'task'])->name('admin.stages.viewTask');

@@ -22,12 +22,21 @@
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-36 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
+                            <div v-for="r in readings.filter( x => x.type == 'economic')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'video')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-40 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('file_title')}}</div>
-                            
+                            <div v-for="r in readings.filter( x => x.type == 'economic')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'file')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,12 +47,21 @@
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-36 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
+                            <div v-for="r in readings.filter( x => x.type == 'society')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'video')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-40 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('file_title')}}</div>
-                            
+                            <div v-for="r in readings.filter( x => x.type == 'society')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'file')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,12 +72,21 @@
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-36 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('video_title')}}</div>
+                            <div v-for="r in readings.filter( x => x.type == 'environment')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'video')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="px-4 py-2 shadow-md border rounded-lg bg-slate-100/50">
                         <div class="min-h-40 ">
                             <div class="mx-4 my-2 text-lg font-bold">{{$t('file_title')}}</div>
-                            
+                            <div v-for="r in readings.filter( x => x.type == 'environment')">
+                                <div class="my-2 " v-for="media in r.media.filter( x => x.collection_name == 'file')">
+                                    <a class="!text-blue-500 hover:text-blue-600" :href="media.original_url">{{ media.file_name }}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,6 +118,7 @@ export default {
     components: {
         AdminLayout,
     },
+    props:['readings'],
     data() {
         return {
             currentStage: 'guide', // 'guide' | 'reading' | 'finished'

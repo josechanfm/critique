@@ -75,6 +75,9 @@ background: linear-gradient(135deg, rgba(212,254,255,0.5746673669467788) 0%, rgb
                                 <NavLink v-role="['admin']" :href="route('admin.missions.index')" :active="route().current('admin.missions.index')">
                                     {{ $t('mission') }}
                                 </NavLink>
+                                <NavLink v-role="['admin']" :href="route('admin.readings.index')" :active="route().current('admin.readings.index')">
+                                    阅读编辑
+                                </NavLink>
                                 <!-- <NavLink v-role="['admin']" :href="route('admin.templateStages.index')" :active="route().current('admin.templateStages.index')">
                                     Stage Template
                                 </NavLink> -->
